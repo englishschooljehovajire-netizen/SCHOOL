@@ -1,0 +1,14 @@
+<div id="date" style="font-size:14px; color:#aaa;"></div>
+<div id="time" style="font-size:16px; color:#25D366; font-weight:bold;"></div>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  document.getElementById("date").innerText = now.toLocaleDateString('en-IN', options);
+  const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' };
+  document.getElementById("time").innerText = now.toLocaleTimeString('en-IN', timeOptions) + " IST";
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
