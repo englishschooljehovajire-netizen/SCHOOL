@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jehova Jire English School - JJES</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#f5f5f5; }
+/* TOP BAR */
+.top-bar {
+  background:#0d3b66; color:white; padding:8px 0; font-size:13px;
+}
+.top-bar .container { 
+  max-width:1200px; margin:auto; padding:0 20px; 
+  display:flex; justify-content:space-between; 
+}
+/* HEADER */
+header {
+  background:white; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  position:sticky; top:0; z-index:1000;
+}
+.navbar {
+  max-width:1200px; margin:auto; padding:12px 20px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { width:60px; }
+.logo h1 { font-size:18px; color:#0d3b66; line-height:1.3; }
+.logo span { font-size:12px; color:#666; }
+nav a {
+  text-decoration:none; color:#333; margin-left:20px; font-weight:bold;
+  font-size:14px; transition:0.3s;
+}
+nav a:hover { color:#ffc107; }
+/* BANNER */
+.banner {
+  background:url('primary.jpg') center/cover no-repeat;
+  height:400px; display:flex; align-items:center; justify-content:center;
+  color:white; text-align:center; position:relative;
+}
+.banner::after {
+  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:rgba(13,59,102,0.7);
+}
+.banner-content { position:relative; z-index:2; }
+.banner h2 { font-size:38px; margin-bottom:10px; }
+.banner p { font-size:18px; margin-bottom:20px; }
+.btn {
+  background:#ffc107; color:#000; padding:12px 25px; text-decoration:none;
+  border-radius:5px; font-weight:bold; display:inline-block;
+}
+.btn:hover { background:#ffdb4d; }
+/* SECTIONS */
+.container { max-width:1200px; margin:auto; padding:40px 20px; }
+.section-title { text-align:center; margin-bottom:30px; }
+.section-title h2 { font-size:28px; color:#0d3b66; margin-bottom:8px; }
+.section-title p { color:#666; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+.card {
+  background:white; padding:25px; border-radius:8px; 
+  box-shadow:0 3px 10px rgba(0,0,0,0.1); text-align:center;
+}
+.card h3 { color:#0d3b66; margin-bottom:10px; }
+
+/* FOOTER */
+footer {
+  background:#0d3b66; color:white; text-align:center; padding:25px;
+  margin-top:40px;
+}
+@media(max-width:768px){
+  nav { display:none; } /* Mobile ah menu hide rih */
+  .banner h2 { font-size:26px; }
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="JJES Logo">
+      <div>
+        <h1>Jehova Jire English School
+      </h1>
+      <span>Pvt. Institute | Affilated under State Govt.</span>
+      <p><span>Address Pangbalkawn, Kolasib, Mizoram 796081<span>
+        <p>Motto: Brighten up your future</p>
+      </div>
+    </div>
+    <nav>
+      <a href="home.html" target="blank">Home</a>
+      <a href="about.html" target="blank">About Us</a>
+      <a href="academics.html" target="blank">Academics</a>
+      <a href="admission-form.html" target="blank">Admission</a>
+      <a href="contact.html" target="blank">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="banner" id="home">
+  <div class="banner-content">
+    <h2>Quality Education for Bright Future</h2>
+    <p>Primary | Class l to Class IV </p>
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy & Curriculum - Sri Chaitanya Techno Schools</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: left;
+        }
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #004080;
+            font-size: 32px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ff6b00;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #ff6b00;
+            margin-top: 35px;
+            font-size: 24px;
+            border-left: 5px solid #004080;
+            padding-left: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-left: 25px;
+        }
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+        .highlight {
+            background: #f0f8ff;
+            border-left: 4px solid #004080;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Philosophy & Approach</h1>
+        
+        <h2>Philosophy</h2>
+        <div class="highlight">
+            <p>A refined personality is a result of proper grooming. At <strong>Jesus</strong>, we look to inculcate the best moral values and social etiquette, resulting in children with impeccable character.</p>
+        </div>
+
+        <h2>Curriculum</h2>
+        <p>A skills and activities based approach forms the backbone of our teaching methodology. Emphasis is put on <strong>public speaking, interpersonal and communication skills, and team work</strong>. </p>
+        <p>Our dedicated faculty members follow a <strong>child-centric approach</strong>, providing kids ample opportunities to learn and also apply what they have learnt. Heavy emphasis is given to holistic growth, thus personality building forms an integral part of their education design.</p>
+        <p>With this, a strong foundation is laid for students to go on and become <strong>global achievers</strong> in whichever field they choose.</p>
+
+        <h2>Objectives</h2>
+        <ul>
+            <li>To make learning fun by introducing elements beyond the four walls of the classroom</li>
+            <li>To develop knowledge and skills of a student in stages</li>
+            <li>To address both the physical and cognitive needs of the child</li>
+            <li>To give equal attention to the intelligence and emotional quotients of the child</li>
+            <li>To induce the right kind of aptitude for global success</li>
+            <li>To create a focused perception through unique teaching methodologies</li>
+        </ul>
+
+        <footer>
+            © 2026 Jehova Jire English School. Building Global Achievers with Strong Character.
+        </footer>
+    </div>
+</body>
+</html>
