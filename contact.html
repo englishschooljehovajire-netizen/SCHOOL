@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon dahna -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Icon awmna tur COLOURED -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<title>JJES - Pangbalkawn | Pvt. Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.menu{font-size:26px;cursor:pointer;color:#1a5f9e}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.school-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #1a5f9e;background:#fff;flex-shrink:0}
+.logo h1{font-size:13px;color:#1a5f9e;font-weight:700;line-height:1.1}
+.logo p{font-size:9px;color:#666;line-height:1.2}
+.topbar{background:#0e3d6b;color:white;display:flex;justify-content:space-between;padding:8px 16px;font-size:11px}
+.slider{position:relative;width:100%;height:320px;overflow:hidden;background:#000}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1s ease;background-size:cover;background-position:center}
+.slide.active{opacity:1}
+.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent)}
+.slide-text{position:absolute;bottom:30px;left:20px;color:white;z-index:2}
+.slide-text h2{font-size:20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+.slide-text p{font-size:12px;opacity:.9}
+.dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+.dot.active{background:white}
+#drawer{position:fixed;top:0;left:-280px;width:270px;height:100%;background:#fff;z-index:200;transition:.3s;box-shadow:4px 0 20px rgba(0,0,0,.2)}
+#drawer.open{left:0}
+.drawer-head{padding:18px 22px;font-weight:700;color:#1a5f9e;font-size:15px;border-bottom:2px solid #1a5f9e;margin:0 12px}
+.menu-list{list-style:none;padding:0;margin:0}
+.menu-list li{border-bottom:1px solid #f0f0f0}
+.menu-list li a{display:flex;align-items:center;gap:12px;padding:14px 22px;color:#555;text-decoration:none;font-size:14px}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:150}
+#overlay.show{display:block}
+.jjes-cards{padding:16px;background:#f4f7fb;display:flex;flex-direction:column;gap:16px}
+.jjes-card{background:#fff;border-radius:10px;padding:18px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #eef2f7}
+.jjes-card h3{text-align:center;color:#1a3a5f;font-size:15px;font-weight:600;margin-bottom:10px}
+.jjes-card p{font-size:12.5px;color:#444;line-height:1.6;text-align:justify}
+.btn-wrap{text-align:center;margin-top:14px}
+.yellow-btn{display:inline-block;background:#f9b700;color:#000;font-weight:600;font-size:13px;padding:9px 18px;border-radius:6px;text-decoration:none;box-shadow:0 2px 4px rgba(0,0,0,.15)}
+footer{background:#0083c3;color:#fff;padding:30px 20px;text-align:center}
+.social-icons{display:flex;justify-content:center;gap:16px;margin-bottom:15px}
+.social-icons a{width:50px;height:50px;background:#000;border-radius:50%;display:flex;justify-content:center;align-items:center;text-decoration:none;font-size:28px;transition:.3s}
+.social-icons a:hover{transform:translateY(-3px) scale(1.05)}
+.fa-facebook{color:#1877F2}
+.fa-instagram{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fa-youtube{color:#FF0000}
+.fa-whatsapp{color:#25D366}
+</style>
+</head>
+<body>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+<div id="drawer">
+<div class="drawer-head">JJES MENU</div>
+<ul class="menu-list">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">🏫 About Us</a></li>
+<li><a href="admission-form.html">🎓 Student Admission</a></li>
+<li><a href="notification.html">🔔 OM / Notifications</a></li>
+<li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
+<li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
+<li><a href="contact.html">📞 Contact</a></li>
+</ul>
+</div>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+<div id="drawer">
+<div class="drawer-head">JJES MENU</div>
+<ul class="menu-list">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">🏫 About Us</a></li>
+<li><a href="admission-form.html">🎓 Student Admission</a></li>
+<li><a href="notification.html">🔔 OM / Notifications</a></li>
+<li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
+<li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
+<li><a href="contact.html">📞 Contact</a></li>
+</ul>
+</div>
+
+<header>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="logo-wrap">
+<img src="logo.jpg" alt="Logo" class="school-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Mizoram.png'">
+<div class="logo"><h1>Jehova Jire English School</h1><p>Pvt. Institution | 150, Hall Veng, Pangbalkawn, Kolasib 796081 | Estd.2011</p>
+<p>Motto: Brighten up your</p></div>
+</div>
+</header>
+
+<div class="topbar"><div id="liveTime">⏰ Loading...</div><div id="visitCount">👁️ Total Visitors: 0</div></div>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#0d3b69; color:#fff; padding:50px 30px;">
+    <p style="display:flex; align-items:center; gap:0px; margin-bottom:35px; flex-wrap:wrap;">
+      <h1 style="font-size:40px; font-weight:bold; color:#fff;">Contact</h1>
+      </a>
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <h3 style="font-size:18px; margin-bottom:15px; color:#fff; text-align:left;">Locate us at Google Map</h3>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.123456!2d92.606478!3d24.208049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374a0a0a0a0a0a0a%3A0x123456789!2sJehova%20Jire%20English%20School%2C%20Pangbalkawn%2C%20Kolasib%2C%20Mizoram!5e0!3m2!1sen!2sin!4v1720000"
+        width="90%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- CAMPUS DETAILS -->
+    <div class="campus-grid">
+      <div class="campus-col">
+        <h4>Main Campus</h4>
+        <p>
+          Pangbalkawn, Kolasib<br>
+          Mizoram - 796081<br>
+          INDIA<br><br>
+                    <p>Location: 150, Near Community Hall, Pangbalkawn Vill.</b><br>
+        </p>
+      </div>
+       
+      <div class="campus-col">
+        
+        <h4>School Hours</h4>
+        <p>Monday - Friday | Saturday (Hindi class)<br>
+          9:00 AM - 2:30 PM | 10:00 AM - 11:30 AM<br>
+      <div class="campus-col">
+        <h4>Academics: Nursery to Class VIII</h4></b><br>
+
+        <h4>Diploma in computer application-DCA [Computer class]</h4>
+        <p>Tuesday, Thursday, Friday<br>
+          7:30 PM - 8:00 PM<br>
+</div>
+</div>
+
+<footer>
+<div class="social-icons">
+<a href="https://facebook.com/@jjespangbalkawn" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/@jjespangbalkawn" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/@JJESpangbalkawn" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/919612356076" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+<p style="font-size:13px;">Copyright © 2026 Jehova Jire English School. All Rights Reserved.</p>
+<div id="footerTime" style="margin-top:8px;font-size:11px;opacity:.8"></div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
+let idx=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+function show(i){
+ slides.forEach(s=>s.classList.remove('active'));
+ dots.forEach(d=>d.classList.remove('active'));
+ slides[i].classList.add('active');
+ dots[i].classList.add('active');
+ idx=i;
+}
+dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
+setInterval(()=>{idx=(idx+1)%slides.length;show(idx);},4000);
+function updateTime(){
+ const now=new Date();
+ const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+ document.getElementById('liveTime').innerText='⏰ '+str+' IST';
+ document.getElementById('footerTime').innerText=str+' IST';
+}
+setInterval(updateTime,1000);updateTime();
+let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;
+localStorage.setItem('jjes_visits',c);
+document.getElementById('visitCount').innerText='👁️ Total Visitors: '+c.toLocaleString('en-IN');
+</script>
+</body>
+</html>
