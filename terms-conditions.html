@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>JJES - Pangbalkawn | Pvt. Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.menu{font-size:26px;cursor:pointer;color:#1a5f9e}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.school-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #1a5f9e;background:#fff;flex-shrink:0}
+.logo h1{font-size:13px;color:#1a5f9e;font-weight:700;line-height:1.1}
+.logo p{font-size:9px;color:#666;line-height:1.2}
+.topbar{background:#0e3d6b;color:white;display:flex;justify-content:space-between;padding:8px 16px;font-size:11px}
+#drawer{position:fixed;top:0;left:-280px;width:270px;height:100%;background:#fff;z-index:200;transition:.3s;box-shadow:4px 0 20px rgba(0,0,0,.2)}
+#drawer.open{left:0}
+.drawer-head{padding:18px 22px;font-weight:700;color:#1a5f9e;font-size:15px;border-bottom:2px solid #1a5f9e;margin:0 12px}
+.menu-list{list-style:none;padding:0;margin:0}
+.menu-list li{border-bottom:1px solid #f0f0f0}
+.menu-list li a{display:flex;align-items:center;gap:12px;padding:14px 22px;color:#555;text-decoration:none;font-size:14px}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:150}
+#overlay.show{display:block}
+.jjes-cards{padding:16px;background:#f4f7fb;display:flex;flex-direction:column;gap:16px}
+.jjes-card{background:#fff;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #eef2f7}
+.jjes-card h2{text-align:center;color:#0e3d6b;font-size:18px;font-weight:700;margin-bottom:14px}
+.jjes-card h4{color:#0e3d6b;font-size:14px;font-weight:700;margin:20px 0 8px;border-left:4px solid #f9b700;padding-left:8px;text-align:left}
+.jjes-card p{font-size:12.5px;color:#444;line-height:1.7;text-align:justify;margin-bottom:10px}
+.jjes-card ul{padding-left:20px;margin:10px 0}
+.jjes-card ul li{font-size:12.5px;color:#444;line-height:1.7;text-align:justify;padding:5px 0;list-style-type:disc}
+footer{background:#0083c3;color:#fff;padding:30px 20px;text-align:center}
+#footerTime{margin-top:8px;font-size:11px;opacity:.8}
+</style>
+</head>
+<body>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+<div id="drawer">
+<div class="drawer-head">JJES MENU</div>
+<ul class="menu-list">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">🏫 About Us</a></li>
+<li><a href="admission-form.html">🎓 Student Admission</a></li>
+<li><a href="notification.html">🔔 OM / Notifications</a></li>
+<li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
+<li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
+<li><a href="contact.html">📞 Contact</a></li>
+</ul>
+</div>
+
+<header>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="logo-wrap">
+<img src="logo.jpg" alt="Logo" class="school-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Mizoram.png'">
+<div class="logo"><h1>Jehova Jire English School</h1><p>Pvt. Institution | 150, Hall Veng, Pangbalkawn, Kolasib 796081</p>
+<p>Estd. 10th Jan. 2011</p>
+<p>Motto: Brighten up your future</p></div>
+</div>
+</header>
+
+<div class="topbar"><div id="liveTime">⏰ Loading...</div><div id="visitCount">👁️ Total Visitors: 0</div></div>
+
+<div class="jjes-cards"> 
+<div class="jjes-card">
+<h2>Terms & Conditions</h2>
+<p><strong>Jehova Jire English Schools ("SCTS")</strong> will allow you to access and use the Website on the condition that you accept the terms and conditions set out below (the "Terms of Use").</p>
+<p style="font-weight:600; background:#fff8e1; padding:8px; border-radius:6px; border:1px dashed #f9b700;">IMPORTANT - READ BEFORE ACCESSING OR USING THE PAYMENT SERVICES. BY SELECTING THE "I ACCEPT" BUTTON BELOW, OR BY ACCESSING OR USING THE PAYMENT SERVICES, YOU AGREE THAT YOU HAVE CAREFULLY READ, UNDERSTOOD AND AGREED TO BE BOUND BY THE TERMS AND CONDITIONS OF THESE TERMS OF USE.</p>
+<p>SCTS reserves the right to modify or amend the Terms of Use without notice at any time. As such, it is important that the Terms of Use be read on a regular basis so that you are aware of any such changes.</p>
+
+<h4>Term</h4>
+<p>This Agreement shall be effective upon your agreeing to be bound by the terms of this Agreement and shall continue in effect unless terminated in accordance with the provisions set out herein.</p>
+
+<h4>Proprietary Rights</h4>
+<p>All works, content and materials on this Website, including without limitation, all text, information, designs, graphics, images, drawings, photographs, code and software (the "Materials") and all organization and presentation of the Materials which form a part of this Website are the exclusive property of SCTS or its licensors and are protected by intellectual property laws relating to copyrights, trade-marks, trade names, Internet domain names, trade dress and other proprietary rights.</p>
+
+<h4>Trademarks and Copyright</h4>
+<p>All Materials and other information found on this Website is protected under the applicable copyright and trade-mark laws of India and of other applicable jurisdictions. Any unauthorized use of this information including re-publication, downloading, copying or modification of material on the Website, including trademarks, trade names and design marks, may violate applicable legislation and may result in legal action.</p>
+
+<h4>Service Provided</h4>
+<p>This Website allows parents of children enrolled with SCTS to check Details, Notifications, Announcements, Calendar, Academic Marks, Pay fees applicable to each child's enrollment through credit card/debit transactions (the "Payment Services").</p>
+
+<h4>Permitted Uses</h4>
+<ul>
+<li>Not copy, reproduce, republish, upload, post, transmit, or distribute the Materials from the Website in any way whatsoever except that you have the right to download one copy of the Materials on any single computer, for your personal, non-commercial use only, provided you keep intact all copyright, trade-mark and proprietary notices;</li>
+<li>Use the Materials solely for lawful purposes</li>
+<li>Not create derivative works from or exploit the Materials in any way;</li>
+<li>Only use this Website if you are legally able to make binding contracts under applicable law; and</li>
+<li>Acknowledge that the unauthorized use of the Materials could cause irreparable harm to SCTS and that in the event of an unauthorized use, SCTS shall be entitled to an injunction, in addition to any other remedies available at law or in equity, to prevent such irreparable.</li>
+</ul>
+
+<h4>Accounts</h4>
+<p>You are solely responsible for the activity that occurs on your account, and you must keep your account password secure. You must notify SCTS immediately of any breach of security or unauthorized use of your account.</p>
+
+<h4>Internet Communications</h4>
+<p>The Internet is not a fully secure medium and is subject to possible interception, loss, corruption, or alteration of communication. SCTS is not liable for any damages resulting from the transmission, interception or corruption of communications to or from the Website.</p>
+
+<h4>Privacy and Protection of Personal Information</h4>
+<p>SCTS respects the privacy and confidentiality of your personal information. SCTS does not collect your personal information except where you provide such information in the course of using the Website.</p>
+
+<h4>Liability Disclaimer</h4>
+<p>SCTS DOES NOT GUARANTEE THE CURRENCY, ACCURACY OR RELIABILITY OF ANY OF THE INFORMATION OR HYPERLINKS CONTAINED ON THIS WEBSITE.</p>
+
+<h4>Limitation of Liability</h4>
+<p>YOU ASSUME ALL RESPONSIBILITY AND RISK FOR USE OF THIS WEBSITE. IN NO EVENT WILL SCTS BE LIABLE FOR ANY INCIDENTAL, INDIRECT, SPECIAL, EXEMPLARY, AGGRAVATED, PUNITIVE OR CONSEQUENTIAL DAMAGES.</p>
+
+<h4>Indemnity</h4>
+<p>You agree to indemnify, defend and hold harmless SCTS and each of its trustees, officers, directors, employees, agents, representatives, successors and assigns from and against any claims, actions or demands, including without limitation, legal and accounting fees arising from your use or misuse of the Website.</p>
+
+<h4>Typographical Errors</h4>
+<p>In the event the cost of a fee is listed incorrectly due to a typographical error, SCTS shall have the right to refuse or cancel any orders placed at the incorrect price.</p>
+
+<h4>Refund Policy</h4>
+<p>Unless expressly stated herein, no refunds will be available after a payment has been submitted. If a payment has been erroneously made to a school, you must notify that school within 24 hours of the transaction.</p>
+
+<h4>Changes to Terms and Conditions</h4>
+<p>SCTS reserves the right to modify the Terms of Use without notice at any time. Any Changes will be posted to the Website and it is your responsibility to ensure that you are aware of any such Change.</p>
+
+<h4>Third-Party Sites</h4>
+<p>Links on this Website to third-party websites are provided solely as a convenience to you. SCTS is not responsible for any of these sites or their content.</p>
+
+<h4>Severability</h4>
+<p>If any provision of the Terms of Use is unlawful or unenforceable, that provision is deemed severable from the Terms of Use and does not affect the validity and enforceability of any remaining provisions.</p>
+
+<h4>Governing Law</h4>
+<p>The Terms of Use shall be governed by and interpreted in accordance with the laws of the state of Mizoram and the federal laws of India. You agree to submit to the exclusive jurisdiction of the courts of Mizoram.</p>
+
+<h4>General</h4>
+<p>The Terms of Use and SCTS's Privacy Policy, together, constitute the entire agreement between you and SCTS with respect to the use of the Website.</p>
+<p><strong>ALL RIGHTS NOT EXPRESSLY GRANTED HEREIN ARE RESERVED</strong></p>
+</div>
+</div>
+
+<footer>
+<p style="font-size:13px;">Copyright © 2026 Jehova Jire English School. All Rights Reserved.</p>
+<div id="footerTime"></div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
+function updateTime(){
+ const now=new Date();
+ const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+ document.getElementById('liveTime').innerText='⏰ '+str+' IST';
+ document.getElementById('footerTime').innerText=str+' IST';
+}
+setInterval(updateTime,1000);updateTime();
+let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;
+localStorage.setItem('jjes_visits',c);
+document.getElementById('visitCount').innerText='👁️ Total Visitors: '+c.toLocaleString('en-IN');
+</script>
+</body>
+</html>
