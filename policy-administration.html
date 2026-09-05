@@ -23,25 +23,25 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 .drawer-head{padding:18px 22px;font-weight:700;color:#1a5f9e;border-bottom:2px solid #1a5f9e;margin:0 12px}
 .menu-list{list-style:none}.menu-list li{border-bottom:1px solid #f0f0f0}.menu-list li a{display:flex;gap:12px;padding:14px 22px;color:#555;text-decoration:none;font-size:14px}
 #overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:150}#overlay.show{display:block}
-.jjes-cards{width:100%;margin:0;padding:0;display:flex;flex-direction:column;gap:0;background:#eef2f7}
-.jjes-card-row{display:flex;flex-wrap:nowrap;width:100%;background:#fff;border:0;border-bottom:1px solid #e2e8f0;border-radius:0;margin:0;box-shadow:none}
-.text-side{flex:1 1 100%;padding:24px 18px;display:flex;flex-direction:column;justify-content:center}
+.jjes-cards{width:100%;margin:0;padding:12px;display:flex;flex-direction:column;gap:12px;background:#eef2f7}
+.jjes-card-row{display:flex;width:100%;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0;overflow:hidden}
+.text-side{flex:1;padding:24px 22px;display:flex;flex-direction:column;justify-content:center}
 .text-side h3{font-size:14px;color:#1a3a5f;font-weight:700;margin-bottom:12px;border-left:4px solid #1a5f9e;padding-left:10px;text-transform:uppercase}
 .text-side p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify;margin-bottom:10px}
-.jjes-card{background:#fff;border-radius:0;border:0;border-bottom:1px solid #e2e8f0;box-shadow:none;padding:20px 18px;margin:0;width:100%}
-.jjes-card p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify}
-.jjes-card ul{list-style:disc;margin:8px 0 12px 18px}
-.jjes-card ul li{font-size:12.5px;color:#333;padding:4px 0}
-@media(max-width:800px){
-.jjes-card-row{flex-direction:column}
-}
-/* FOOTER FULL WIDTH FIX */
+.jjes-card{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0;padding:20px 22px}
+.jjes-card h3{font-size:14px;color:#1a3a5f;font-weight:700;margin-bottom:12px;border-left:4px solid #1a5f9e;padding-left:10px;text-transform:uppercase}
+.jjes-card h4{font-size:13px;color:#0e3d6b;font-weight:700;margin:18px 0 8px 0}
+.jjes-card p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify;margin-bottom:10px}
+.jjes-card ul{list-style:disc;margin:8px 0 12px 20px}
+.jjes-card ul li{font-size:12.5px;color:#333;padding:4px 0;display:list-item}
+.jjes-card ul li a{color:#1a3a5f;text-decoration:none}
+/* FOOTER FULL-WIDTH FIX */
 .jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px 0;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;margin-top:0;border-radius:0;box-sizing:border-box}
 .jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 18px;width:100%;max-width:1250px;margin:0 auto;box-sizing:border-box}
 .jjes-footer-about{flex:1 1 300px;background:rgba(255,255,255,.15);border-radius:10px;padding:16px}
 .jjes-footer-about-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
 .jjes-footer-about-head img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#fff}
-.jjes-footer-about-head h4{font-size:13px;color:#fff;font-weight:800;line-height:1.1}
+.jjes-footer-about-head h4{font-size:13px;color:#fff;font-weight:800;line-height:1.1;margin:0}
 .jjes-footer-about p{font-size:11.5px;line-height:1.6;color:#e9e5f5}
 .jjes-footer-social{display:flex;gap:10px;margin-top:12px}
 .jjes-footer-social a{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;color:#fff;text-decoration:none}
@@ -58,6 +58,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 .jjes-footer-call{display:inline-flex;background:#ff3b2f;color:#fff;padding:8px 14px;border-radius:6px;font-weight:700;font-size:12px;text-decoration:none;margin-top:8px;margin-right:6px}
 .jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:18px;padding:10px 18px 0 18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd;max-width:1250px;margin:0 auto;box-sizing:border-box}
 .jjes-footer-bottom b{color:#fff}
+@media(max-width:800px){.jjes-card-row{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -74,8 +75,6 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
 <li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
 <li><a href="contact.html">📞 Contact</a></li>
-<li><a><span>Update: <b id="lastUpdate">05-09-2026</b></span>
-<span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span></a></li>
 </ul>
 </div>
 
