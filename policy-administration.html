@@ -75,6 +75,8 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
 <li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
 <li><a href="contact.html">📞 Contact</a></li>
+<li><a><span>Update: <b id="lastUpdate">04-09-2026</b></span>
+<span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span></a></li>
 </ul>
 </div>
 
@@ -168,7 +170,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
     </div>
   </div>
   <div class="jjes-footer-bottom">
-    <span>Last Update : <b id="footerDate">05-09-2026</b></span>
+    <span>Last Update : <b id="lastUpdate">05-09-2026</b></span>
     <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span>
     <div>JJES Official Website</div>
   </div>
@@ -176,12 +178,37 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 
 <script>
 function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
+(function(){
+ const slider=document.getElementById('mainSlider');
+ if(!slider) return;
+ const slides=slider.querySelectorAll('.slide');
+ const dots=slider.querySelectorAll('.dot');
+ let idx=0;
+ function show(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+  idx=i;
+ }
+ dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
+ setInterval(()=>{idx=(idx+1)%slides.length;show(idx);},4000);
+})();
+function initMiniSlider(id){
+  const box=document.getElementById(id); if(!box) return;
+  let mIdx=0; const mSlides=box.querySelectorAll('.mini-slide'); const mDots=box.querySelectorAll('.mini-dot');
+  function showM(i){mSlides.forEach(s=>s.classList.remove('active'));mDots.forEach(d=>d.classList.remove('active'));if(mSlides[i])mSlides[i].classList.add('active');if(mDots[i])mDots[i].classList.add('active');mIdx=i;}
+  mDots.forEach((d,i)=>d.addEventListener('click',()=>showM(i)));
+  setInterval(()=>{mIdx=(mIdx+1)%mSlides.length;showM(mIdx);},3500);
+}
+initMiniSlider('miniSlider1');
+initMiniSlider('miniSlider2');
 function updateTime(){
  const now=new Date();
  const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
  document.getElementById('liveTime').innerText='⏰ '+str+' IST';
  const ft=document.getElementById('footerTime'); if(ft) ft.innerText=str+' IST';
- const fd=document.getElementById('footerDate'); if(fd) fd.innerText=new Date().toLocaleDateString('en-GB').replaceAll('/','-');
+ document.getElementById('lastUpdate').innerText=new Date().toLocaleDateString('en-GB').replaceAll('/','-');
 }
 setInterval(updateTime,1000);updateTime();
 let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;
