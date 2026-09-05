@@ -190,7 +190,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
   <div class="jjes-footer-top">
     <div class="jjes-footer-about">
       <div class="jjes-footer-about-head">
-        <img src="logo.jpg" alt="JJES Logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Mizoram.png'">
+        <img src="logo.jpg" alt="JJES Logo">
         <h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4>
       </div>
       <p style="text-align:justify">Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Hall Veng, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p>
@@ -228,37 +228,21 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
     <div class="jjes-footer-contact">
       <h3>Contact Information</h3>
       <p>150, Hall Veng, Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p>
-      <div class="email">✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;"; href="mailto:englishschooljehovajire@gmail.com" style="margin-left:18px">englishschooljehovajire@gmail.com</a></div>
+      <div class="email">✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com" style="margin-left:18px">englishschooljehovajire@gmail.com</a></div>
       <a class="jjes-footer-call" href="tel:+919612356076">📞 +91 9612356076</a>
       <a class="jjes-footer-call" href="tel:+918731996242">📞 +91 8731996242</a>
       <div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div>
     </div>
   </div>
   <div class="jjes-footer-bottom">
-    <span>Last Update : <b id="lastUpdate">02-09-2026</b></span>
+    <span>Last Update : <b id="lastUpdate">04-09-2026</b></span>
     <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span>
     <div>JJES Official Website</div>
+  </div>
 </footer>
 
 <script>
 function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
-const mainSlider=document.getElementById('mainSlider');
-if(mainSlider){
-  const slides=mainSlider.querySelectorAll('.slide');
-  const dots=mainSlider.querySelectorAll('.dot');
-  let idx=0;
-  function showMain(i){slides.forEach(s=>s.classList.remove('active'));dots.forEach(d=>d.classList.remove('active'));slides[i].classList.add('active');dots[i].classList.add('active');idx=i;}
-  dots.forEach((d,i)=>d.addEventListener('click',()=>showMain(i)));
-  setInterval(()=>{idx=(idx+1)%slides.length;showMain(idx);},4000);
-}
-function initMiniSlider(id){
-  const box=document.getElementById(id); if(!box) return;
-  let mIdx=0; const mSlides=box.querySelectorAll('.mini-slide'); const mDots=box.querySelectorAll('.mini-dot');
-  function showM(i){mSlides.forEach(s=>s.classList.remove('active'));mDots.forEach(d=>d.classList.remove('active'));mSlides[i].classList.add('active');mDots[i].classList.add('active');mIdx=i;}
-  mDots.forEach((d,i)=>d.addEventListener('click',()=>showM(i)));
-  setInterval(()=>{mIdx=(mIdx+1)%mSlides.length;showM(mIdx);},3500);
-}
-initMiniSlider('miniSlider1'); initMiniSlider('miniSlider2');
 function updateTime(){
  const now=new Date();
  const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
