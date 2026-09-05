@@ -25,17 +25,13 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 #overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:150}#overlay.show{display:block}
 .jjes-cards{width:100%;margin:0;padding:12px;display:flex;flex-direction:column;gap:12px;background:#eef2f7}
 .jjes-card-row{display:flex;width:100%;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0;overflow:hidden}
-.text-side{flex:1;padding:24px 22px;display:flex;flex-direction:column;justify-content:center}
+.text-side{flex:1;padding:24px 22px}
 .text-side h3{font-size:14px;color:#1a3a5f;font-weight:700;margin-bottom:12px;border-left:4px solid #1a5f9e;padding-left:10px;text-transform:uppercase}
 .text-side p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify;margin-bottom:10px}
 .jjes-card{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0;padding:20px 22px}
-.jjes-card h3{font-size:14px;color:#1a3a5f;font-weight:700;margin-bottom:12px;border-left:4px solid #1a5f9e;padding-left:10px;text-transform:uppercase}
-.jjes-card h4{font-size:13px;color:#0e3d6b;font-weight:700;margin:18px 0 8px 0}
-.jjes-card p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify;margin-bottom:10px}
+.jjes-card p{font-size:12.5px;color:#333;line-height:1.8;text-align:justify}
 .jjes-card ul{list-style:disc;margin:8px 0 12px 20px}
-.jjes-card ul li{font-size:12.5px;color:#333;padding:4px 0;display:list-item}
-.jjes-card ul li a{color:#1a3a5f;text-decoration:none}
-/* FOOTER FULL-WIDTH FIX */
+.jjes-card ul li{font-size:12.5px;color:#333;padding:4px 0}
 .jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px 0;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;margin-top:0;border-radius:0;box-sizing:border-box}
 .jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 18px;width:100%;max-width:1250px;margin:0 auto;box-sizing:border-box}
 .jjes-footer-about{flex:1 1 300px;background:rgba(255,255,255,.15);border-radius:10px;padding:16px}
@@ -62,7 +58,6 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 </style>
 </head>
 <body>
-
 <div id="overlay" onclick="toggleMenu()"></div>
 <div id="drawer">
 <div class="drawer-head">MENU</div>
@@ -75,7 +70,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
 <li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
 <li><a href="contact.html">📞 Contact</a></li>
-<li><a><span>Update: <b id="lastUpdate">04-09-2026</b></span>
+<li><a><span>Update: <b id="lastUpdate">05-09-2026</b></span>
 <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span></a></li>
 </ul>
 </div>
@@ -83,137 +78,25 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <div class="topbar"><span id="liveTime">⏰ Loading...</span><span id="visitCount">👁️ Visitors: 0</span></div>
 <header>
 <div class="menu" onclick="toggleMenu()">☰</div>
-<div class="logo-wrap">
-<img src="logo.jpg" alt="Logo" class="school-logo">
-<div class="logo"><h1>Jehova Jire English School</h1><p>Pvt. Institution | 150, Hall Veng, Pangbalkawn, Kolasib 796081</p><p>Estd. 10th Jan. 2011 | Motto: Brighten up your future</p></div>
-</div>
+<div class="logo-wrap"><img src="logo.jpg" alt="Logo" class="school-logo"><div class="logo"><h1>Jehova Jire English School</h1><p>Pvt. Institution | 150, Hall Veng, Pangbalkawn, Kolasib 796081</p><p>Estd. 10th Jan. 2011 | Motto: Brighten up your future</p></div></div>
 </header>
-
 <div class="jjes-cards">
-<div class="jjes-card-row">
-<div class="text-side">
-<h3>JJES Policy</h3>
-<p>Focus on academic excellence, skill development, character building, community and integrating technology and innovation to prepare students for a bright future. "Mizo: Zirna lama thiamna tak tak neih tir a, tih hmasawn te, mizia siam leh khawtlang nun hona ngaihtuah a hriatthiamtir te, technology thiamna leh thil thar siamchuah kawng a hmalam hun eng tak nei tur a Zirlai buatsaih te a ni".</p>
-<p style="font-size:14px;margin-top:16px;font-weight:700;color:#0e3d6b;">School rule's</p>
-<p>School hours will be 9:00am - 2:00pm. No school entry before 8:30am. Cleanliness check will be conducted daily. Students are required to attend school in Full uniform. Any reason for not wearing uniform should be notified to the class Teacher or Head Teacher/Principal. Only those recomended languages should spoke in the school compound.</p>
-<p>During school hours not allowed to cross the compound. No one is allowed to stay in the school building and compound unless there is a special programe after class off. All students are required to respect, lose or damage school property.</p>
-<p>School tool's-Pencil, Eraser and others, non-owned items should be hand over to the Teacher's or Head Teacher/Principal. Item that do not belong to them are a violation of school rules. Those who Children with disabilities or big reason who are required to attend school shall make a written request to the Class Teacher's or Head Teacher/Principal; Parents can sit next to the child in class for a week.</p>
-<p>It is compulsory for the students to complete 80% of attendance in the year to make them eligible to sit for their final exams. The percentage however, could be relaxed on medical grounds but such students will not be eligible for any academic rewards.</p>
+<div class="jjes-card-row"><div class="text-side"><h3>JJES Policy</h3><p>Focus on academic excellence, skill development, character building, community and integrating technology and innovation to prepare students for a bright future. "Mizo: Zirna lama thiamna tak tak neih tir a, tih hmasawn te, mizia siam leh khawtlang nun hona ngaihtuah a hriatthiamtir te, technology thiamna leh thil thar siamchuah kawng a hmalam hun eng tak nei tur a Zirlai buatsaih te a ni".</p><p style="font-size:14px;margin-top:16px;font-weight:700;color:#0e3d6b;">School rule's</p><p>School hours will be 9:00am - 2:00pm. No school entry before 8:30am. Cleanliness check will be conducted daily. Students are required to attend school in Full uniform. Any reason for not wearing uniform should be notified to the class Teacher or Head Teacher/Principal. Only those recomended languages should spoke in the school compound.</p><p>During school hours not allowed to cross the compound. No one is allowed to stay in the school building and compound unless there is a special programe after class off. All students are required to respect, lose or damage school property.</p><p>School tool's-Pencil, Eraser and others, non-owned items should be hand over to the Teacher's or Head Teacher/Principal. Item that do not belong to them are a violation of school rules. Those who Children with disabilities or big reason who are required to attend school shall make a written request to the Class Teacher's or Head Teacher/Principal; Parents can sit next to the child in class for a week.</p><p>It is compulsory for the students to complete 80% of attendance in the year to make them eligible to sit for their final exams. The percentage however, could be relaxed on medical grounds but such students will not be eligible for any academic rewards.</p></div></div>
+<div class="jjes-card"><p style="font-size:15px;font-weight:700;color:#0e3d6b;"><i class="fa-solid fa-shirt"></i> School Uniform</p><p style="font-size:14px; margin-top:14px; font-weight:700; color:#0e3d6b;">= Boy's =</p><ul><li>White shirt, Sand color pants. Black sweater, Red tie, belt, Black socks and shoes.</li><li>KG-I to Class-VIII boys will wear White banians and Sand color pants on Wednesday.</li><li>The boys will have their hair short and decently cut.</li><li>Pants should be worn on the waist and not on the hips.</li></ul><p style="font-size:14px; margin-top:16px; font-weight:700; color:#0e3d6b;">= Girl's =</p><ul><li>White shirt, Sand color skirts. Blue sweater, Red tie, belt, White socks and Black shoes</li><li>KG-I to Class-VIII girls will wear White banians and Sand color skirts on Wednesday.</li><li>Girls will have minimum shoulder length hair neatly tied with red colour ribbon/hair band only.</li><li>Skirts should be worn on the waist and not on the hips.</li></ul></div>
 </div>
-</div>
-
-<div class="jjes-card">
-<p style="font-size:15px;font-weight:700;color:#0e3d6b;"><i class="fa-solid fa-shirt"></i> School Uniform</p>
-<p style="font-size:14px; margin-top:14px; font-weight:700; color:#0e3d6b;">= Boy's =</p>
-<ul>
-<li>White shirt, Sand color pants. Black sweater, Red tie, belt, Black socks and shoes.</li>
-<li>KG-I to Class-VIII boys will wear White banians and Sand color pants on Wednesday.</li>
-<li>The boys will have their hair short and decently cut.</li>
-<li>Pants should be worn on the waist and not on the hips.</li>
-</ul>
-<p style="font-size:14px; margin-top:16px; font-weight:700; color:#0e3d6b;">= Girl's =</p>
-<ul>
-<li>White shirt, Sand color skirts. Blue sweater, Red tie, belt, White socks and Black shoes</li>
-<li>KG-I to Class-VIII girls will wear White banians and Sand color skirts on Wednesday.</li>
-<li>Girls will have minimum shoulder length hair neatly tied with red colour ribbon/hair band only.</li>
-<li>Skirts should be worn on the waist and not on the hips.</li>
-</ul>
-</div>
-</div>
-
 <footer class="jjes-footer">
   <div class="jjes-footer-top">
-    <div class="jjes-footer-about">
-      <div class="jjes-footer-about-head">
-        <img src="logo.jpg" alt="JJES Logo">
-        <h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4>
-      </div>
-      <p style="text-align:justify">Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Hall Veng, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p>
-      <div class="jjes-footer-social">
-        <a href="https://facebook.com/@jjespangbalkawn"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/jjespangbalkawn"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@JJESpangbalkawn"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="jjes-footer-links">
-      <div class="jjes-footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-school.html">Our History</a></li>
-          <li><a href="about.html">Curriculum</a></li>
-          <li><a href="admission-form.html">Admissions</a></li>
-          <li><a href="photo-gallery.html">Photo Gallery</a></li>
-          <li><a href="admission-form.html">Admission Enquiry</a></li>
-        </ul>
-      </div>
-      <div class="jjes-footer-col">
-        <h4>&nbsp;</h4>
-        <ul>
-          <li><a href="infrastructure.html">Infrastructure</a></li>
-          <li><a href="terms-conditions.html">Fee Structure</a></li>
-          <li><a href="index.html">News & Events</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="jjes-footer-contact">
-      <h3>Contact Information</h3>
-      <p>150, Hall Veng, Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p>
-      <div class="email">✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></div>
-      <a class="jjes-footer-call" href="tel:+919612356076">📞 +91 9612356076</a>
-      <a class="jjes-footer-call" href="tel:+918731996242">📞 +91 8731996242</a>
-      <div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div>
-    </div>
+    <div class="jjes-footer-about"><div class="jjes-footer-about-head"><img src="logo.jpg" alt="JJES Logo"><h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4></div><p style="text-align:justify">Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Hall Veng, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p><div class="jjes-footer-social"><a href="https://facebook.com/@jjespangbalkawn"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/jjespangbalkawn"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@JJESpangbalkawn"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div>
+    <div class="jjes-footer-links"><div class="jjes-footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-school.html">Our History</a></li><li><a href="about.html">Curriculum</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="admission-form.html">Admission Enquiry</a></li></ul></div><div class="jjes-footer-col"><h4>&nbsp;</h4><ul><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="terms-conditions.html">Fee Structure</a></li><li><a href="index.html">News & Events</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-conditions.html">Terms & Conditions</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div>
+    <div class="jjes-footer-contact"><h3>Contact Information</h3><p>150, Hall Veng, Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p><div class="email">✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></div><a class="jjes-footer-call" href="tel:+919612356076">📞 +91 9612356076</a><a class="jjes-footer-call" href="tel:+918731996242">📞 +91 8731996242</a><div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div></div>
   </div>
-  <div class="jjes-footer-bottom">
-    <span>Last Update : <b id="lastUpdate">05-09-2026</b></span>
-    <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span>
-    <div>JJES Official Website</div>
-  </div>
+  <div class="jjes-footer-bottom"><span>Last Update : <b id="footerDate">05-09-2026</b></span><span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span><div>JJES Official Website</div></div>
 </footer>
-
 <script>
 function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
-(function(){
- const slider=document.getElementById('mainSlider');
- if(!slider) return;
- const slides=slider.querySelectorAll('.slide');
- const dots=slider.querySelectorAll('.dot');
- let idx=0;
- function show(i){
-  slides.forEach(s=>s.classList.remove('active'));
-  dots.forEach(d=>d.classList.remove('active'));
-  slides[i].classList.add('active');
-  dots[i].classList.add('active');
-  idx=i;
- }
- dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
- setInterval(()=>{idx=(idx+1)%slides.length;show(idx);},4000);
-})();
-function initMiniSlider(id){
-  const box=document.getElementById(id); if(!box) return;
-  let mIdx=0; const mSlides=box.querySelectorAll('.mini-slide'); const mDots=box.querySelectorAll('.mini-dot');
-  function showM(i){mSlides.forEach(s=>s.classList.remove('active'));mDots.forEach(d=>d.classList.remove('active'));if(mSlides[i])mSlides[i].classList.add('active');if(mDots[i])mDots[i].classList.add('active');mIdx=i;}
-  mDots.forEach((d,i)=>d.addEventListener('click',()=>showM(i)));
-  setInterval(()=>{mIdx=(mIdx+1)%mSlides.length;showM(mIdx);},3500);
-}
-initMiniSlider('miniSlider1');
-initMiniSlider('miniSlider2');
-function updateTime(){
- const now=new Date();
- const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
- document.getElementById('liveTime').innerText='⏰ '+str+' IST';
- const ft=document.getElementById('footerTime'); if(ft) ft.innerText=str+' IST';
- document.getElementById('lastUpdate').innerText=new Date().toLocaleDateString('en-GB').replaceAll('/','-');
-}
+function updateTime(){const now=new Date();const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});document.getElementById('liveTime').innerText='⏰ '+str+' IST';const ft=document.getElementById('footerTime');if(ft)ft.innerText=str+' IST';const fd=document.getElementById('footerDate');if(fd)fd.innerText=new Date().toLocaleDateString('en-GB').replaceAll('/','-');}
 setInterval(updateTime,1000);updateTime();
-let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;
-localStorage.setItem('jjes_visits',c);
-document.getElementById('visitCount').innerText='👁️ Visitors: '+c.toLocaleString('en-IN');
+let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;localStorage.setItem('jjes_visits',c);document.getElementById('visitCount').innerText='👁️ Visitors: '+c.toLocaleString('en-IN');
 </script>
 </body>
 </html>
