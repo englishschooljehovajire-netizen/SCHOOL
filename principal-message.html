@@ -63,8 +63,9 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 .map-wrap{width:100%;background:#fff;border-top:2px solid #1a5f9e}
 .map-head{padding:14px 20px;font-size:14px;font-weight:700;color:#1a3a5f;border-bottom:1px solid #e2e8f0}
 .map-frame{width:100%;height:400px}.map-frame iframe{width:100%;height:100%;border:0}
-.jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px 0;width:100vw;margin-left:calc(-50vw + 50%);margin-top:0;border-radius:0;box-sizing:border-box}
-.jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 18px;width:100%;max-width:1250px;margin:0 auto;box-sizing:border-box}
+/* FOOTER FULL-WIDTH CHIAH SIAMTHAT - A DANG KHAWIHLO */
+.jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px 0;width:100%;margin:0;border-radius:0;box-sizing:border-box}
+.jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 24px;width:100%;max-width:100%;margin:0;box-sizing:border-box}
 .jjes-footer-about{flex:1 1 300px;background:rgba(255,255,255,.15);border-radius:10px;padding:16px}
 .jjes-footer-about-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
 .jjes-footer-about-head img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#fff}
@@ -83,12 +84,11 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 .jjes-footer-contact h3{font-size:13px;color:#fff;margin-bottom:8px}
 .jjes-footer-contact p{font-size:11.5px;color:#c8c1dd;line-height:1.6}
 .jjes-footer-call{display:inline-flex;background:#ff3b2f;color:#fff;padding:8px 14px;border-radius:6px;font-weight:700;font-size:12px;text-decoration:none;margin-top:8px;margin-right:6px}
-.jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:18px;padding:10px 18px 0 18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd;max-width:1250px;margin:0 auto;box-sizing:border-box}
+.jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding:10px 24px 0 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd;width:100%;max-width:100%;margin:18px 0 0 0;box-sizing:border-box}
 .jjes-footer-bottom b{color:#fff}
 </style>
 </head>
 <body>
-
 <div id="overlay" onclick="toggleMenu()"></div>
 <div id="drawer">
 <div class="drawer-head">MENU</div>
@@ -105,8 +105,6 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span></a></li>
 </ul>
 </div>
-
-
 <div class="topbar"><span id="liveTime">⏰ Loading...</span><span id="visitCount">👁️ Visitors: 0</span></div>
 <header>
 <div class="menu" onclick="toggleMenu()">☰</div>
@@ -115,8 +113,6 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:whi
 <div class="logo"><h1>Jehova Jire English School</h1><p>Pvt. Institution | 150, Hall Veng, Pangbalkawn, Kolasib 796081</p><p>Estd. 10th Jan. 2011 | Motto: Brighten up your future</p></div>
 </div>
 </header>
-
-
 <div class="jjes-card">
 <h3>Principal Message</h3><td><img src="timothy.jpg" class="photo" class="text-align:center"> Dear Friends,</td>
 <p>It gives me immense joy and pride to welcome you to Jehova Jire English School - JJES, Pangbalkawn.
@@ -139,8 +135,6 @@ Thank you for trusting us with your child's future.
 <p><strong>Principal</strong></p>
 <h3></h3>
 </div>
-
-
 <footer class="jjes-footer">
   <div class="jjes-footer-top">
     <div class="jjes-footer-about">
@@ -195,7 +189,6 @@ Thank you for trusting us with your child's future.
     <div>JJES Official Website</div>
   </div>
 </footer>
-
 <script>
 function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
 (function(){
