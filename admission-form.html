@@ -3,277 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jehova Jire English School - JJES</title>
+<title>JJES Admission Form 2026-27</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-body { background:#f5f5f5; }
-
-/* TOP BAR */
-.top-bar {
-  background:#0d3b66; color:white; padding:8px 0; font-size:13px;
-}
-.top-bar .container { 
-  max-width:1200px; margin:auto; padding:0 20px; 
-  display:flex; justify-content:space-between; 
-}
-
-/* HEADER */
-header {
-  background:white; box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  position:sticky; top:0; z-index:1000;
-}
-.navbar {
-  max-width:1200px; margin:auto; padding:12px 20px;
-  display:flex; justify-content:space-between; align-items:center;
-}
-.logo { display:flex; align-items:center; gap:10px; }
-.logo img { width:60px; }
-.logo h1 { font-size:18px; color:#0d3b66; line-height:1.3; }
-.logo span { font-size:12px; color:#666; }
-nav a {
-  text-decoration:none; color:#333; margin-left:20px; font-weight:bold;
-  font-size:14px; transition:0.3s;
-}
-nav a:hover { color:#ffc107; }
-
-/* BANNER */
-.banner {
-  background:url('school-bg.jpg') center/cover no-repeat;
-  height:400px; display:flex; align-items:center; justify-content:center;
-  color:white; text-align:center; position:relative;
-}
-.banner::after {
-  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
-  background:rgba(13,59,102,0.7);
-}
-.banner-content { position:relative; z-index:2; }
-.banner h2 { font-size:38px; margin-bottom:10px; }
-.banner p { font-size:18px; margin-bottom:20px; }
-.btn {
-  background:#ffc107; color:#000; padding:12px 25px; text-decoration:none;
-  border-radius:5px; font-weight:bold; display:inline-block;
-}
-.btn:hover { background:#ffdb4d; }
-
-/* SECTIONS */
-.container { max-width:1200px; margin:auto; padding:40px 20px; }
-.section-title { text-align:center; margin-bottom:30px; }
-.section-title h2 { font-size:28px; color:#0d3b66; margin-bottom:8px; }
-.section-title p { color:#666; }
-
-.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
-.card {
-  background:white; padding:25px; border-radius:8px; 
-  box-shadow:0 3px 10px rgba(0,0,0,0.1); text-align:center;
-}
-.card h3 { color:#0d3b66; margin-bottom:10px; }
-
-/* FOOTER */
-footer {
-  background:#0d3b66; color:white; text-align:center; padding:25px;
-  margin-top:40px;
-}
-@media(max-width:768px){
-  nav { display:none; } /* Mobile ah menu hide rih */
-  .banner h2 { font-size:26px; }
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#e8eef5;padding:15px;}
+.form-container{max-width:850px;margin:15px auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,0.15);position:relative;overflow:hidden;}
+.bg-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;opacity:0.07;z-index:0;pointer-events:none;}
+.bg-watermark img{width:100%;height:100%;object-fit:contain;}
+.form-container > *:not(.bg-watermark){position:relative;z-index:1;}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;border-bottom:3px solid #0d3b66;padding-bottom:15px;margin-bottom:15px;}
+.header-left{width:95px;text-align:center;flex-shrink:0;}
+.header-left img{width:85px;height:85px;border-radius:50%;border:3px solid #0d3b66;object-fit:cover;background:#fff;}
+.header-center{flex:1;text-align:center;}
+.header-center h1{color:#0d3b66;font-size:20px;font-weight:800;line-height:1.2;}
+.header-center p{font-size:11px;color:#444;line-height:1.35;}
+.header-right{width:110px;flex-shrink:0;}
+.photo-box{width:105px;height:125px;border:2px dashed #0d3b66;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f9fbfd;cursor:pointer;overflow:hidden;}
+.photo-box span{font-size:10px;color:#0d3b66;font-weight:600;text-align:center;padding:4px;line-height:1.2;}
+.photo-box a{color:#0d3b66;text-decoration:none}
+.photo-box img{width:100%;height:100%;object-fit:cover;display:none;}
+.adm-no-box{background:#0d3b66;color:#ffc107;padding:11px;border-radius:8px;text-align:center;font-weight:700;font-size:13.5px;margin:15px 0;letter-spacing:0.8px;}
+.time-bar{display:flex;justify-content:space-between;font-size:11px;color:#333;background:#f1f5f9;padding:7px 12px;border-radius:6px;border:1px solid #dde4ed;margin-bottom:10px;}
+.section-title{background:#0d3b66;color:white;padding:8px 14px;border-radius:6px;margin:20px 0 12px 0;font-size:12.5px;text-transform:uppercase;font-weight:600;}
+.form-group{margin-bottom:12px;text-align:left;flex:1;}
+label{font-weight:600;margin-bottom:4px;color:#333;font-size:12px;display:block;}
+input,select,textarea{width:100%;padding:9px 11px;border:1px solid #bbb;border-radius:6px;font-size:12.5px;outline:none;background:#fff;}
+.row{display:flex;gap:12px;}
+.footer-sign{margin-top:30px;border-top:1px dashed #999;padding-top:18px;display:flex;justify-content:space-between;gap:20px;}
+.sign-box{flex:1;text-align:center;font-size:11px;}
+.sign-line{border-top:1px solid #000;margin-top:45px;padding-top:5px;font-weight:600;}
+.btn{background:#0d3b66;color:#fff;padding:12px;border:none;border-radius:8px;font-weight:700;font-size:14px;width:100%;cursor:pointer;margin-top:18px;}
+.qr-doc-wrapper{display:flex;gap:15px;align-items:flex-start;margin-top:10px;}
+.qr-box{width:145px;text-align:center;padding:12px;background:#f8fbff;border:1px solid #d0ddee;border-radius:10px;flex-shrink:0;}
+.qr-box img{width:115px;height:115px;border-radius:6px;border:1px solid #eee;}
+.qr-box p{font-size:10.5px;font-weight:700;color:#0d3b66;margin:5px 0 2px 0;}
+.qr-box span{font-size:8px;color:#666;}
+.doc-upload-side{flex:1;}
+.doc-upload-item{display:flex;justify-content:space-between;align-items:center;background:#f9fbfd;border:1px solid #e0e6ef;border-radius:6px;padding:7px 10px;margin-bottom:7px;}
+.doc-upload-item label{margin:0;font-size:11.5px;color:#333;font-weight:500;}
+.doc-upload-item input[type=file]{width:auto;font-size:11px;border:none;padding:0;background:transparent;max-width:130px;}
+@media(max-width:650px){.header-top{flex-direction:column;align-items:center;}.row{flex-direction:column;}.footer-sign{flex-direction:column;}.qr-doc-wrapper{flex-direction:column;}.qr-box{width:100%;}}
+@media print{body{background:white;padding:0;}.btn{display:none;}.bg-watermark{opacity:0.05!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.adm-no-box,.section-title{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.photo-box{border:1px solid #000;}.doc-upload-item input[type=file]{display:none;}.doc-upload-item::after{content:'[ ] Attached';font-size:10px;color:#000;}}
 </style>
 </head>
 <body>
+<div class="form-container">
+  <div class="bg-watermark"><img src="logo.jpg" onerror="this.src='logo.jpg'"></div>
+  <div class="time-bar"><div id="date"></div><div id="time" style="color:#0d3b66;font-weight:700;"></div></div>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="container">
-    <div>📞 +91 9612356076 | ✉️ englishschooljehovajire@gmail.com</div>
-    <div><div id="date" style="font-size:14px; color:#white;"></div>
-<div id="time" style="font-size:16px; color:#25D366; font-weight:bold;"></div>
+  <div class="header-top">
+    <div class="header-left"><img src="logo.jpg" onerror="this.src='logo.jpg'"><div style="font-size:8px;font-weight:700;color:#0d3b66;margin-top:3px;">JJES LOGO</div></div>
+    <div class="header-center">
+      <h1>JEHOVA JIRE ENGLISH SCHOOL</h1>
+      <p>Hall Veng, Near Presbyterian Church, Pangbalkawn Village</p>
+      <p>Kolasib, Mizoram - 796081 | Estd. 10th Jan 2011</p>
+      <p>Office: +91 9612356076, +91 8731996242 | pbkjjes.online</p>
+      <p style="font-weight:600;color:#0d3b66;">Motto: Brighten up your future</p>
+      <p>Email: englishschooljehovajire@gmail.com | Hours: 09:00 a.m. - 02:05 p.m.</p>
+    </div>
+    <div class="header-right">
+      <label class="photo-box" for="photoUpload"><img id="previewPhoto"><span id="photoText"><a href="#" onclick="document.getElementById('photoUpload').click();return false;">Paste Passport Photo Here<br>3.5x4.5cm<br><b style="color:#d00;">Click to Upload</b></a></span></label>
+      <input type="file" id="photoUpload" accept="image/*" style="display:none;">
+    </div>
+  </div>
+
+  <h2 style="text-align:center;color:#0d3b66;margin:10px 0;font-size:17px;">ADMISSION FORM - <span id="sessionTitle">2026-27</span></h2>
+  <div class="adm-no-box" id="admNoDisplay">PBKJJES/2026-27/001</div>
+
+  <div class="row">
+    <div class="form-group"><label>Admission For Session *</label><select id="session" onchange="updateAdmNo()"><option value="2026-27" selected>2026-2027</option><option value="2027-28">2027-2028</option><option value="2028-29">2028-2029</option></select></div>
+    <div class="form-group"><label>Form Issued Date & Live Time (IST) *</label><input type="text" id="formDate" readonly style="background:#fffbe6;font-weight:700;color:#0d3b66;"></div>
+  </div>
+
+  <div class="section-title">Student Details</div>
+  <div class="form-group"><label>Student Full Name *</label><input id="studentName" type="text" placeholder="Ex: Lalmuanpuia"></div>
+  <div class="row">
+    <div class="form-group"><label>Date of Birth *</label><input id="dob" type="date"></div>
+    <div class="form-group"><label>Gender *</label><select id="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+  </div>
+  <div class="row">
+    <div class="form-group"><label>Aadhaar No *</label><input id="aadhaar" maxlength="12" placeholder="12 digit type rawh"></div>
+    <div class="form-group"><label>APAAR ID / PAN No. *</label><input id="apaar" placeholder="type rawh"></div>
+  </div>
+  <div class="form-group"><label>Class Applying For *</label><select id="classApply"><option value="">Select Class</option><option>Nursery</option><option>LKG</option><option>UKG</option><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option></select></div>
+
+  <div class="section-title">Parents / Guardian Details</div>
+  <div class="form-group"><label>Parents/Guardian Name *</label><input id="parentName" type="text" placeholder="Ex: Father: Richard Lalnunmawia, Mother: Amy Lalhmingliani"></div>
+  <div class="row">
+    <div class="form-group"><label>Contact No. *</label><input id="contact" type="tel" maxlength="10" placeholder="10 digit type rawh"></div>
+    <div class="form-group"><label>Occupation *</label><select id="occupation"><option value="">Select</option><option>Govt. Servant</option><option>Govt./Pvt. Teacher</option><option>Doctor/Nurse/Medical Staff</option><option>Engineer</option><option>Driver</option><option>Contractor</option><option>Farmer/Daily Wage</option><option>Shopkeeper</option><option>Business</option><option>Others</option></select></div>
+  </div>
+  <div class="form-group"><label>Address *</label><textarea id="address" rows="2" placeholder="Pangbalkawn, Kolasib, Mizoram - 796081"></textarea></div>
+  <div class="form-group"><label>Previous School *</label><select id="prevSchool"><option value="">Select</option><option>Anganwadi Centre 1, Pangbalkawn Vill.</option><option>Anganwadi Centre 2, Pangbalkawn Vill.</option><option>Govt. Primary School, Pangbalkawn Vill.</option><option>Pawizinga Middle School, Pangbalkawn Vill.</option><option>Holy Angel School (Pvt) Pangbalkawn Vill.</option><option>Other</option></select></div>
+
+  <div class="section-title">Documents Required - Upload</div>
+  <div class="qr-doc-wrapper">
+    <div class="qr-box">
+      <p>School Details</p>
+      <img src="YouTube-QR.jpg" alt="QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=115x115&data=https://youtube.com/@pbkjjes'">
+      <p>Scan QR Code</p><span>YouTube.com/@pbkjjes</span>
+    </div>
+    <div class="doc-upload-side">
+      <div class="doc-upload-item"><label>• Passport Photo</label><input id="docPassport" type="file" accept="image/*"></div>
+      <div class="doc-upload-item"><label>• Aadhaar Card</label><input type="file" accept=".pdf,image/*"></div>
+      <div class="doc-upload-item"><label>• Birth Certificate</label><input type="file" accept=".pdf,image/*"></div>
+      <div class="doc-upload-item"><label>• School Result / TC</label><input type="file" accept=".pdf,image/*"></div>
+      <div class="doc-upload-item"><label>• APAAR ID / PAN No.</label><input type="file" accept=".pdf,image/*"></div>
+    </div>
+  </div>
+
+  <div class="footer-sign">
+    <div class="sign-box"><div class="sign-line">Parent / Guardian Signature</div></div>
+    <div class="sign-box"><div class="sign-line">Receiver Name: ________________<br><br>Signature & Seal</div></div>
+  </div>
+
+  <div style="text-align:center;margin-top:15px;font-size:9px;color:#666;"><span id="printTime"></span></div>
+  <button class="btn" onclick="handleDownload()">⬇️ Print / Download Form - <span id="btnAdmNo"></span></button>
+  <p style="text-align:center;margin-top:8px;font-size:11px;color:#900;font-weight:600;">Note: He form hi print la, Xerox copy required document nen school office ah submit tur.</p>
+  <p style="text-align:center;margin-top:5px;"><a href="index.html" style="font-size:11px;color:#0d3b66;">← Back to Website Home</a></p>
+</div>
 
 <script>
-function updateDateTime() {
-  const now = new Date();
-  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-  document.getElementById("date").innerText = now.toLocaleDateString('en-IN', options);
-  const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' };
-  document.getElementById("time").innerText = now.toLocaleTimeString('en-IN', timeOptions) + " IST";}
-updateDateTime();
-setInterval(updateDateTime, 1000);
-</script></div>
-  </div>
-</div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JJES Student Admission Form 2026-27</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Arial', sans-serif;
-  background: #f2f4f7;
-  padding: 20px;
-  text-align: center;
+function updateDateTime(){
+  const now=new Date();
+  document.getElementById("date").innerText=now.toLocaleDateString('en-IN',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+  document.getElementById("time").innerText=now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'Asia/Kolkata'})+" IST";
+  document.getElementById("formDate").value=now.toLocaleDateString('en-IN')+" | "+now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'Asia/Kolkata'})+" IST";
 }
-.form-container {
-  max-width: 750px;
-  margin: 20px auto;
-  background: white;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+let counter=localStorage.getItem('jjes_adm_counter')||1; counter=parseInt(counter);
+function updateAdmNo(){
+  let s=document.getElementById('session').value;
+  document.getElementById('sessionTitle').innerText=s;
+  let f=String(counter).padStart(3,'0');
+  let no=`PBKJJES/${s}/${f}`;
+  document.getElementById('admNoDisplay').innerText=no;
+  document.getElementById('btnAdmNo').innerText=no;
+  document.getElementById('printTime').innerText='Generated: '+new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})+' IST | '+no;
+  return no;
 }
-.header img { width: 100px; border-radius: 50%; margin-bottom: 12px; border: 3px solid #0d3b66; }
-.header h1 { color: #0d3b66; font-size: 24px; margin-bottom: 5px; }
-.header p { color: #666; margin-bottom: 25px; }
+function saveApplication(){
+  let admNo=document.getElementById('admNoDisplay').innerText;
+  let data={
+    admNo:admNo,
+    name:document.getElementById('studentName').value||'N/A',
+    dob:document.getElementById('dob').value||'',
+    class:document.getElementById('classApply').value||'',
+    contact:document.getElementById('contact').value||'',
+    parent:document.getElementById('parentName').value||'',
+    date:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})+' IST',
+    photo:document.getElementById('previewPhoto').src||''
+  };
+  let all=JSON.parse(localStorage.getItem('jjes_applications')||'[]');
+  all.push(data);
+  localStorage.setItem('jjes_applications', JSON.stringify(all));
+}
+function handleDownload(){ saveApplication(); updateAdmNo(); localStorage.setItem('jjes_adm_counter', counter+1); window.print(); }
 
-.section-title {
-  background: #0d3b66;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  margin: 25px 0 15px 0;
-  font-size: 17px;
-  text-align: center;
+function showPhoto(file){
+  if(!file) return;
+  const r=new FileReader();
+  r.onload=function(ev){
+    document.getElementById('previewPhoto').src=ev.target.result;
+    document.getElementById('previewPhoto').style.display='block';
+    document.getElementById('photoText').style.display='none';
+  };
+  r.readAsDataURL(file);
 }
-.form-group { margin-bottom: 18px; text-align: left; }
-label { 
-  display: block; 
-  font-weight: bold; 
-  margin-bottom: 8px; 
-  color: #333;
-  font-size: 15px;
-}
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-}
-input:focus, select:focus, textarea:focus { border-color: #0d3b66; }
-.row { display: flex; gap: 15px; }
-.row .form-group { flex: 1; }
+document.getElementById('photoUpload').addEventListener('change',e=> showPhoto(e.target.files[0]));
+document.getElementById('docPassport').addEventListener('change',e=> showPhoto(e.target.files[0]));
 
-.btn {
-  background: #ffc107;
-  color: #000;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  width: 100%;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-.btn:hover { background: #ffdb4d; transform: translateY(-2px); }
-
-.note { font-size: 12px; color: #d32f2f; margin-top: 5px; }
-@media(max-width:600px){ .row{flex-direction:column;} }
-</style>
-</head>
-<body>
-  <div class="header">
-    <p>
-    <h1><strong>JEHOVA JIRE ENGLISH SCHOOL</strong></h1></div>
-    <p>150 Hall Veng, Near Community Hall, Pangbalkawn, Kolasib, Mizoram.  PIN Code: 796081</p>
-    <p>Office Contact No. +91 9612356076 | School Hours: 09:00 a.m. - 02:05 p.m.</p>
-    <p>School Website: pbkjjes.online | E-mail: englishschooljehovajire@gmail.com</p>
-    </div><h1><strong>Admission-Form</strong></h1>
-    <div><select name="class" required>
-          <option value="">School admission for what session?</option>
-          <option>2026-2027</option><option>2027-2028</option><option>2028-2029</option>
-     </select>
-      </div>
-    </div>
-    <div class="section-title">Student Details</div>
-    <div class="form-group">
-      <label>Student (Full Name) *</label>
-      <input type="text" name="student_name" placeholder="Ex: Lalmuanpuia" required>
-    </div>
-
-    <div class="row">
-      <div class="form-group">
-        <label>Date of Birth *</label>
-        <input type="date" name="dob" required>
-      </div>
-      
-      <div class="form-group">
-        <label>APAAR/PAN No *</label>
-        <input type="text" name="pan" maxlength="12" placeholder="Ex: 123456789101">
-        <p class="note"></p>
-      </div>
-    </div>
-      
-      <div class="form-group">
-        <label>Class Applying For *</label>
-        <select name="class" required>
-          <option value="">Select Class</option>
-          <option>Nursery</option><option>LKG</option><option>UKG</option>
-          <option>Class 1</option><option>Class 2</option><option>Class 3</option>
-          <option>Class 4</option><option>Class 5</option><option>Class 6</option>
-          <option>Class 7</option><option>Class 8</option>
-        </select>
-      </div>
-    </div>
-    <div class="section-title">Parents / Guardians Details</div>
-    <div class="form-group">
-      <label>Parents/Guardians Name *</label>
-      <input type="text" name="parent_name" placeholder="Ex: Father: R. Lalnunmawia, Mother: Lalhmingliani" required>
-    </div>
-    <div class="row">
-      <div class="form-group">
-        <label>Contact No. *</label>
-        <input type="tel" name="contact" placeholder="Ex: 96123 56076" maxlength="10" required>
-      </div>
-      <div class="form-group">
-        <label>Occupation *</label>
-        <input type="text" name="pan" maxlength="10" placeholder="Ex: ABCDE1234F">
-        <p class="note"></p>
-      </div>
-    </div>
-    <div class="section-title">Other Details</div>
-    <div class="form-group">
-      <label>Address *</label>
-      <textarea name="address" rows="3" placeholder="Ex: Pangbalkawn, Kolasib, Mizoram - 796081" required></textarea>
-    </div>
-    <div class="form-group">
-      <label>Previous School</label>
-      <input type="text" name="prev_school" placeholder="Ex: Govt. Primary School, Kolasib">
-    </div>
-    <button type="submit" class="btn">Print / Download Form</button>
-    <p class="note" style="text-align:center; margin-top:20px; color:#900;">Note: He form hi print la, document nen school office ah submit rawh</p>
-  </form>
-</div>
+updateDateTime(); setInterval(updateDateTime,1000); updateAdmNo();
+</script>
 </body>
 </html>
-    <div class="row">
-      <div class="form-group">
-
-<p>
-<div id="date" style="font-size:14px; color:#aaa;"></div>
-<div id="time" style="font-size:16px; color:#25D366; font-weight:bold;"></div>
-<script>
-updateDateTime();
-setInterval(updateDateTime, 1000);
-</script>
-<div>
-  </p>
-    <div>
-</section>
-  <p>For new admission, students are required to fill out and submit the admission form along with the following genuine documents:-</p>
-<div>•	Passport size photograph
-<div>•	Aadhar card
-<div>•	Birth certificate
-<div>•	School result
-<div>•	PAN No. and APAAR ID.</p></div> 
-Physical verification of documents is mandatory.  
-For existing/old students, simply download the form, complete it, and submit.
-    <div>
-    <div class="qr">
-      <p>School details</p>
-      <img src="qr-code.jpg" alt="QR Code">
-      <p>Scan QR Code</p>
-    </div>
