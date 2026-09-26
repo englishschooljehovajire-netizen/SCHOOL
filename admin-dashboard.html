@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>JEHOVA JIRE English School - Admin Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#eef2ff;display:flex;min-height:100vh;overflow-x:hidden}
+.sidebar{width:150px;background:#0a2563;display:flex;flex-direction:column;align-items:center;padding:14px 0;gap:10px;position:sticky;top:0;height:100vh;z-index:50;transition:.3s}
+.logo{width:64px;height:64px;background:#fff;border-radius:50%;overflow:hidden;border:3px solid #fff}.logo img{width:100%;height:100%;object-fit:cover}
+.nav{width:100%;margin-top:10px;flex:1}.nav a{display:flex;align-items:center;gap:10px;padding:11px 16px;color:#8ca2cc;text-decoration:none;font-size:11px;font-weight:700;cursor:pointer;border-left:4px solid transparent}
+.nav a i{font-size:14px;width:18px}.nav a.active{background:#e8eeff;color:#0a2563;border-left-color:#ffc107}
+.logout{width:90%;background:#ff3b3b;color:#fff;border:none;padding:10px;border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;margin-bottom:10px}
+.main{flex:1;padding:16px 20px;overflow:auto;min-width:0}
+.top{background:#0a2563;color:#fff;border-radius:12px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:800;margin-bottom:14px;gap:10px}
+.hamburger{display:none;background:#fff;color:#0a2563;border:none;padding:8px 10px;border-radius:6px;font-size:16px;cursor:pointer}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.kpi{background:#fff;border-radius:12px;padding:14px 16px;border-left:5px solid #0a2563;box-shadow:0 2px 10px rgba(0,0,0,.06)}.kpi b{font-size:22px;color:#0a2563;display:block}.kpi span{font-size:10px;font-weight:700;color:#666;margin-top:4px;display:block}
+.feeBoxGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
+.feeBox{background:#fff;border-radius:14px;display:flex;overflow:hidden;height:105px;border:1px solid #e2e8f0;box-shadow:0 3px 10px rgba(0,0,0,.06);cursor:pointer}
+.feeBoxLeft{width:150px;background:#0a2563;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;text-align:center;flex-shrink:0}
+.feeBoxRight{flex:1;padding:6px 8px;display:flex;align-items:center;justify-content:center;min-width:0}
+.dashboardTopCharts{display:grid;grid-template-columns:360px 1fr;gap:14px;margin-bottom:14px}
+.card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:0}.card h4{font-size:11px;font-weight:800;text-align:center;margin-bottom:12px}
+.card.big{height:540px;display:flex;flex-direction:column;overflow:auto}
+.card.mapLandscape{height:330px}
+.mapFrameLandscape{width:100%;height:230px;border:0;border-radius:10px}
+.tab{display:none}.tab.active{display:block}
+.table-wrap{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:600px}th{background:#0a2563;color:#fff;padding:8px 6px;font-size:10px;text-align:left}td{padding:8px 6px;border-bottom:1px solid #eef2ff}
+.btn{padding:6px 12px;border:none;border-radius:6px;font-size:10px;font-weight:800;cursor:pointer}.btn-p{background:#0a2563;color:#fff}.btn-y{background:#ffc107;color:#0a2563}.btn-r{background:#fee;color:#c00}
+.fee-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.fee-tabs button{padding:6px 12px;border:1px solid #cbd5e1;border-radius:20px;font-size:10px;font-weight:700;background:#fff;cursor:pointer}.fee-tabs button.active{background:#0a2563;color:#fff}
+.input{padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:11px;width:100%}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:99;padding:12px}.modal.open{display:flex}.box{background:#fff;border-radius:12px;padding:18px;width:100%;max-width:420px;max-height:90vh;overflow:auto}
+.hbars{padding:2px 0}.hbar-row{display:flex;align-items:center;margin-bottom:10px;gap:8px}.hbar-row label{width:38px;font-size:10px;font-weight:800;color:#0a2563;text-align:center;background:#eef2ff;border-radius:4px;padding:4px 2px}.hbar-track{flex:1;height:16px;background:#eef2ff;border-radius:8px;overflow:hidden}.hbar-fill{height:100%;background:linear-gradient(90deg,#0a2563,#3b82f6);border-radius:8px}.hbar-val{width:44px;font-size:11px;font-weight:800;color:#0a2563;text-align:right}
+.classGroup{background:#0a2563;color:#fff;font-size:11px;font-weight:800;padding:8px 10px;border-radius:6px;margin-top:12px;margin-bottom:4px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:40}.overlay.show{display:block}
+
+/* MOBILE FIX */
+@media(max-width:900px){
+.hamburger{display:block}
+.sidebar{position:fixed;left:0;top:0;transform:translateX(-100%);width:220px;height:100vh}
+.sidebar.open{transform:translateX(0)}
+.main{padding:10px;width:100%}
+.kpis{grid-template-columns:repeat(2,1fr);gap:8px}
+.feeBoxGrid{grid-template-columns:1fr}
+.dashboardTopCharts{grid-template-columns:1fr}
+.card.big{height:auto;max-height:520px}
+.card.mapLandscape{height:auto}
+.mapFrameLandscape{height:260px}
+.top{font-size:11px;padding:10px 12px}
+.top div{font-size:11px}
+.table-wrap{padding:10px}
+table{min-width:650px}
+}
+@media(max-width:480px){
+.kpis{grid-template-columns:1fr 1fr}
+.kpi b{font-size:18px}
+.feeBox{height:auto;min-height:95px}
+.feeBoxLeft{width:110px}
+}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="sidebar" id="sidebar">
+<div class="logo"><img src="logo.jpg" onerror="this.src='https://via.placeholder.com/80?text=JJES'"></div>
+<div style="color:#fff;font-size:11px;font-weight:800;text-align:center">JEHOVA JIRE<br><span style="font-size:8px;opacity:.7">English School</span></div>
+<div class="nav">
+<a class="active" data-t="overview"><i class="fa-solid fa-table-columns"></i>DASHBOARD</a>
+<a data-t="students"><i class="fa-solid fa-users"></i>Students</a>
+<a data-t="fees"><i class="fa-solid fa-money-bill"></i>Fees</a>
+<a data-t="teachers"><i class="fa-solid fa-chalkboard-user"></i>Teachers</a>
+</div>
+<button class="logout" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+</div>
+
+<div class="main">
+<div class="top">
+<div style="display:flex;align-items:center;gap:10px"><button class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button><div>JEHOVA JIRE English School <span style="font-size:8px;opacity:.7">Pvt. Unaided (Govt. Provissionally Recognised)</span></div></div>
+<div id="date" style="font-size:10px"></div>
+</div>
+
+<div id="tab-overview" class="tab active">
+<div class="kpis">
+<div class="kpi"><b id="kTotal">0</b><span>TOTAL STUDENTS</span></div>
+<div class="kpi"><b id="kColl">₹0</b><span>FEES COLLECTED</span></div>
+<div class="kpi"><b id="kDue">₹0</b><span>FEES DUE</span></div>
+<div class="kpi"><b id="kSalDue">₹0</b><span>SALARY DUE</span></div>
+</div>
+<div class="feeBoxGrid" id="feeBoxGrid"></div>
+
+<div class="dashboardTopCharts">
+<div class="card"><h4>Collection vs Due - Pie</h4><canvas id="pieChart" height="260"></canvas>
+<div id="pieLegend" style="font-size:11px;text-align:center;margin-top:10px;font-weight:700"></div></div>
+<div class="card big"><h4>Fee Collection Rate by Class - Nursery to Class 8</h4><div class="hbars" id="hbars"></div></div>
+</div>
+
+<div class="card mapLandscape">
+<h4><i class="fa-solid fa-location-dot"></i> JEHOVA JIRE English School, Pangbalkawn - MAP</h4>
+<iframe class="mapFrameLandscape" src="https://www.google.com/maps?q=Pangbalkawn,+Kolasib,+Mizoram+796081&z=15&output=embed" loading="lazy"></iframe>
+<div style="padding:10px 0 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+  <div style="font-size:11px">
+    <b>Jehova Jire English School</b> - Pangbalkawn</div>
+    <a href="https://maps.app.goo.gl/QXnjQvgaNTT5x4NdA" target="_blank" style="background:#0a2563;color:#fff;padding:9px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:11px;">Open Map</a></div>
+</div>
+</div>
+
+<div id="tab-students" class="tab">
+  <div class="table-wrap">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+      <h3>Student List</h3><button class="btn btn-y" onclick="openM('admM')">+ Admission</button></div>
+      <input id="sSearch" class="input" style="max-width:240px;margin-bottom:10px" placeholder="Search..." onkeyup="renderStu()"><div id="stuGrouped"></div></div></div>
+<div id="tab-fees" class="tab"><div class="table-wrap"><h3 style="margin-bottom:8px">Student Fee Details</h3><div class="fee-tabs" id="feeTypeTabs"></div><table><thead><tr><th>SL</th><th>Sub-SL</th><th>Roll</th><th>Name</th><th>Type</th><th>Amt</th><th>Mode</th><th>Date</th><th>Recvd</th><th>Del</th></tr></thead><tbody id="feeBody"></tbody></table></div></div>
+<div id="tab-teachers" class="tab"><div class="table-wrap"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+  <h3>Teachers Salary - Advance Pay</h3><div style="display:flex;gap:6px;flex-wrap:wrap"><select id="salMonthFilter" class="input" style="width:130px" onchange="renderTeach()"></select><button class="btn btn-y" onclick="openM('advM')">+ Advance</button><button class="btn btn-p" onclick="openM('addTeachM')">+ Teacher</button></div></div><table><thead><tr><th>Teacher</th><th>Month</th><th>Type</th><th>Amt</th><th>Mode</th><th>Date</th><th>Recvd</th><th>Edit</th><th>Del</th></tr></thead><tbody id="teachBody"></tbody></table></div></div>
+</div>
+
+<div id="admM" class="modal"><div class="box"><h4>Admission</h4><input id="an" class="input" placeholder="Full Name" style="margin-top:8px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><select id="ac" class="input"><option value="NUR">Nursery</option><option value="LKG">LKG</option><option value="UKG">UKG</option><option value="C1">Class 1</option><option value="C2">Class 2</option><option value="C3">Class 3</option><option value="C4">Class 4</option><option value="C5">Class 5</option><option value="C6">Class 6</option><option value="C7">Class 7</option><option value="C8">Class 8</option></select><select id="asec" class="input"><option>A</option><option>B</option><option>C</option></select></div><button class="btn btn-p" style="width:100%;margin-top:10px" onclick="addStu()">Save</button><button class="btn" style="width:100%;margin-top:6px" onclick="closeM('admM')">Close</button></div></div>
+<div id="payM" class="modal"><div class="box"><h4 id="payTitle">Collect Fee</h4><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><select id="pType" class="input"><option>Monthly</option><option>Exam</option><option>Teachers Day</option><option>Sports</option><option>School Trip</option><option>Uniform</option><option>Book</option></select><input id="pAmt" type="number" class="input" placeholder="Amount"><select id="pMode" class="input"><option>Cash</option><option>UPI</option></select><input id="pDate" type="datetime-local" class="input"><label style="font-size:11px"><input type="checkbox" id="pRec"> Received</label></div><button class="btn btn-p" style="width:100%;margin-top:10px" onclick="savePay()">Save</button><button class="btn" style="width:100%;margin-top:6px" onclick="closeM('payM')">Close</button></div></div>
+<div id="addTeachM" class="modal"><div class="box"><h4>Add Teacher</h4><input id="tName" class="input" placeholder="Name" style="margin-top:8px"><input id="tBase" type="number" class="input" placeholder="Base Salary" style="margin-top:8px"><button class="btn btn-p" style="width:100%;margin-top:10px" onclick="addTeacher()">Save</button><button class="btn" style="width:100%;margin-top:6px" onclick="closeM('addTeachM')">Close</button></div></div>
+<div id="advM" class="modal"><div class="box"><h4>Salary / Advance</h4><div style="display:grid;gap:8px;margin-top:8px"><select id="advTeacher" class="input"></select><input id="advMonth" type="month" class="input"><select id="advType" class="input"><option value="Salary">Salary</option><option value="Advance">Advance</option></select><input id="advAmt" type="number" class="input" placeholder="Amount"><select id="advMode" class="input"><option>Cash</option><option>UPI</option><option>Bank</option></select><input id="advDate" type="datetime-local" class="input"><label style="font-size:11px"><input type="checkbox" id="advRec"> Paid</label></div><button class="btn btn-p" style="width:100%;margin-top:10px" onclick="saveAdvance()">Save</button><button class="btn" style="width:100%;margin-top:6px" onclick="closeM('advM')">Close</button></div></div>
+<div id="editSalM" class="modal"><div class="box"><h4>Edit Salary</h4><div style="display:grid;gap:8px;margin-top:8px"><input id="eTeacher" class="input" disabled><input id="eMonth" type="month" class="input"><select id="eType" class="input"><option>Salary</option><option>Advance</option></select><input id="eAmt" type="number" class="input"><select id="eMode" class="input"><option>Cash</option><option>UPI</option><option>Bank</option></select><input id="eDate" type="datetime-local" class="input"><label style="font-size:11px"><input type="checkbox" id="eRec"> Paid</label></div><button class="btn btn-p" style="width:100%;margin-top:10px" onclick="updateSalEdit()">Update</button><button class="btn" style="width:100%;margin-top:6px" onclick="closeM('editSalM')">Close</button></div></div>
+
+<script>
+document.getElementById('date').innerText=new Date().toLocaleDateString('en-IN',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+function toggleMenu(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('show')}
+function go(t){document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));document.querySelector('[data-t="'+t+'"]').classList.add('active');document.querySelectorAll('.tab').forEach(c=>c.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');if(window.innerWidth<=900){toggleMenu()}}
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>go(a.dataset.t)));
+function openM(id){if(id=='advM'){let sel=document.getElementById('advTeacher');sel.innerHTML=teachersList.map(t=>'<option value="'+t.id+'">'+t.name+'</option>').join('');document.getElementById('advMonth').value=getMonthKey();document.getElementById('advDate').value=new Date().toISOString().slice(0,16);}document.getElementById(id).classList.add('open')}
+function closeM(id){document.getElementById(id).classList.remove('open')}
+function logout(){if(confirm('Logout duh em?')){localStorage.clear();location.reload();}}
+let students=JSON.parse(localStorage.getItem('jjes_final_v5')||'[]');
+if(students.length===0){students=[
+{roll:'JJES001',name:'Lalruatfela',class:'C8',sec:'A',fees:[{type:'Monthly',amt:800,mode:'Cash',date:'2026-08-01T10:00',rec:true}]},
+{roll:'JJES002',name:'Ruthi Hmar',class:'C5',sec:'B',fees:[{type:'Monthly',amt:700,mode:'UPI',date:'2026-08-01T10:00',rec:false}]},
+{roll:'JJES003',name:'Mimi',class:'LKG',sec:'A',fees:[{type:'Monthly',amt:500,mode:'Cash',date:'2026-08-01T10:00',rec:true}]},
+{roll:'JJES004',name:'John',class:'NUR',sec:'A',fees:[{type:'Monthly',amt:400,mode:'Cash',date:'2026-08-01T10:00',rec:true}]},
+{roll:'JJES005',name:'Zuali',class:'UKG',sec:'A',fees:[{type:'Monthly',amt:550,mode:'Cash',date:'2026-08-01T10:00',rec:true}]},
+{roll:'JJES006',name:'Rema',class:'C1',sec:'A',fees:[{type:'Monthly',amt:600,mode:'Cash',date:'2026-08-01T10:00',rec:false}]}
+];}
+let teachersList=JSON.parse(localStorage.getItem('jjes_tlist_v5')||'[{"id":"T01","name":"Sir Lian","base":18000},{"id":"T02","name":"Miss Zuali","base":16000}]');
+let salaryRecords=JSON.parse(localStorage.getItem('jjes_tsal_v5')||'[]');
+let feeTypes=['All','Monthly','Exam','Teachers Day','Sports','School Trip','Uniform/Book','Others'];
+let curFee='All';let curPayRoll=null;let curEditSalId=null;
+function getMonthKey(d){let dt=d||new Date();return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')}
+function genSalary(){let k=getMonthKey();let has=salaryRecords.some(r=>r.monthKey===k && r.type==='Salary');if(!has){teachersList.forEach(t=>{salaryRecords.push({id:Date.now()+Math.random(),teacherId:t.id,teacherName:t.name,monthKey:k,type:'Salary',amt:t.base,mode:'',date:'',rec:false})});save()}}genSalary();
+function save(){localStorage.setItem('jjes_final_v5',JSON.stringify(students));localStorage.setItem('jjes_tlist_v5',JSON.stringify(teachersList));localStorage.setItem('jjes_tsal_v5',JSON.stringify(salaryRecords))}
+function addStu(){let n=document.getElementById('an').value;if(!n)return;students.unshift({roll:'JJES'+String(students.length+1).padStart(3,'0'),name:n,class:document.getElementById('ac').value,sec:document.getElementById('asec').value,fees:[]});save();renderAll();closeM('admM')}
+function openPay(r){curPayRoll=r;let s=students.find(x=>x.roll==r);document.getElementById('payTitle').innerText='Collect - '+s.name+' ('+s.class+')';document.getElementById('pDate').value=new Date().toISOString().slice(0,16);openM('payM')}
+function savePay(){let s=students.find(x=>x.roll==curPayRoll);s.fees.push({type:document.getElementById('pType').value,amt:Number(document.getElementById('pAmt').value),mode:document.getElementById('pMode').value,date:document.getElementById('pDate').value,rec:document.getElementById('pRec').checked});save();renderAll();closeM('payM')}
+function renderStu(){let q=(document.getElementById('sSearch').value||'').toLowerCase();let filtered=students.filter(s=>s.name.toLowerCase().includes(q)||s.roll.toLowerCase().includes(q)||s.class.toLowerCase().includes(q));let order=['NUR','LKG','UKG','C1','C2','C3','C4','C5','C6','C7','C8'];let labels={NUR:'Nursery',LKG:'LKG',UKG:'UKG',C1:'Class 1',C2:'Class 2',C3:'Class 3',C4:'Class 4',C5:'Class 5',C6:'Class 6',C7:'Class 7',C8:'Class 8'};let container=document.getElementById('stuGrouped');container.innerHTML='';let totalSL=0;order.forEach(cls=>{let group=filtered.filter(s=>s.class===cls);if(group.length===0)return;let head=document.createElement('div');head.className='classGroup';head.innerHTML='<span>📚 '+labels[cls]+' - '+cls+'</span><span>'+group.length+' Students</span>';container.appendChild(head);let tbl=document.createElement('table');let rows=group.map(s=>{totalSL++;let tot=s.fees.filter(f=>f.rec).reduce((a,b)=>a+Number(b.amt||0),0);return '<tr><td>'+totalSL+'</td><td>'+s.roll+'</td><td>'+s.name+'</td><td>'+s.sec+'</td><td>₹'+tot+'</td><td><button class="btn btn-p" onclick="openPay(\''+s.roll+'\')">Pay</button></td></tr>';}).join('');tbl.innerHTML='<thead><tr><th>SL</th><th>Roll</th><th>Name</th><th>Sec</th><th>Paid</th><th>Action</th></tr></thead><tbody>'+rows+'</tbody>';container.appendChild(tbl);});if(container.innerHTML===''){container.innerHTML='<div style="padding:20px;text-align:center;color:#999">No students found</div>'}document.getElementById('kTotal').innerText=students.length;}
+function renderFeeTabs(){let c=document.getElementById('feeTypeTabs');c.innerHTML='';feeTypes.forEach(t=>{c.innerHTML+='<button class="'+(curFee===t?'active':'')+'" onclick="curFee=\''+t+'\';renderFeeTabs();renderFees()">'+t+'</button>'})}
+function renderFees(){let b=document.getElementById('feeBody');b.innerHTML='';let tot=0,due=0;let all=[];students.forEach(s=>s.fees.forEach((f,idx)=>{all.push({s:s,f:f,idx:idx})}));let grouped={};all.forEach(o=>{if(curFee!=='All'&&o.f.type!==curFee)return;if(!grouped[o.f.type])grouped[o.f.type]=[];grouped[o.f.type].push(o)});let gSL=1;Object.keys(grouped).forEach(type=>{let sub=1;grouped[type].forEach(o=>{if(o.f.rec)tot+=Number(o.f.amt);else due+=Number(o.f.amt);b.innerHTML+='<tr><td>'+gSL+'</td><td>'+type.slice(0,3).toUpperCase()+'-'+sub+'</td><td>'+o.s.roll+'</td><td>'+o.s.name+' ('+o.s.class+')</td><td>'+o.f.type+'</td><td>₹'+o.f.amt+'</td><td>'+o.f.mode+'</td><td style="font-size:10px">'+(o.f.date?new Date(o.f.date).toLocaleString():'-')+'</td><td>'+(o.f.rec?'✅':'❌')+'</td><td><button class="btn" style="background:#fee" onclick="delFee(\''+o.s.roll+'\','+o.idx+')">X</button></td></tr>';sub++;gSL++;})});document.getElementById('kColl').innerText='₹'+tot;document.getElementById('kDue').innerText='₹'+due;if(window.pieC){window.pieC.data.datasets[0].data=[tot||0,due||1];window.pieC.update();document.getElementById('pieLegend').innerText='Collected ₹'+tot+' | Due ₹'+due;}}
+function delFee(roll,i){let stu=students.find(x=>x.roll===roll);if(stu){stu.fees.splice(i,1);save();renderAll();}}
+function renderBoxes(){let c=document.getElementById('feeBoxGrid');c.innerHTML='';let types=['Monthly','Exam','Teachers Day','Sports','School Trip','Uniform/Book','Others'];types.forEach((t,i)=>{let rec=0,due=0;students.forEach(s=>s.fees.forEach(f=>{if(f.type===t){if(f.rec)rec+=Number(f.amt);else due+=Number(f.amt)}}));c.innerHTML+='<div class="feeBox" onclick="curFee=\''+t+'\';renderFeeTabs();renderFees();go(\'fees\')"><div class="feeBoxLeft"><h5>'+t+'</h5><div class="amt">₹'+rec+'</div><div class="due">Due ₹'+due+'</div></div><div class="feeBoxRight"><canvas id="bar'+i+'" height="70"></canvas></div></div>';});setTimeout(()=>{types.forEach((t,i)=>{let el=document.getElementById('bar'+i);if(!el)return;new Chart(el,{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:[{data:[120+Math.random()*200,200+Math.random()*200,180+Math.random()*200,250+Math.random()*200,300+Math.random()*100,320+Math.random()*100],backgroundColor:['#0a2563','#1e40af','#3b82f6','#60a5fa','#93c5fd','#dbeafe'],borderRadius:3,barThickness:7}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{display:false,grid:{display:false}},y:{display:false,grid:{display:false}}}}});});},120);}
+function renderSectionBars(){let classes=['NUR','LKG','UKG','C1','C2','C3','C4','C5','C6','C7','C8'];let html='';classes.forEach(cls=>{let list=students.filter(s=>s.class===cls);let totFees=0;let collFees=0;list.forEach(s=>{s.fees.forEach(f=>{totFees+=Number(f.amt);if(f.rec)collFees+=Number(f.amt)})});let rate=totFees?Math.round((collFees/totFees)*1000)/10:0;if(list.length===0)rate=0;html+='<div class="hbar-row"><label>'+cls+'</label><div class="hbar-track"><div class="hbar-fill" style="width:'+rate+'%"></div></div><span class="hbar-val">'+rate+'%</span></div>';});document.getElementById('hbars').innerHTML=html;}
+function addTeacher(){let n=document.getElementById('tName').value;let b=document.getElementById('tBase').value;if(!n)return;teachersList.push({id:'T'+Date.now(),name:n,base:Number(b||0)});save();renderTeach();closeM('addTeachM');}
+function saveAdvance(){let tid=document.getElementById('advTeacher').value;let t=teachersList.find(x=>x.id===tid);if(!t)return;salaryRecords.push({id:Date.now()+Math.random(),teacherId:tid,teacherName:t.name,monthKey:document.getElementById('advMonth').value,type:document.getElementById('advType').value,amt:Number(document.getElementById('advAmt').value),mode:document.getElementById('advMode').value,date:document.getElementById('advDate').value,rec:document.getElementById('advRec').checked});save();renderTeach();closeM('advM');}
+function openEditSal(id){let r=salaryRecords.find(x=>x.id===id);if(!r)return;curEditSalId=id;document.getElementById('eTeacher').value=r.teacherName;document.getElementById('eMonth').value=r.monthKey;document.getElementById('eType').value=r.type||'Salary';document.getElementById('eAmt').value=r.amt;document.getElementById('eMode').value=r.mode||'Cash';document.getElementById('eDate').value=r.date||new Date().toISOString().slice(0,16);document.getElementById('eRec').checked=r.rec;openM('editSalM');}
+function updateSalEdit(){let r=salaryRecords.find(x=>x.id===curEditSalId);if(!r)return;r.monthKey=document.getElementById('eMonth').value;r.type=document.getElementById('eType').value;r.amt=Number(document.getElementById('eAmt').value);r.mode=document.getElementById('eMode').value;r.date=document.getElementById('eDate').value;r.rec=document.getElementById('eRec').checked;save();renderTeach();closeM('editSalM');}
+function delSal(id){if(!confirm('Delete?'))return;salaryRecords=salaryRecords.filter(x=>x.id!==id);save();renderTeach();}
+function renderTeach(){let sel=document.getElementById('salMonthFilter');let months=[...new Set(salaryRecords.map(r=>r.monthKey))].sort().reverse();if(months.length===0)months=[getMonthKey()];sel.innerHTML=months.map(m=>'<option>'+m+'</option>').join('');let f=sel.value||months[0];let b=document.getElementById('teachBody');b.innerHTML='';let due=0;salaryRecords.filter(r=>r.monthKey===f).forEach(r=>{if(!r.rec)due+=Number(r.amt);let badge=r.type==='Advance'?'<span style="background:#ffedd5;color:#c2410c;padding:2px 6px;border-radius:10px;font-size:8px">ADV</span>':'<span style="background:#dcfce7;color:#166534;padding:2px 6px;border-radius:10px;font-size:8px">SAL</span>';b.innerHTML+='<tr><td>'+r.teacherName+'</td><td>'+r.monthKey+'</td><td>'+badge+' '+(r.type||'Salary')+'</td><td>₹'+r.amt+'</td><td>'+(r.mode||'-')+'</td><td style="font-size:10px">'+(r.date?new Date(r.date).toLocaleString():'-')+'</td><td><input type="checkbox" '+(r.rec?'checked':'')+' onchange="let rec=salaryRecords.find(x=>x.id==='+r.id+');rec.rec=this.checked;save();renderTeach()"></td><td><button class="btn btn-p" onclick="openEditSal('+r.id+')">Edit</button></td><td><button class="btn btn-r" onclick="delSal('+r.id+')">X</button></td></tr>';});document.getElementById('kSalDue').innerText='₹'+due;}
+function renderAll(){renderStu();renderFees();renderBoxes();renderSectionBars();renderTeach()}
+renderFeeTabs();renderAll();
+window.pieC=new Chart(document.getElementById('pieChart'),{type:'doughnut',data:{labels:['Collected','Due'],datasets:[{data:[1500,800],backgroundColor:['#0a2563','#fbbf24'],borderWidth:0}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:12}}}}});
+</script>
+</body>
+</html>
