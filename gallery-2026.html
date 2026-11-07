@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHOOL GALLERY - STEP UP | 2025-2029</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+  body{background:linear-gradient(180deg,#08222f 0%,#0a2e3f 45%,#0f3d54 100%);min-height:100vh;color:white;overflow-x:hidden}
+  header{text-align:center;padding:28px 16px 6px}
+  header span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:30px;font-size:12px;letter-spacing:3px;font-weight:700}
+  header h1{font-size:clamp(28px,5vw,50px);line-height:1.05;margin:12px 0 6px;color:#2ec4e6}
+  header h1 b{color:white}
+  header p{max-width:640px;margin:0 auto;color:#cfe8f0;font-size:14.5px;line-height:1.6}
+  .controls{margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button{background:#1fb6dd;color:white;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .controls button:nth-child(2){background:white;color:#0a2e3f}
+  .controls button:nth-child(3){background:#ffb703;color:#222}
+
+  /* STEP STAGE */
+  .stage{
+    position:relative;height:560px;max-width:900px;margin:10px auto 0;
+    perspective:1100px;overflow:hidden;
+  }
+  /* step floor line */
+  .floor{
+    position:absolute;left:6%;right:6%;bottom:48px;height:6px;
+    background:linear-gradient(90deg,#1fb6dd,#ffb703,#1fb6dd);
+    border-radius:20px;opacity:.35;
+  }
+  .stair{
+    position:absolute;inset:0;
+    transform-style:preserve-3d;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card{
+    position:absolute;width:240px;height:340px;border-radius:18px;overflow:hidden;
+    background:white;color:#222;box-shadow:0 24px 45px rgba(0,0,0,.5);
+    border:4px solid white;display:flex;flex-direction:column;
+    transition:all .7s cubic-bezier(.2,.9,.25,1.15); /* step anga lawn - a zuang chho */
+    cursor:pointer;
+  }
+  .card img{width:100%;height:150px;object-fit:cover}
+  .card .body{padding:12px}
+  .year{display:inline-block;background:#0a2e3f;color:#2ec4e6;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:800}
+  .card h2{font-size:21px;margin:6px 0 4px}
+  .card p{font-size:13.5px;line-height:1.5;color:#555;min-height:40px}
+  .card ul{list-style:none;margin:8px 0;display:flex;flex-wrap:wrap;gap:5px}
+  .card ul li{background:#eef7fa;padding:4px 8px;border-radius:20px;font-size:11px;font-weight:700}
+  .card .btns{display:flex;gap:8px;margin-top:auto}
+  .card .btns a,.card .btns button{flex:1;text-align:center;border:0;padding:10px;border-radius:8px;font-weight:800;font-size:13px;cursor:pointer;text-decoration:none}
+  .view{background:#1fb6dd;color:white}
+  .edit{background:#ffe8a3;color:#222}
+  .step-badge{
+    position:absolute;top:10px;right:10px;background:#ffb703;color:#222;
+    font-size:11px;font-weight:900;padding:5px 9px;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.25)
+  }
+  .hint{text-align:center;color:#9ecbda;font-size:13px;margin-top:-8px}
+  .dots{display:flex;justify-content:center;gap:8px;margin:16px 0 28px}
+  .dots button{width:32px;height:8px;border-radius:20px;border:0;background:rgba(255,255,255,.3);cursor:pointer}
+  .dots button.active{background:#ffb703;width:48px}
+
+  /* MODAL - a hmaa mi ang tho */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:flex-start;justify-content:center;padding:18px;z-index:99;overflow-y:auto}
+  .overlay.open{display:flex}
+  .modal{background:white;color:#222;width:100%;max-width:620px;border-radius:18px;overflow:hidden;margin:20px 0}
+  .modal img{width:100%;height:240px;object-fit:cover}
+  .modal .m-body{padding:18px}
+  .modal h2{font-size:26px}
+  .prog{border:1px solid #eee;border-radius:12px;padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:center}
+  .prog img{width:74px;height:74px;object-fit:cover;border-radius:10px}
+  .prog button{margin-left:auto;background:#ff5a5a;color:white;border:0;padding:7px 10px;border-radius:8px;cursor:pointer}
+  .add-box{background:#f6fbff;border:1px dashed #1fb6dd;border-radius:12px;padding:12px;margin-top:12px}
+  .add-box input,.add-box textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px;font-size:14px}
+  .add-box button{background:#0a2e3f;color:white;border:0;padding:11px;border-radius:8px;width:100%;font-weight:800;cursor:pointer}
+  .close{float:right;background:#eee;border:0;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer}
+  @media(max-width:640px){.stage{height:500px}.card{width:210px;height:320px}}
+</style>
+</head>
+<body>
+
+<header>
+  <span>WE CREATE MEMORIES • STEP BY STEP</span>
+  <h1>SCHOOL <b>GALLERY</b><br>Step Up</h1>
+  <p>Kum tin step 1 in a lawn chho zel ang. 2025-26 atanga tanin, 2028-29 thleng - kan lawn chho zel.</p>
+  <div class="controls">
+    <button onclick="stepDown()">◀ STEP DOWN</button>
+    <button onclick="toggleSpin()" id="spinBtn">⏸ PAUSE STEP</button>
+    <button onclick="stepUp()">STEP UP ▶</button>
+  </div>
+</header>
+
+<div class="stage" id="stage">
+  <div class="floor"></div>
+  <div class="stair" id="stair"></div>
+</div>
+
+<p class="hint">👆 STEP UP click la, card chu step ang in a lawn chho ang. A mahin step 1 in a lawn chho reng bawk ang.</p>
+<div class="dots" id="dots"></div>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <div style="padding:12px 12px 0"><button class="close" onclick="closeModal()">✕</button></div>
+    <img id="mImg" src="">
+    <div class="m-body">
+      <h2 id="mTitle"></h2>
+      <p id="mDesc" style="color:#555;line-height:1.6"></p>
+      <label style="font-weight:800;font-size:13px">YEAR DESCRIPTION (Edit theih)</label>
+      <textarea id="editDesc" rows="2" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin:6px 0"></textarea>
+      <label style="font-weight:800;font-size:13px">COVER PHOTO LINK</label>
+      <input id="editCover" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin:6px 0">
+      <div style="display:flex;gap:8px;margin:10px 0">
+        <button onclick="saveYear()" style="flex:1;background:#1fb6dd;color:white;border:0;padding:11px;border-radius:8px;font-weight:800;cursor:pointer">💾 SAVE YEAR</button>
+        <button onclick="resetData()" style="flex:1;background:#eee;border:0;padding:11px;border-radius:8px;font-weight:700;cursor:pointer">↺ RESET</button>
+      </div>
+      <h3>📸 Programmes in this Year</h3>
+      <div id="progList"></div>
+      <div class="add-box">
+        <b>➕ Programme Thar Add</b><br><br>
+        <input id="newTitle" placeholder="Programme hming - e.g. Children's Day">
+        <input id="newDate" placeholder="Date - e.g. 14 Nov 2025">
+        <textarea id="newDesc" rows="2" placeholder="Description tawi..."></textarea>
+        <input id="newImg" placeholder="Thlalak Link">
+        <button onclick="addProgramme()">ADD PROGRAMME</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let defaultData = {
+  "2025-26": {title:"2025 - 26", cover:"https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80", desc:"Programme zawng zawng khaikhawmna. Teachers Day, Students Song leh hlimna tam tak.", programmes:[
+    {title:"Children's Day", date:"14 Nov 2025", desc:"Infiamna leh cultural programme hlimawm tak.", img:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"},
+    {title:"Independence Day", date:"15 Aug 2025", desc:"India zalenna ni lawmna.", img:"https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80"},
+    {title:"Sports Day", date:"Jan 2026", desc:"Sports day hun hmanna leh lawmman sem.", img:"https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80"},
+    {title:"Farewell 2025-26", date:"Mar 2026", desc:"Class tinte thlahna programme.", img:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80"},
+    {title:"School Tour 2026", date:"Feb 2026", desc:"Picnic leh tour hlimawm tak.", img:"https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=400&q=80"}
+  ]},
+  "2026-27": {title:"2026 - 27", cover:"https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80", desc:"Zirna leh hlimna kum thar.", programmes:[{title:"Independence Day", date:"15 Aug 2026", desc:"Zalenna ni lawmna.", img:"https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80"}]},
+  "2027-28": {title:"2027 - 28", cover:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80", desc:"Thlirna thar, beiseina thar.", programmes:[{title:"Children's Day", date:"14 Nov 2027", desc:"Naupangte ni pual programme.", img:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"}]},
+  "2028-29": {title:"2028 - 29", cover:"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80", desc:"Learning, Growth, Excellence.", programmes:[{title:"Sports Day", date:"Jan 2029", desc:"Sports leh lawmman sem.", img:"https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80"}]}
+};
+let data = JSON.parse(localStorage.getItem('schoolGallery') || 'null') || defaultData;
+let keys = Object.keys(data);
+let currentIndex = 0; // step sang ber a awm mek
+let auto = true;
+let currentKey = keys[0];
+
+function save(){ localStorage.setItem('schoolGallery', JSON.stringify(data)); renderStair(); }
+
+// *** STEP LOGIC - A LAWM CHHO ZEL ***
+function renderStair(){
+  const stair = document.getElementById('stair');
+  stair.innerHTML = '';
+  keys.forEach((key, i)=>{
+    // currentIndex atanga a hlat dan
+    let diff = (i - currentIndex + keys.length) % keys.length;
+    // diff 0 = step sang ber (hmalam, lian, sang)
+    // diff 1,2,3 = a hnunga step hniam zawk
+    let x = 0, y = 0, scale = 1, opacity = 1, z = 10, rotate = 0;
+    if(diff===0){ x=0; y=-30; scale=1.08; opacity=1; z=30; rotate=0; }
+    else if(diff===1){ x=165; y=38; scale=0.88; opacity=0.95; z=20; rotate=6; }
+    else if(diff===2){ x=-165; y=72; scale=0.78; opacity=0.75; z=10; rotate=-6; }
+    else if(diff===3){ x=0; y=98; scale=0.68; opacity=0.45; z=1; rotate=0; }
+
+    // mobile-ah x tlem zawk
+    if(window.innerWidth < 640){
+      if(diff===1) x=110;
+      if(diff===2) x=-110;
+    }
+
+    const d = data[key];
+    const el = document.createElement('div');
+    el.className='card';
+    el.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotate}deg)`;
+    el.style.opacity = opacity;
+    el.style.zIndex = z;
+    el.innerHTML = `
+      <span class="step-badge">STEP ${i+1} • ${d.title}</span>
+      <img src="${d.cover}">
+      <div class="body">
+        <span class="year">ACADEMIC YEAR</span>
+        <h2>${d.title}</h2>
+        <p>${d.desc}</p>
+        <ul>${d.programmes.slice(0,3).map(p=>`<li>${p.title}</li>`).join('')}</ul>
+        <div class="btns">
+          <a class="view" href="javascript:void(0)" onclick="openModal('${key}')">VIEW →</a>
+          <button class="edit" onclick="openModal('${key}')">✏️ EDIT</button>
+        </div>
+      </div>`;
+    el.onclick = (e)=>{ if(e.target.tagName!=='A' && e.target.tagName!=='BUTTON'){ currentIndex=i; renderStair(); } };
+    stair.appendChild(el);
+  });
+  document.querySelectorAll('.dots button').forEach((b,i)=> b.classList.toggle('active', i===currentIndex));
+}
+function renderDots(){
+  const box=document.getElementById('dots'); box.innerHTML='';
+  keys.forEach((k,i)=>{ const b=document.createElement('button'); b.onclick=()=>{ currentIndex=i; renderStair(); }; box.appendChild(b); });
+}
+function stepUp(){ currentIndex = (currentIndex+1)%keys.length; renderStair(); }
+function stepDown(){ currentIndex = (currentIndex-1+keys.length)%keys.length; renderStair(); }
+function toggleSpin(){ auto=!auto; document.getElementById('spinBtn').textContent=auto?'⏸ PAUSE STEP':'▶ START STEP'; }
+
+// Auto Step - second 2.5 danah step 1 in a lawn chho
+setInterval(()=>{ if(auto) stepUp(); }, 2600);
+
+// Modal
+function openModal(key){ currentKey=key; const d=data[key];
+  document.getElementById('mImg').src=d.cover;
+  document.getElementById('mTitle').textContent=d.title+' • '+d.programmes.length+' Programmes';
+  document.getElementById('mDesc').textContent=d.desc;
+  document.getElementById('editDesc').value=d.desc;
+  document.getElementById('editCover').value=d.cover;
+  renderProgList();
+  document.getElementById('overlay').classList.add('open');
+}
+function closeModal(){ document.getElementById('overlay').classList.remove('open'); }
+function renderProgList(){
+  document.getElementById('progList').innerHTML = data[currentKey].programmes.map((p,i)=>`
+    <div class="prog"><img src="${p.img}"><div><b>${p.title}</b><br><small>${p.date} • ${p.desc}</small></div><button onclick="deleteProg(${i})">Delete</button></div>`).join('');
+}
+function saveYear(){ data[currentKey].desc=document.getElementById('editDesc').value; const c=document.getElementById('editCover').value.trim(); if(c) data[currentKey].cover=c; save(); openModal(currentKey); alert('Saved!'); }
+function addProgramme(){
+  const t=document.getElementById('newTitle').value.trim(); if(!t){ alert('Programme hming dah rawh'); return; }
+  data[currentKey].programmes.push({title:t, date:document.getElementById('newDate').value||'Date dah loh', desc:document.getElementById('newDesc').value||'', img:document.getElementById('newImg').value||'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80'});
+  ['newTitle','newDate','newDesc','newImg'].forEach(id=>document.getElementById(id).value='');
+  save(); openModal(currentKey);
+}
+function deleteProg(i){ if(!confirm('Delete duh em?')) return; data[currentKey].programmes.splice(i,1); save(); openModal(currentKey); }
+function resetData(){ if(!confirm('A bul atanga siam that leh duh em?')) return; localStorage.removeItem('schoolGallery'); data=JSON.parse(JSON.stringify(defaultData)); save(); openModal(currentKey); }
+
+// Swipe pawhin step up/down theih
+let sx=0;
+document.getElementById('stage').addEventListener('touchstart', e=> sx=e.touches[0].clientX);
+document.getElementById('stage').addEventListener('touchend', e=>{ let dx=e.changedTouches[0].clientX - sx; if(dx<-40) stepUp(); if(dx>40) stepDown(); });
+
+renderDots(); renderStair();
+</script>
+</body>
+</html>

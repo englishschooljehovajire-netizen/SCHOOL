@@ -3,234 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School Photos & Videos Gallery</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>JJES - Pangbalkawn | Pvt. Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-  body{background:#062a3d;color:#fff}
-  header{padding:25px 5%;display:flex;justify-content:space-between;align-items:center}
-  header h1{font-size:28px;color:#2fb9e8;line-height:1.1}
-  header h1 span{color:#fff;font-size:15px;font-weight:400;display:block;margin-top:6px}
-  .badge{background:#34495e;padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:2px}
-  .wrap{display:flex;gap:25px;padding:0 5% 40px}
-  .left{width:320px;flex-shrink:0}
-  .left p{font-size:14px;line-height:1.6;color:#cbdde8;margin-bottom:18px}
-  .cats{display:flex;flex-direction:column;gap:10px}
-  .cats button{text-align:left;background:#0b3a52;border:1px solid #1a4f68;color:#fff;padding:13px 16px;border-radius:10px;cursor:pointer;font-size:15px;display:flex;justify-content:space-between}
-  .cats button.active,.cats button:hover{background:#2fb9e8;color:#062a3d;font-weight:700}
-  .cats button span{font-size:12px;background:rgba(255,255,255,.25);padding:3px 8px;border-radius:20px}
-  .desc-box{margin-top:20px;background:#fff;color:#222;border-radius:14px;padding:18px}
-  .desc-box p{color:#555;font-size:14px;line-height:1.6}
-  .right{flex:1;min-width:0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html,body{width:100%;overflow-x:hidden}
+body{background:#fff;margin:0;position:relative}
+.slideshow{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden}
+.bg-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.5s ease;background-size:cover;background-position:center}
+.bg-slide.active{opacity:1}
+.slideshow::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.32);z-index:1}
+header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100;width:100%}
+.menu{font-size:26px;cursor:pointer;color:#1a5f9e}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.school-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #1a5f9e}
+.logo h1{font-size:13px;color:#1a5f9e;font-weight:700;line-height:1.1}
+.logo p{font-size:9px;color:#666}
+.topbar{background:#0e3d6b;color:white;display:flex;justify-content:space-between;padding:8px 16px;font-size:11px;width:100%}
+#drawer{position:fixed;top:0;left:-280px;width:270px;height:100%;background:#fff;z-index:200;transition:.3s;overflow-y:auto}
+#drawer.open{left:0}
+.drawer-head{padding:18px 22px;font-weight:700;color:#1a5f9e;border-bottom:2px solid #1a5f9e;margin:0 12px}
+.menu-list{list-style:none}.menu-list li{border-bottom:1px solid #f0f0f0}.menu-list li a{display:flex;gap:12px;padding:14px 22px;color:#555;text-decoration:none;font-size:14px}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:150}#overlay.show{display:block}
 
-  /* SLIDER */
-  .slider{position:relative;border-radius:16px;overflow:hidden;height:360px;background:#000}
-  .slides{display:flex;height:100%;transition:transform .6s ease}
-  .slide{min-width:100%;height:100%;position:relative}
-  .slide img,.slide video{width:100%;height:100%;object-fit:cover}
-  .slide .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 22px 22px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
-  .slide .cap b{font-size:22px}
-  .slide .cap p{font-size:14px;color:#ddd}
-  .prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:none;width:42px;height:42px;border-radius:50%;font-size:20px;cursor:pointer;z-index:2}
-  .prev{left:12px}.next{right:12px}
-  .dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:2}
-  .dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.6);cursor:pointer}
-  .dots button.active{background:#2fb9e8;width:26px;border-radius:20px}
+/* ===== SIR ZAWHNG ZAWHNG LUAH VEK - FULL BLEED ===== */
+.jjes-cards{width:100%;max-width:100%;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.g-hero{
+  background:linear-gradient(135deg,#0e3d6b 0%,#1a5f9e 55%,#2d1b69 100%);
+  color:#fff;border-radius:0;padding:30px 22px;position:relative;overflow:hidden;
+  box-shadow:none;border:0;width:100%
+}
+.g-hero::after{content:'📸';position:absolute;right:22px;top:12px;font-size:78px;opacity:.18}
+.g-hero .eyebrow{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:30px;font-size:11px;letter-spacing:1.5px;font-weight:700}
+.g-hero h3{font-size:22px;line-height:1.25;margin:14px 0 6px;font-weight:800}
+.g-hero h5{font-size:14px;font-weight:600;color:#cde6ff;margin-bottom:10px}
+.g-hero p{font-size:13.5px;line-height:1.8;color:#eaf3ff;text-align:justify}
+.g-card{
+  background:#fff;border-radius:0;padding:24px 22px;
+  box-shadow:none;border:0;border-bottom:1px solid #e8eef5;width:100%
+}
+.g-card h5{
+  display:flex;align-items:center;gap:10px;font-size:15px;color:#0e3d6b;font-weight:800;
+  margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid #eef3fa
+}
+.g-card h5 .ic{
+  width:36px;height:36px;min-width:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:#e8f2ff;color:#1a5f9e;font-size:16px
+}
+.g-card p{font-size:13px;color:#333;line-height:1.85;text-align:justify}
+.purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}
+.purpose-item{
+  background:#f7faff;border:1px solid #e6eefb;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:flex-start
+}
+.purpose-item .n{
+  width:32px;height:32px;min-width:32px;border-radius:50%;background:#1a5f9e;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px
+}
+.purpose-item b{display:block;font-size:13.5px;color:#1a3a5f;line-height:1.3}
+.purpose-item span{font-size:12.5px;color:#555;line-height:1.6;display:block;margin-top:3px}
+.highlight-card{background:linear-gradient(135deg,#fff7e6,#fffdf5)}
+.highlight-card h5{border-color:#ffe9b0}
+.highlight-card h5 .ic{background:#fff0c2;color:#8a5a00}
+.safety-card{background:linear-gradient(135deg,#eefcf3,#ffffff)}
+.safety-card h5 .ic{background:#d6f5e0;color:#0e7a3a}
+.gratitude-card{background:linear-gradient(135deg,#f0eaff,#ffffff);text-align:center}
+.gratitude-card h5{justify-content:center}
+.gratitude-card p{text-align:center}
+.school-sign{margin-top:14px;font-weight:800;color:#0e3d6b;font-size:14px}
+.school-sign small{display:block;font-weight:600;color:#1a5f9e;font-size:12.5px;margin-top:2px}
+.view-more{text-align:center;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.view-more a.m-btn{background:#fff;border:1px solid #d0ddf0;color:#1a3a5f;font-size:12px;font-weight:600;text-decoration:none;padding:9px 18px;border-radius:30px;box-shadow:0 3px 8px rgba(0,0,0,.06)}
+.view-more a.m-btn:hover{background:#1a5f9e;color:#fff;border-color:#1a5f9e}
 
-  /* PROGRAM CARD - VIDEO + 2/3 PHOTOS */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:18px}
-  .program{background:#fff;color:#222;border-radius:16px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.3)}
-  .main-media{position:relative;height:260px;background:#000;cursor:pointer}
-  .main-media img,.main-media video{width:100%;height:100%;object-fit:cover;display:none}
-  .main-media img.active,.main-media video.active{display:block}
-  .live{position:absolute;top:12px;left:12px;background:#ff2d55;color:#fff;font-size:11px;padding:5px 10px;border-radius:20px;font-weight:700}
-  .live::before{content:"● ";animation:blink 1s infinite}
-  @keyframes blink{50%{opacity:.3}}
-  .count{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:5px 10px;border-radius:20px}
-  .thumbs{display:flex;gap:8px;padding:10px;background:#f4f8fa}
-  .thumbs .thumb{flex:1;height:68px;border-radius:10px;overflow:hidden;cursor:pointer;border:3px solid transparent;position:relative;padding:0}
-  .thumbs .thumb.active{border-color:#2fb9e8}
-  .thumbs img,.thumbs video{width:100%;height:100%;object-fit:cover}
-  .thumbs .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;text-shadow:0 0 8px #000}
-  .info{padding:16px}
-  .info h3{font-size:17px}
-  .info p{font-size:13.5px;color:#666;line-height:1.6;margin-top:6px}
-  .tag{display:inline-block;font-size:11px;background:#e0f4fb;color:#0a6a8a;padding:4px 10px;border-radius:20px;margin-top:10px}
-  .btns{display:flex;gap:8px;margin-top:12px}
-  .btns button{flex:1;padding:10px;border:none;border-radius:9px;cursor:pointer;font-weight:600}
-  .btns .view{background:#2fb9e8;color:#fff}
-  .btns .share{background:#eef2f5}
+/* --- DESKTOP : SIR LUAH VEK, 2 COLUMN PHARH --- */
+@media(min-width:1024px){
+  .jjes-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "purpose purpose"
+      "consent fame"
+      "safety gratitude";
+    gap:0;
+  }
+  .g-hero{grid-area:hero; padding:38px 40px; min-height:220px}
+  .g-hero h3{font-size:30px; max-width:82%}
+  .g-hero p{max-width:84%; font-size:14.5px}
+  .g-hero::after{font-size:115px; right:38px; top:18px}
+  .g-card{height:100%; padding:28px 30px; border-bottom:1px solid #e8eef5; border-right:1px solid #e8eef5}
+  .purpose-card{grid-area:purpose}
+  .consent-card{grid-area:consent}
+  .fame-card{grid-area:fame}
+  .safety-card{grid-area:safety}
+  .gratitude-card{grid-area:gratitude}
+  .purpose-grid{grid-template-columns:1fr 1fr 1fr 1fr}
+  .g-card h5{font-size:16px}
+  .g-card p{font-size:13.5px}
+}
 
-  @media(max-width:900px){.wrap{flex-direction:column}.left{width:100%}.cats{flex-direction:row;flex-wrap:wrap}.cats button{flex:1;min-width:140px}.grid{grid-template-columns:1fr}.slider{height:280px}}
+/* --- TABLET --- */
+@media(min-width:700px) and (max-width:1023px){
+  .jjes-cards{display:grid; grid-template-columns:1fr 1fr; gap:0}
+  .g-hero{grid-column:1 / -1}
+  .purpose-card{grid-column:1 / -1}
+  .purpose-grid{grid-template-columns:1fr 1fr}
+}
+
+/* --- MOBILE - SIR LUAH VEK BAWK --- */
+@media(max-width:699px){
+  .purpose-grid{grid-template-columns:1fr}
+  .g-hero{padding:24px 16px}
+  .g-hero h3{font-size:19px}
+  .g-hero::after{font-size:56px}
+  .g-card{padding:20px 16px}
+}
+
+.jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px 0;width:100%;margin:0}
+.jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 18px;width:100%}
+.jjes-footer-about{flex:1 1 300px;background:rgba(255,255,255,.15);border-radius:10px;padding:16px}
+.jjes-footer-about-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.jjes-footer-about-head img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#fff}
+.jjes-footer-about-head h4{font-size:13px;color:#fff;font-weight:800;line-height:1.1}
+.jjes-footer-about p{font-size:11.5px;line-height:1.6;color:#e9e5f5}
+.jjes-footer-social{display:flex;gap:10px;margin-top:12px}
+.jjes-footer-social a{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;color:#fff;text-decoration:none}
+.jjes-footer-links{flex:1 1 400px;display:flex;gap:18px}
+.jjes-footer-col{flex:1}.jjes-footer-col h4{font-size:13px;color:#fff;margin-bottom:10px}
+.jjes-footer-col ul{list-style:none}.jjes-footer-col ul li{margin:5px 0}.jjes-footer-col ul li a{font-size:11.5px;color:#c8c1dd;text-decoration:none}
+.jjes-footer-col ul li a::before{content:"▸ ";font-size:10px}
+.jjes-footer-contact{flex:1 1 240px}.jjes-footer-contact h3{font-size:13px;color:#fff;margin-bottom:8px}.jjes-footer-contact p{font-size:11.5px;color:#c8c1dd;line-height:1.6}
+.jjes-footer-call{display:inline-flex;background:#ff3b2f;color:#fff;padding:8px 14px;border-radius:6px;font-weight:700;font-size:12px;text-decoration:none;margin-top:8px;margin-right:6px}
+.jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:18px;padding:10px 18px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd}
+.jjes-footer-bottom b{color:#fff}
 </style>
 </head>
 <body>
+<div class="slideshow">
+<div class="bg-slide active" style="background-image:url('learning1.jpg')"></div>
+<div class="bg-slide" style="background-image:url('learning2.jpg')"></div>
+<div class="bg-slide" style="background-image:url('learning3.jpg')"></div>
+<div class="bg-slide" style="background-image:url('learning4.jpg')"></div>
+<div class="bg-slide" style="background-image:url('learning5.jpg')"></div>
+</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+<div id="drawer"><div class="drawer-head">MENU</div><ul class="menu-list">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">🏫 About Us</a></li>
+<li><a href="admission-form.html">🎓 Student Admission</a></li>
+<li><a href="our-academics.html">👧👦 Our Academics</a></li>
+<li><a href="notification.html">🔔 OM / Notifications</a></li>
+<li><a href="terms-conditions.html">📄 Terms & Conditions</a></li>
+<li><a href="privacy-policy.html">📰 Privacy Policy</a></li>
+<li><a href="contact.html">📞 Contact</a></li>
+<li><a><span>Update: <b>19-10-2026</b></span> <span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span></a></li>
+</ul></div>
+<div class="topbar"><span id="liveTime">⏰ Loading...</span><span id="visitCount">👁️ Visitors: 0</span></div>
+<header><div class="menu" onclick="toggleMenu()">☰</div><div class="logo-wrap"><img src="logo.jpg" alt="Logo" class="school-logo"><div class="logo"><h1>Jehova Jire English School</h1><p>Govt. Recognised | UDISE No. 15024100019</p><p>Near Community Hall, Pangbalkawn, Kolasib 796081</p><p>Estd. 10th Jan. 2011 | Motto: Brighten up your future</p></div></div></header>
 
-<header>
-  <div><span class="badge">WE CREATE MEMORIES</span><h1>School Photos<br>Gallery</h1></div>
-  <div style="text-align:right;font-size:13px;color:#cbdde8">Pangbalkawn, Mizoram<br><b style="color:#fff">2025 - 2026</b></div>
-</header>
+<div class="jjes-cards">
 
-<div class="wrap">
-  <div class="left">
-    <h2>Categories</h2>
-<p></p>
-    <div class="cats" id="cats">
-      <button data-cat="all" class="active">All Programmes <span>0</span></button>
-      <button data-cat="teachers">Teachers Day <span>0</span></button>
-      <button data-cat="children">Children Day <span>0</span></button>
-      <button data-cat="independence">Independence Day <span>0</span></button>
-      <button data-cat="farewell">Farewell <span>0</span></button>
-      <button data-cat="tour">Tour <span>0</span></button>
-      <button data-cat="sports">Sports <span>0</span></button>
+  <div class="g-hero">
+    <span class="eyebrow">SCHOOL PHOTOS & VIDEOS GALLERY</span>
+    <h3>Our Gallery: A Celebration of Learning and Togetherness</h3>
+    <h5>Our Gallery: A Celebration of Learning and Togetherness</h5>
+    <p>At Jehova Jire English School (JJES), we cherish every moment of our students' journey — their learning, their achievements, their smiles, and their growth. Our photo and video gallery has been created with love and appreciation, to preserve these precious memories and to celebrate the collective progress of our school community.</p>
+  </div>
+
+  <div class="g-card purpose-card">
+    <h5><span class="ic"><i class="fa-solid fa-bullseye"></i></span> Purpose of Sharing Photos and Videos</h5>
+    <p>The photographs and videos shared on this website are published solely for the following purposes:</p>
+    <div class="purpose-grid" style="margin-top:14px">
+      <div class="purpose-item"><div class="n">1</div><div><b>To Appreciate and Encourage</b><span>To acknowledge the hard work, talent, and dedication of our students and teachers.</span></div></div>
+      <div class="purpose-item"><div class="n">2</div><div><b>To Document School Life</b><span>To preserve a record of our academic programmes, cultural events, sports, tours, celebrations, and special moments throughout the year.</span></div></div>
+      <div class="purpose-item"><div class="n">3</div><div><b>To Promote the Growth of Our School</b><span>To showcase the values, discipline, creativity, and all-round development nurtured at JJES, and to inspire future students and families.</span></div></div>
+      <div class="purpose-item"><div class="n">4</div><div><b>To Strengthen Our School Community</b><span>To keep parents, guardians, and well-wishers connected with the life and progress of our school.</span></div></div>
     </div>
-    <div class="desc-box"><h3 id="descTitle">All Programmes</h3><p id="descText">A showcase of all our programmes in the academic year 2025–26 honouring our dedicated teachers and celebrating the talent of our students. A year of learning, growth, and memorable moments. Watch the full video.</small></div>
   </div>
 
-  <div class="right">
-    <div class="slider" id="slider"><div class="slides" id="slides"></div><button class="prev" onclick="moveSlide(-1)">❮</button><button class="next" onclick="moveSlide(1)">❯</button><div class="dots" id="dots"></div></div>
-    <div style="display:flex;justify-content:space-between;margin:12px 2px;font-size:13px;color:#cbdde8"><span id="slideInfo">1 / 1</span><span>Video chu auto-play a ni</span></div>
-    <div style="display:flex;justify-content:space-between;align-items:center"><h3 id="galleryTitle">All Programmes</h3><input id="search" placeholder="Search..." style="padding:10px 14px;border-radius:20px;border:none;width:220px"></div>
-    <div class="grid" id="grid"></div>
+  <div class="g-card consent-card">
+    <h5><span class="ic"><i class="fa-solid fa-user-check"></i></span> With Parental Consent</h5>
+    <p>All photographs and videos featuring our students are shared only with the full consent and permission of their parents / guardians. We deeply respect the privacy, dignity, and safety of every child. No content is shared for personal publicity, personal promotion, or any commercial purpose.</p>
   </div>
+
+  <div class="g-card highlight-card fame-card">
+    <h5><span class="ic"><i class="fa-solid fa-heart"></i></span> Not for Personal Fame</h5>
+    <p>This gallery is not intended to promote any individual for personal fame or recognition. Every child featured here is equally valued, and every moment shared reflects the spirit of teamwork, unity, and togetherness that defines JJES. Our focus is always on the school as a family — where every student is encouraged, every teacher is honoured, and every achievement is celebrated together.</p>
+  </div>
+
+  <div class="g-card safety-card">
+    <h5><span class="ic"><i class="fa-solid fa-shield-halved"></i></span> Our Commitment to Child Safety</h5>
+    <p>We are committed to maintaining a safe, respectful, and positive online environment for our students. If any parent or guardian wishes to have a photograph or video of their child removed or updated, they are most welcome to contact the school administration, and we will promptly attend to the request with full respect and understanding.</p>
+  </div>
+
+  <div class="g-card gratitude-card">
+    <h5><span class="ic"><i class="fa-solid fa-hands-holding-child"></i></span> A Message of Gratitude</h5>
+    <p>We extend our heartfelt gratitude to our dear parents for their trust, support, and consent. Your encouragement makes it possible for us to celebrate our children and share the joy of their growth with the wider community. Together, let us continue to build a school where children learn with joy, grow with values, and shine with confidence.</p>
+    <div class="school-sign">JEHOVA JIRE English School<small>Learning, Growing, Excelling Together.</small></div>
+    <div class="view-more">
+      <a href="gallery-2025.html" class="m-btn">Gallery@2025</a>
+      <a href="gallery-2026.html" class="m-btn">Gallery@2026</a>
+      <a href="gallery-2027.html" class="m-btn">Gallery@2027</a>
+    </div>
+  </div>
+
 </div>
 
+<footer class="jjes-footer">
+<div class="jjes-footer-top">
+<div class="jjes-footer-about"><div class="jjes-footer-about-head"><img src="logo.jpg" alt="JJES Logo"><h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4></div><p style="text-align:justify">Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Near Community Hall, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div>
+<div class="jjes-footer-links"><div class="jjes-footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-school.html">Our History</a></li><li><a href="about.html">Curriculum</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="admission-form.html">Admission Enquiry</a></li></ul></div><div class="jjes-footer-col"><h4>&nbsp;</h4><ul><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="terms-conditions.html">Fee Structure</a></li><li><a href="index.html">News & Events</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-conditions.html">Terms & Conditions</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div>
+<div class="jjes-footer-contact"><h3>Contact Information</h3><p>Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p><div>✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></div><a class="jjes-footer-call" href="tel:+919612356076">📞 +91 9612356076</a><a class="jjes-footer-call" href="tel:+918731996242">📞 +91 8731996242</a><div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div></div>
+</div>
+<div class="jjes-footer-bottom"><span>Last Update : <b>19-10-2026</b></span><span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span><div>JJES Official Website</div></div>
+</footer>
+
 <script>
-const descriptions = {
-  teachers:{title:"Teachers Day",text:"A proud moment for our school — honouring our dedicated teachers, followed by a beautiful song performance by our students. Watch the full video to relive the celebration.",meta:"📅 5 Sept 2025"},
-  children:{title:"Children Day",text:"Children’s Day Celebration 2025–26 a joyful day of sports, games, and a vibrant cultural programme. Celebrating the talent, energy, and smiles of our children. Watch the full video.",meta:"📅 14 Nov 2025"},
-  independence:{title:"Independence Day",text:"Independence Day Celebration 2025–26 honouring the spirit of freedom, unity, and patriotism. A proud moment of flag hoisting, patriotic songs, and performances by our students. Watch the full video.",meta:"📅 15 Aug 2025"},
-  farewell:{title:"Farewell",text:"Farewell Programme 2025–26 bidding a heartfelt farewell to the students of each class, with gratitude, memories, and best wishes for a bright future. Watch the full video.",meta:"📅 March 2026"},
-  tour:{title:"Tour",text:"School Tour 2025-26 a joyful picnic and tour filled with learning, laughter, and unforgettable memories. A wonderful day of exploration and togetherness for our students. Watch the full video.",meta:"📅 Jan 2026"},
-  others:{title:"Others",text:"Sports Day 2025–26 a day of energy, teamwork, and sportsmanship, concluded with the distribution of prizes to our achievers. Celebrating fitness, discipline, and excellence. Watch the full video.",meta:"📅 2025-26"},
-  all:{title:"All Programmes",text:"A showcase of all our programmes in the academic year 2025–26 honouring our dedicated teachers and celebrating the talent of our students. A year of learning, growth, and memorable moments. Watch the full video.",meta:"📷 Video + Photos"}
-};
-
-/* ===== I DAH TUR - PROGRAMME 1 AH VIDEO 1 + PHOTO 2/3 =====
-   video: i video file - "videos/teachers-day.mp4"
-   photos: ["images/t1.jpg","images/t2.jpg","images/t3.jpg"] - 2 emaw 3 emaw
-*/
-const programs = [
-  {
-    cat:"teachers", title:"Teachers Day 2025", desc:"A proud moment for our school — honouring our dedicated teachers, followed by a beautiful song performance by our students. Watch the full video to relive the celebration.",
-    date:"5 Sept 2025",
-    video:"2025teachers-day.mp4", // <-- hetah i video dah rawh
-    photos:["2025teach-photo1.jpg","2025teach-photo2.jpg","2025teach-photo3.jpg"]
-  },
-  {
-    cat:"children", title:"Children Day 2025", desc:"Children’s Day Celebration 2025–26 a joyful day of sports, games, and a vibrant cultural programme. Celebrating the talent, energy, and smiles of our children. Watch the full video.",
-    date:"14 Nov 2025",
-    video:"2025childrens-day.mp4",
-    photos:["2025childrens-photo1.jpg","2025childrens-photo2.jpg"]
-  },
-  {
-    cat:"independence", title:"Independence Day 2025", desc:"Independence Day Celebration 2025–26 — honouring the spirit of freedom, unity, and patriotism. A proud moment of flag hoisting, patriotic songs, and performances by our students. Watch the full video.",
-    date:"15 Aug 2025",
-    video:"2025i-day.mp4",
-    photos:["2025iday-photo1.jpg","2025iday-photo2.jpg","2025iday-photo3.jpg"]
-  },
-  {
-    cat:"tour", title:"School Tour 2026", desc:"School Tour 2025-26 a joyful picnic and tour filled with learning, laughter, and unforgettable memories. A wonderful day of exploration and togetherness for our students. Watch the full video.",
-    date:"Nov 2025",
-    video:"2025tour.mp4",
-    photos:["2025tour-photo1.jpg","2025tour-photo2.jpg","2025tour-photo3.jpg"]
-  },
-  {
-    cat:"farewell", title:"School Farewell", desc:"Farewell Programme 2025–26 bidding a heartfelt farewell to the students of each class, with gratitude, memories, and best wishes for a bright future. Watch the full video.",
-    date:"March 2026",
-    video:"2025farewell.mp4",
-    photos:["2025farewell-photo1.jpg","2025farewell-photo2.jpg"]
-  },
-  {
-    cat:"Sports", title:"Sports Day", desc:"Sports Day 2025–26 a day of energy, teamwork, and sportsmanship, concluded with the distribution of prizes to our achievers. Celebrating fitness, discipline, and excellence. Watch the full video.",
-    date:"Dec 2025",
-    video:"2025sports.mp4",
-    photos:["2025sports-photo1.jpg","2025sports-photo2.jpg","2025sports-photo3.jpg"]
-  },
-];
-
-let currentCat="all", currentSlide=0;
-function getFiltered(){ return programs.filter(p=>currentCat==="all"||p.cat===currentCat); }
-
-// SLIDER - video auto play
-function renderSlider(){
-  const list=getFiltered();
-  document.getElementById("slides").innerHTML=list.map(p=>`
-    <div class="slide">
-      <video src="${p.video}" autoplay muted loop playsinline></video>
-      <div class="cap"><b>${p.title}</b><p>${p.desc}</p><span>▶ VIDEO • ${p.date}</span></div>
-    </div>`).join("");
-  document.getElementById("dots").innerHTML=list.map((_,i)=>`<button onclick="goToSlide(${i})"></button>`).join("");
-  currentSlide=0; updateSlider();
-}
-function updateSlider(){
-  const list=getFiltered(); if(!list.length) return;
-  if(currentSlide>=list.length) currentSlide=0; if(currentSlide<0) currentSlide=list.length-1;
-  document.getElementById("slides").style.transform=`translateX(-${currentSlide*100}%)`;
-  document.querySelectorAll("#dots button").forEach((d,i)=>d.classList.toggle("active",i===currentSlide));
-  document.getElementById("slideInfo").textContent=`${currentSlide+1} / ${list.length}`;
-}
-function moveSlide(n){currentSlide+=n;updateSlider()}
-function goToSlide(i){currentSlide=i;updateSlider()}
-setInterval(()=>{currentSlide++;updateSlider()},4000);
-
-// PROGRAM CARDS - VIDEO + PHOTOS
-function renderGrid(){
-  const q=document.getElementById("search").value.toLowerCase();
-  const list=getFiltered().filter(p=>p.title.toLowerCase().includes(q));
-  const grid=document.getElementById("grid");
-  grid.innerHTML=list.map((p,idx)=>{
-    const total = 1 + p.photos.length;
-    return `
-    <div class="program" id="prog-${idx}">
-      <div class="main-media">
-        <span class="live">AUTO PLAY</span><span class="count">1 Video + ${p.photos.length} Photos</span>
-        <video class="active" src="${p.video}" autoplay muted loop playsinline controls></video>
-        ${p.photos.map((ph,i)=>`<img src="${ph}">`).join("")}
-      </div>
-      <div class="thumbs">
-        <button class="thumb active" onclick="showMedia(${idx},0,this)"><video src="${p.video}" muted playsinline></video><span class="play">▶</span></button>
-        ${p.photos.map((ph,i)=>`<button class="thumb" onclick="showMedia(${idx},${i+1},this)"><img src="${ph}"></button>`).join("")}
-      </div>
-      <div class="info">
-        <h3>${p.title}</h3><p>${p.desc}</p>
-        <span class="tag">${p.cat} • ${p.date} • ${total} files</span>
-        <div class="btns"><button class="view" onclick="showMedia(${idx},0,null);document.querySelector('#prog-${idx} video').scrollIntoView({behavior:'smooth',block:'center'})">▶ Watch Video</button><button class="share" onclick="alert('${p.title} link copy!')">🔗 Share</button></div>
-      </div>
-    </div>`;
-  }).join("") || "<p>Programme a awm lo.</p>";
-
-  document.querySelectorAll("#cats button").forEach(btn=>{
-    const c=btn.dataset.cat; btn.querySelector("span").textContent = c==="all"?programs.length:programs.filter(p=>p.cat===c).length;
-  });
-}
-
-function showMedia(progIdx, mediaIdx, btn){
-  const card=document.getElementById(`prog-${progIdx}`);
-  const mains=card.querySelectorAll(".main-media video, .main-media img");
-  mains.forEach(m=>m.classList.remove("active"));
-  const target=mains[mediaIdx];
-  target.classList.add("active");
-  // video a nih chuan play, photo a nih chuan video pause
-  card.querySelectorAll(".main-media video").forEach(v=>v.pause());
-  if(target.tagName==="VIDEO"){ target.play(); target.muted=true; }
-  card.querySelectorAll(".thumb").forEach(t=>t.classList.remove("active"));
-  if(btn) btn.classList.add("active"); else card.querySelectorAll(".thumb")[mediaIdx].classList.add("active");
-}
-
-document.querySelectorAll("#cats button").forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll("#cats button").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active"); currentCat=btn.dataset.cat;
-    const d=descriptions[currentCat];
-    document.getElementById("descTitle").textContent=d.title;
-    document.getElementById("descText").textContent=d.text;
-    document.getElementById("descMeta").textContent=d.meta;
-    document.getElementById("galleryTitle").textContent=d.title;
-    renderSlider(); renderGrid();
-  };
-});
-document.getElementById("search").oninput=renderGrid;
-renderSlider(); renderGrid();
+function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
+function updateTime(){const now=new Date();const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});document.getElementById('liveTime').innerText='⏰ '+str+' IST';const ft=document.getElementById('footerTime');if(ft)ft.innerText=str+' IST';}
+setInterval(updateTime,1000);updateTime();
+let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;localStorage.setItem('jjes_visits',c);document.getElementById('visitCount').innerText='👁️ Visitor Count : '+c.toLocaleString('en-IN');
+let bgIdx=0;const slides=document.querySelectorAll('.bg-slide');
+setInterval(()=>{slides[bgIdx].classList.remove('active');bgIdx=(bgIdx+1)%slides.length;slides[bgIdx].classList.add('active');},3500);
 </script>
 </body>
 </html>
