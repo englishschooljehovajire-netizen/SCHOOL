@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <title>JEHOVA JIRE English School - Pangbalkawn | Pvt. Institute</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- PRELOAD SLIDER IMAGES - FIX FOR FIRST SLIDE DELAY -->
 <link rel="preload" as="image" href="campus-toon.jpg">
 <link rel="preload" as="image" href="image-two.jpg">
 <link rel="preload" as="image" href="smart-learning.jpg">
@@ -36,16 +35,17 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#ff
 .slide-text{position:absolute;bottom:44px;left:20px;color:#fff;z-index:2}.slide-text h2{font-size:26px;font-weight:800;line-height:1.15}.slide-text p{font-size:13px;opacity:.92}
 .slide-text span{background:#ffb703;color:#222;font-size:11px;font-weight:800;padding:6px 16px;border-radius:50px}
 .dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}.dot.active{background:#fff;transform:scale(1.2)}
-.jjes-cards{width:100%;max-width:100%;margin:0;padding:12px;display:flex;flex-direction:column;gap:12px;background:transparent}
-.jjes-card{background:#fff;border:none;border-top:4px solid #1a5f9e;border-radius:20px;padding:26px 20px;margin:0 12px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+/* SIDES PRESSED, TOP AND BOTTOM GAP ONLY */
+.jjes-cards{width:100%;max-width:100%;margin:0;padding:12px 0;display:flex;flex-direction:column;gap:12px;background:transparent}
+.jjes-card{background:#fff;border:none;border-top:4px solid #1a5f9e;border-radius:20px;padding:26px 16px;margin:0;box-shadow:0 3px 12px rgba(0,0,0,.06)}
 .jjes-card h3{font-size:15px;font-weight:800;margin-bottom:10px;text-transform:uppercase;display:flex;align-items:center;gap:12px}
 .jjes-card h3 .icon{width:44px;height:44px;min-width:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.15)}
 .jjes-card p{font-size:13px;color:#444;line-height:1.9;text-align:justify}
 .view-more{text-align:right;margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
 .view-more a{font-size:12px;font-weight:700;text-decoration:none;background:#f0f7ff;padding:10px 20px;border-radius:50px;transition:.2s}
 .view-more a:hover{transform:translateY(-1px)}
-.jjes-card-row{display:flex;flex-wrap:nowrap;width:calc(100% - 24px);max-width:100%;background:#fff;border-radius:20px;box-shadow:0 3px 12px rgba(0,0,0,.06);border:none;margin:0 12px;overflow:hidden}
-.text-side{flex:1 1 55%;padding:26px 22px;display:flex;flex-direction:column;justify-content:center}
+.jjes-card-row{display:flex;flex-wrap:nowrap;width:100%;max-width:100%;background:#fff;border-radius:20px;box-shadow:0 3px 12px rgba(0,0,0,.06);border:none;margin:0;overflow:hidden}
+.text-side{flex:1 1 55%;padding:26px 16px;display:flex;flex-direction:column;justify-content:center}
 .text-side h3{font-size:14px;font-weight:800;margin-bottom:14px;text-transform:uppercase;display:flex;align-items:center;gap:12px}
 .text-side h3 .icon{width:44px;height:44px;min-width:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.15)}
 .text-side p{font-size:13px;color:#444;line-height:1.9;text-align:justify;margin-bottom:10px}
@@ -87,19 +87,19 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#ff
 .proverbs-card .text-side h3 .icon{background:#ff9800;color:#fff}
 .proverbs-card .verse{background:#fff;border-left:4px solid #ff9800;padding:12px;border-radius:20px;margin-bottom:10px}
 .proverbs-card .verse b{color:#e65100;font-size:12px}
-.facts{width:calc(100% - 24px);margin:0 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.facts{width:100%;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .fact{background:#fff;border-radius:20px;padding:18px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.06);border-top:4px solid #1a5f9e}
 .fact:nth-child(2){border-top-color:#2e9e4a}.fact:nth-child(3){border-top-color:#ff6b00}.fact:nth-child(4){border-top-color:#7b1fa2}
 .fact b{display:block;font-size:20px;color:#1a5f9e;line-height:1}
 .fact span{font-size:11.5px;color:#666;font-weight:600}
-@media(max-width:800px){.jjes-card-row{flex-direction:column;margin:0 10px;width:calc(100% - 20px)}.img-side{order:1;min-height:230px}.text-side{order:2;padding:20px}.slider{height:260px}.facts{grid-template-columns:1fr 1fr;margin:0 10px;width:calc(100% - 20px)}.jjes-card{margin:0 10px}}
-.map-wrap{width:calc(100% - 24px);margin:12px;background:#fff;border-radius:20px;border:none;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
-.map-head{padding:16px 20px;font-size:14px;font-weight:800;color:#0e3d6b;display:flex;align-items:center;gap:10px}.map-head span{width:36px;height:36px;border-radius:50%;background:#1a5f9e;color:#fff;display:flex;align-items:center;justify-content:center}
+@media(max-width:800px){.jjes-card-row{flex-direction:column;margin:0;width:100%}.img-side{order:1;min-height:230px}.text-side{order:2;padding:20px 16px}.slider{height:260px}.facts{grid-template-columns:1fr 1fr;margin:0;width:100%;gap:10px}.jjes-card{margin:0}}
+.map-wrap{width:100%;margin:12px 0;background:#fff;border-radius:20px;border:none;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.map-head{padding:16px 16px;font-size:14px;font-weight:800;color:#0e3d6b;display:flex;align-items:center;gap:10px}.map-head span{width:36px;height:36px;border-radius:50%;background:#1a5f9e;color:#fff;display:flex;align-items:center;justify-content:center}
 .map-frame{width:100%;height:360px}.map-frame iframe{width:100%;height:100%;border:0}
-.map-foot{padding:16px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.map-foot{padding:16px 16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
 .map-foot a{background:#1a5f9e;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px}
 .jjes-footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;width:100%;margin:12px 0 0}
-.jjes-footer-top{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:0 18px;width:100%}
+.jjes-footer-top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:0 12px;width:100%}
 .jjes-footer-about{flex:1 1 300px;background:rgba(255,255,255,.15);border-radius:16px;padding:16px}
 .jjes-footer-about-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
 .jjes-footer-about-head img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#fff}
@@ -113,7 +113,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#ff
 .jjes-footer-col ul li a::before{content:"▸ ";font-size:10px}
 .jjes-footer-contact{flex:1 1 240px}.jjes-footer-contact h3{font-size:13px;color:#fff;margin-bottom:8px}.jjes-footer-contact p{font-size:11.5px;color:#c8c1dd;line-height:1.6}
 .jjes-footer-call{display:inline-flex;background:#ff3b2f;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:12px;text-decoration:none;margin-top:8px;margin-right:6px}
-.jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:18px;padding:10px 18px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd}
+.jjes-footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:18px;padding:10px 12px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;color:#b7b0cd}
 .jjes-footer-bottom b{color:#fff}
 </style>
 </head>
@@ -134,7 +134,6 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#ff
 <div class="topbar"><span id="liveTime">⏰ Loading...</span><span id="visitCount">👁️ Visitors: 0</span></div>
 <header><div class="menu" onclick="toggleMenu()">☰</div><div class="logo-wrap"><img src="logo.jpg" alt="Logo" class="school-logo"><div class="logo"><h1>Jehova Jire English School</h1><p>Govt. Recognised | UDISE No. 15024100019</p><p>Near Community Hall, Pangbalkawn, Kolasib 796081</p><p>Estd. 10th Jan. 2011 | Motto: Brighten up your future</p></div></div></header>
 <div class="slider" id="mainSlider">
-<!-- FIXED: FIRST SLIDE NOW HAS active CLASS, SO IT SHOWS IMMEDIATELY -->
 <div class="slide active" style="background-image:url('campus-toon.jpg')"><div class="slide-text"><span>BEST LEARNING ENVIRONMENT</span><h2>Location</h2><p>Peaceful • Safe • Clean Air</p></div></div>
 <div class="slide" style="background-image:url('image-two.jpg')"><div class="slide-text"><span>CHARACTER WITH EXCELLENCE</span><h2>Education - Culture</h2><p>Discipline • Values • Growth</p></div></div>
 <div class="slide" style="background-image:url('smart-learning.jpg')"><div class="slide-text"><span>TEAM WORK & DISCIPLINE</span><h2>Smart Learning</h2><p>Modern • Smart • Joyful</p></div></div>
@@ -161,9 +160,7 @@ header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#ff
 <footer class="jjes-footer"><div class="jjes-footer-top"><div class="jjes-footer-about"><div class="jjes-footer-about-head"><img src="logo.jpg" alt="JJES Logo"><h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4></div><p style="text-align:justify">Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Near Community Hall, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div class="jjes-footer-links"><div class="jjes-footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-school.html">Our History</a></li><li><a href="about.html">Curriculum</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="admission-form.html">Admission Enquiry</a></li></ul></div><div class="jjes-footer-col"><h4>&nbsp;</h4><ul><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="terms-conditions.html">Fee Structure</a></li><li><a href="index.html">News & Events</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-conditions.html">Terms & Conditions</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div><div class="jjes-footer-contact"><h3>Contact Information</h3><p>Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p><div>✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></div><a class="jjes-footer-call" href="tel:+919612356076">📞 +91 9612356076</a><a class="jjes-footer-call" href="tel:+918731996242">📞 +91 8731996242</a><div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div></div></div><div class="jjes-footer-bottom"><span>Last Update : <b>19-10-2026</b></span><span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span><div style="display:flex;gap:8px;align-items:center"><div style="border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.14);padding:7px 14px;border-radius:50px"><a href="admin-login.html" target="_blank" style="color:#ffc107;text-decoration:none;font-weight:800;font-size:11px">🔐 School Administrator LOGIN</a></div><span style="color:#fff;opacity:.7">JJES Official Website</span></div></div></footer>
 <script>
 function toggleMenu(){document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
-// FIXED SLIDER - SHOW FIRST SLIDE IMMEDIATELY, THEN AUTO PLAY
 (function(){const slider=document.getElementById('mainSlider');if(!slider)return;const slides=slider.querySelectorAll('.slide');const dots=slider.querySelectorAll('.dot');let idx=0;function show(i){slides.forEach(s=>s.classList.remove('active'));dots.forEach(d=>d.classList.remove('active'));slides[i].classList.add('active');dots[i].classList.add('active');idx=i;}
-// Show first slide at once, do not wait for interval
 show(0);
 dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));setInterval(()=>{idx=(idx+1)%slides.length;show(idx);},4000);})();
 function initMiniSlider(id){const box=document.getElementById(id);if(!box)return;let mIdx=0;const mSlides=box.querySelectorAll('.mini-slide');const mDots=box.querySelectorAll('.mini-dot');function showM(i){mSlides.forEach(s=>s.classList.remove('active'));mDots.forEach(d=>d.classList.remove('active'));if(mSlides[i])mSlides[i].classList.add('active');if(mDots[i])mDots[i].classList.add('active');mIdx=i;}mDots.forEach((d,i)=>d.addEventListener('click',()=>showM(i)));setInterval(()=>{mIdx=(mIdx+1)%mSlides.length;showM(mIdx);},3500);}
