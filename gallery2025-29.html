@@ -84,7 +84,7 @@
 </head>
 <body>
 
-<header><span>WE CREATE MEMORIES • GROWING EVERY YEAR</span><h1>SCHOOL <b>GALLERY</b><br>JEHOVA JIRE English School</h1><p>Tap a photo to expand it. Each Occasion has 3 Photos + Comments. From 2025-26 to 2028-29, we proudly present the beautiful memories of our journey.</p></header>
+<header><span>WE CREATE MEMORIES • GROWING EVERY YEAR</span><h1>SCHOOL <b>GALLERY</b><br>JEHOVA JIRE English School</h1><p>From 2025-26 to 2028-29, we proudly present the beautiful memories of our journey.</p></header>
 
 <div class="stage" id="stage"><div class="collapse-wrap" id="collapseWrap"></div></div>
 <p class="hint">Tap any Academic Year to expand. Write your comment below each Occasion ❤️</p>
@@ -98,9 +98,12 @@
 <script>
 let defaultData = {
   "2025-26": {title:"2025 - 26", cover:"cover2025-26.jpg", desc:"A collection of all our programmes.", programmes:[
-    {title:"Children's Day", date:"14 Nov 2025", desc:"Fun games and cultural programme.", photos:["childrensday1.jpg","childrensday2.jpg","childrensday3.jpg"]},
+    {title:"Sports Day", date:"Jan 2026", desc:"Sports Day celebration.", photos:["https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80","https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80","https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80"]},
+    {title:"Teacher's Day", date:"15 Aug 2025", desc:"Celebration of India's Independence Day.", photos:["https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"]},
     {title:"Independence Day", date:"15 Aug 2025", desc:"Celebration of India's Independence Day.", photos:["https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"]},
-    {title:"Sports Day", date:"Jan 2026", desc:"Sports Day celebration.", photos:["https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80","https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80","https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80"]}
+    {title:"Children's Day", date:"14 Nov 2025", desc:"Fun games and cultural programme.", photos:["1childrensday2025-26.jpg","2childrensday2025-26.jpg","3childrensday2025-26.jpg"]},
+    {title:"Education Tour", date:"15 Aug 2025", desc:"Celebration of India's Independence Day.", photos:["https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"]},
+    {title:"Farewell", date:"15 Aug 2025", desc:"Celebration of India's Independence Day.", photos:["https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"]}
   ]},
   "2026-27": {title:"2026 - 27", cover:"https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80", desc:"A new year of learning.", programmes:[
     {title:"Independence Day", date:"15 Aug 2026", desc:"Independence Day celebration.", photos:["https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80"]}
@@ -135,7 +138,7 @@ function renderCommentBox(yearKey, progTitle, uid){
   if(list.length===0) html+=`<div class="no-comment">Comment la awm lo. A hmasa ber ni rawh! 👇</div>`;
   else html+=`<div class="comment-list">${list.map(c=>`<div class="comment-item"><div class="comment-avatar">${c.name.charAt(0).toUpperCase()}</div><div><b>${c.name}</b> <small>• ${c.time}</small><p>${c.text}</p></div></div>`).join('')}</div>`;
   html+=`<div class="comment-inputs">
-    <input id="name-${uid}" placeholder="✏️ I hming ziak rawh... (Eg: Lalruata)">
+    <input id="name-${uid}" placeholder="✏️ I hming ziak rawh... (Eg: John Lalduhsanga)">
     <textarea id="text-${uid}" placeholder="💭 He photo chungchangah engnge i sawi duh? (Eg: A mawi lutuk! ❤️)"></textarea>
     <div class="emoji-row">
       <button type="button" onclick="addEmoji('text-${uid}','❤️')">❤️</button>
