@@ -44,24 +44,7 @@ body{background:transparent !important;margin:0;position:relative}
   80%{background:url('learning5.jpg') center/cover no-repeat}
   100%{background:url('learning1.jpg') center/cover no-repeat}
 }
-body::before{content:'';position:fixed;inset:0;background:transparent;z-index:-1;pointer-events:none}
-
-/* ============================================================
-   ALL CARDS - TRANSPARENT 85% = 15% WHITE + 85% SEE-THROUGH
-   Facts / Boxes / Welcome / Mini / Principal / Proverbs / Verse / Map
-============================================================ */
-.fact,.box,.welcome,.mini-card,.principal,.proverbs,.verse,.map-wrap{background:rgba(255,255,255,.15) !important;box-shadow:0 3px 12px rgba(0,0,0,.06) !important;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-.fact{border:1px solid rgba(255,255,255,.7)}
-.box{border:1px solid rgba(255,255,255,.8)}
-.mini-card{border:1px solid rgba(255,255,255,.7)}
-.verse{border-left:4px solid #ff9800 !important}
-.map-wrap{border:1px solid rgba(255,255,255,.7)}
-
-/* Text stays readable on slideshow */
-.fact b,.welcome-left h2,.welcome-left h4,.principal h3,.proverbs h3,.map-head{text-shadow:0 1px 4px rgba(255,255,255,.9)}
-.fact span,.welcome-left p,.principal p,.verse p,.mini-card p{color:#222;text-shadow:0 1px 3px rgba(255,255,255,.9)}
-.box h3,.box p,.box a{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7)}
-.mini-card h4{color:#1a2a4a;text-shadow:0 1px 3px rgba(255,255,255,.9)}
+body::before{content:'';position:fixed;inset:0;background:rgba(255,255,255,.55);z-index:-1;pointer-events:none}
 
 /* ============================================================
    5. TOPBAR
@@ -135,6 +118,8 @@ nav a.home{background:#ffb703;color:#222}
 
 /* ============================================================
    7D. MOBILE STICKY BAR - HOME PAGE ONLY
+   Hidden on desktop, shown only on mobile.
+   Only this bar stays sticky on mobile.
 ============================================================ */
 .mobile-home-bar{display:none}
 .mobile-home-bar a{display:flex;align-items:center;justify-content:center;gap:8px;background:#ffb703;color:#222;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.5px;padding:12px 10px;width:100%}
@@ -160,34 +145,34 @@ nav a.home{background:#ffb703;color:#222}
    9. FACTS
 ============================================================ */
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 5% 0}
-.fact{border-radius:12px;padding:18px 12px;text-align:center;border-top:4px solid #1a5f9e;min-width:0}
+.fact{background:rgba(255,255,255,.92);border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.06);border-top:4px solid #1a5f9e;min-width:0}
 .fact:nth-child(2){border-top-color:#2e9e4a}.fact:nth-child(3){border-top-color:#ff6b00}.fact:nth-child(4){border-top-color:#7b1fa2}
 .fact b{display:block;font-size:20px;color:#1a5f9e;word-break:break-word}.fact span{font-size:11.5px;color:#666;font-weight:600}
 
 /* ============================================================
-   10. 4 BOXES - 85% TRANSPARENT
+   10. 4 BOXES
 ============================================================ */
 .boxes{display:grid;grid-template-columns:repeat(4,1fr);margin:14px 5% 0}
-.box{padding:22px 18px;min-height:170px;min-width:0;border-radius:8px}
+.box{padding:22px 18px;color:#fff;min-height:170px;min-width:0}
 .box i{font-size:30px;margin-bottom:10px;display:block}
 .box h3{font-size:16px;margin-bottom:8px;text-transform:uppercase;word-break:break-word}
 .box p{font-size:12.5px;line-height:1.6}
-.box a{font-size:12px;font-weight:700}
-.box.green,.box.yellow,.box.orange,.box.red{background:rgba(255,255,255,.15) !important}
+.box a{color:#fff;font-size:12px;font-weight:700}
+.box.green{background:#7a9e2e}.box.yellow{background:#f2b705}.box.orange{background:#e67e22}.box.red{background:#d95d3a}
 
 /* ============================================================
    11. WELCOME
 ============================================================ */
-.welcome{display:flex;gap:22px;padding:28px 5%;margin:14px 5% 0;border-radius:12px}
-.welcome-left{flex:1.6;min-width:0}.welcome-left h2{font-size:22px;color:#1a2a4a}.welcome-left h2 span{color:#2a6cb6}.welcome-left h4{font-size:13px;color:#2a6cb6;margin:4px 0 10px}.welcome-left p{font-size:13px;line-height:1.8;text-align:justify}
+.welcome{display:flex;gap:22px;padding:28px 5%;background:rgba(255,255,255,.92);margin:14px 5% 0;border-radius:12px}
+.welcome-left{flex:1.6;min-width:0}.welcome-left h2{font-size:22px;color:#1a2a4a}.welcome-left h2 span{color:#2a6cb6}.welcome-left h4{font-size:13px;color:#2a6cb6;margin:4px 0 10px}.welcome-left p{font-size:13px;color:#666;line-height:1.8;text-align:justify}
 .join-btn{display:inline-block;background:#e67e22;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700;font-size:13px;margin-top:12px}
 .welcome-right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start;min-width:0}
-.mini-card{padding:14px;border-radius:6px;min-width:0}.mini-card.orange h4{color:#fff}.mini-card h4{font-size:14px;color:#1a2a4a}.mini-card p{font-size:12px}.mini-card.orange p{color:#fff}
+.mini-card{background:#e8eef7;padding:14px;border-radius:6px;min-width:0}.mini-card.orange{background:#f2b705;color:#fff}.mini-card.orange h4{color:#fff}.mini-card h4{font-size:14px;color:#1a2a4a}.mini-card p{font-size:12px;color:#666}.mini-card.orange p{color:#fff}
 
 /* ============================================================
    12. PRINCIPAL DESK
 ============================================================ */
-.principal{border-top:4px solid #2e9e4a;margin:14px 5% 0;padding:26px 22px;border-radius:12px}
+.principal{background:linear-gradient(135deg,rgba(232,245,233,.92) 0%,rgba(220,245,222,.92) 100%);border-top:4px solid #2e9e4a;margin:14px 5% 0;padding:26px 22px;border-radius:12px}
 .principal h3{font-size:15px;color:#1a6b2e;display:flex;align-items:center;gap:12px;text-transform:uppercase;flex-wrap:wrap}
 .principal h3 .icon{width:44px;height:44px;min-width:44px;border-radius:50%;background:#2e9e4a;color:#fff;display:flex;align-items:center;justify-content:center}
 .principal p{font-size:13px;color:#2e4a33;line-height:1.9;text-align:justify;margin-top:12px}
@@ -197,17 +182,17 @@ nav a.home{background:#ffb703;color:#222}
 /* ============================================================
    13. PROVERBS
 ============================================================ */
-.proverbs{border-top:4px solid #ff9800;margin:14px 5% 0;padding:22px;border-radius:12px}
+.proverbs{background:linear-gradient(135deg,rgba(255,248,225,.92) 0%,rgba(255,243,224,.92) 100%);border-top:4px solid #ff9800;margin:14px 5% 0;padding:22px;border-radius:12px}
 .proverbs h3{font-size:14px;color:#e65100;text-transform:uppercase;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .proverbs h3 .icon{width:44px;height:44px;min-width:44px;border-radius:50%;background:#ff9800;color:#fff;display:flex;align-items:center;justify-content:center}
-.verse{padding:14px;border-radius:8px;margin-top:12px}
+.verse{background:rgba(255,255,255,.9);border-left:4px solid #ff9800;padding:14px;border-radius:8px;margin-top:12px}
 .verse b{color:#e65100;font-size:12px}
 .verse p{font-size:13px;color:#444;line-height:1.8;text-align:justify;margin-top:4px;word-break:break-word}
 
 /* ============================================================
    14. MAP
 ============================================================ */
-.map-wrap{margin:14px 5% 0;border-radius:12px;overflow:hidden}
+.map-wrap{margin:14px 5% 0;background:rgba(255,255,255,.92);border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
 .map-head{padding:16px;font-size:14px;font-weight:800;color:#0e3d6b;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .map-head span{width:36px;height:36px;min-width:36px;border-radius:50%;background:#1a5f9e;color:#fff;display:flex;align-items:center;justify-content:center}
 .map-frame{width:100%;height:360px}.map-frame iframe{width:100%;height:100%;border:0;display:block}
@@ -215,7 +200,7 @@ nav a.home{background:#ffb703;color:#222}
 .map-foot a{background:#1a5f9e;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;text-align:center}
 
 /* ============================================================
-   15. FOOTER - Kept solid for readability
+   15. FOOTER
 ============================================================ */
 footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;margin:14px 0 0}
 .foot-top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:0 5%}
@@ -237,6 +222,7 @@ footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;margin:14px 0 0}
 
 /* ============================================================
    16. RESPONSIVE - TABLET / MOBILE
+   MOBILE: ONLY HOME PAGE STICKY
 ============================================================ */
 @media(max-width:900px){
   .topbar{height:auto;flex-direction:column;padding:10px 4%;gap:8px;justify-content:center}
@@ -252,12 +238,17 @@ footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;margin:14px 0 0}
   .logo-tag{margin-left:10px;padding-left:10px}
   .logo-tag span{font-size:9px;letter-spacing:1.5px}
   .logo-right{text-align:center;width:100%}
+
+  /* MOBILE: Full nav is NOT sticky - it scrolls away */
   nav{position:static;flex-wrap:wrap;justify-content:center;gap:6px;padding:8px;box-shadow:none}
   nav a{flex:1 1 30%;min-width:110px;padding:12px 8px;font-size:12px;margin:0;white-space:normal;line-height:1.3}
   .nav-dropdown{flex:1 1 30%;min-width:110px}
   .nav-dropdown > a{width:100%}
   .nav-dropdown-content{position:fixed;left:50% !important;top:auto;transform:translateX(-50%);width:92vw;max-width:340px}
+
+  /* MOBILE: Only HOME PAGE bar stays sticky */
   .mobile-home-bar{display:block;position:sticky;top:0;z-index:1000;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+
   .hero{height:320px}
   .hero-text{bottom:36px}
   .hero-text h2{font-size:22px}
@@ -371,6 +362,7 @@ footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;margin:14px 0 0}
 </nav>
 
 <!-- ================= 7D. MOBILE ONLY - HOME PAGE STICKY BAR ================= -->
+<!-- Hidden on desktop. On mobile, only this bar stays fixed on scroll. -->
 <div class="mobile-home-bar"><a href="index.html">🏠 HOME PAGE</a></div>
 
 <!-- ================= 8. HERO ================= -->
