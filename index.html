@@ -3,12 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <title>JEHOVA JIRE English School - Pangbalkawn | Pvt. Institute</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preload" as="image" href="campus-toon.jpg">
+<link rel="preload" as="image" href="image-two.jpg">
+<link rel="preload" as="image" href="smart-learning.jpg">
+<link rel="preload" as="image" href="admission-banner.jpg">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f2f2f2}
+html,body{width:100%;overflow-x:clip}
+html,body{background:transparent !important}
+body{background:transparent !important;margin:0;position:relative}
+.slideshow{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;animation:slideshow 25s infinite}
+@keyframes slideshow{0%{background:url('learning1.jpg') center/cover no-repeat}20%{background:url('learning2.jpg') center/cover no-repeat}40%{background:url('learning3.jpg') center/cover no-repeat}60%{background:url('learning4.jpg') center/cover no-repeat}80%{background:url('learning5.jpg') center/cover no-repeat}100%{background:url('learning1.jpg') center/cover no-repeat}}
+body::before{content:'';position:fixed;inset:0;background:rgba(255,255,255,.55);z-index:-1;pointer-events:none}
+.site-header{position:sticky;top:0;z-index:1000;background:#1a2a4a;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .topbar{background:#1a2a4a;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:38px;font-size:12px}
 .topbar-left{display:flex;align-items:center;height:100%}
 .topbar-left a{color:#cbd5e1;text-decoration:none;padding:0 12px;border-right:1px solid rgba(255,255,255,.15);height:100%;display:flex;align-items:center}
@@ -33,27 +46,28 @@ body{background:#f2f2f2}
 .logo-right b{font-size:14px;color:#fff;letter-spacing:1px}
 .logo-right p{font-size:11px;color:#cbd5e1;line-height:1.6}
 .logo-right .motto{color:#ffb703;font-weight:700}
-nav{background:#2a6cb6;display:flex;justify-content:center;align-items:stretch;flex-wrap:nowrap;white-space:nowrap;position:sticky;top:0;z-index:100;overflow:visible}
-nav a{color:#fff;text-decoration:none;padding:13px 12px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;flex-shrink:0}
+nav{background:#2a6cb6;display:flex;justify-content:center;align-items:stretch;flex-wrap:nowrap;white-space:nowrap;overflow:visible;width:100%;gap:2px;padding:0 8px}
+nav a{color:#fff;text-decoration:none;padding:14px 16px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;flex:0 0 auto;text-align:center;border-radius:6px;margin:4px 0}
 nav a:hover{background:#1a4a85}
 nav a.home{background:#ffb703;color:#222}
 .nav-news{position:relative;background:#ff3b2f !important;color:#fff !important;animation:newsBlink 1.2s infinite}
 @keyframes newsBlink{0%,100%{background:#ff3b2f}50%{background:#ff6b00}}
-.nav-news .new-badge{background:#ffb703;color:#222;font-size:8px;font-weight:900;padding:2px 6px;border-radius:10px}
+.nav-news .new-badge{background:#ffb703;color:#222;font-size:8px;font-weight:900;padding:2px 6px;border-radius:10px;flex-shrink:0}
 .nav-news .dot{width:8px;height:8px;background:#00ff88;border-radius:50%;display:inline-block;animation:dotPulse 1s infinite;flex-shrink:0}
 @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
 .nav-dept{background:#0067C0 !important;color:#fff !important}
 .nav-dept:hover{background:#004a8a !important}
-.nav-dropdown{position:relative;display:flex;align-items:stretch;flex-shrink:0}
+.nav-dropdown{position:relative;display:flex;align-items:stretch;flex:0 0 auto}
+.nav-dropdown > a{width:100%}
 .nav-dropdown-content{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:340px;background:#fff;border-radius:0 0 12px 12px;box-shadow:0 10px 30px rgba(0,0,0,.30);overflow:hidden;z-index:9999;text-align:left;white-space:normal}
 .nav-dropdown:hover .nav-dropdown-content,.nav-dropdown.open .nav-dropdown-content{display:block}
 .nav-dropdown-content .drop-head{color:#fff;padding:12px 16px;font-size:13px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
 .nav-dropdown-content .drop-head span{background:#ffb703;color:#222;font-size:10px;padding:2px 8px;border-radius:20px}
 .nav-dropdown-content ul{list-style:none}
 .nav-dropdown-content ul li{border-bottom:1px solid #f0f0f0}
-.nav-dropdown-content ul li a{display:flex;gap:10px;padding:11px 14px;color:#333 !important;font-size:12.5px;line-height:1.5;font-weight:500;background:#fff !important}
+.nav-dropdown-content ul li a{display:flex;gap:10px;padding:11px 14px;color:#333 !important;font-size:12.5px;line-height:1.5;font-weight:500;background:#fff !important;flex:none;justify-content:flex-start;text-align:left;border-radius:0;margin:0}
 .nav-dropdown-content ul li a:hover{background:#f7f0ff !important}
-.nav-dropdown-content .drop-foot{display:block;text-align:center;background:#1a2a4a;color:#fff !important;padding:11px;font-size:12px;font-weight:700;justify-content:center}
+.nav-dropdown-content .drop-foot{display:block;text-align:center;background:#1a2a4a;color:#fff !important;padding:11px;font-size:12px;font-weight:700;justify-content:center;flex:none;border-radius:0;margin:0}
 .dept-drop .drop-head{background:#0067C0}
 .news-drop .drop-head{background:#6A1B9A}
 .hero{position:relative;width:100%;height:440px;overflow:hidden;background:#000}
@@ -70,7 +84,7 @@ nav a.home{background:#ffb703;color:#222}
 .hero-dots i{width:10px;height:10px;background:rgba(255,255,255,.6);border-radius:50%;cursor:pointer}
 .hero-dots i.active{background:#fff;transform:scale(1.3)}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 5% 0}
-.fact{background:#fff;border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.06);border-top:4px solid #1a5f9e}
+.fact{background:rgba(255,255,255,.92);border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.06);border-top:4px solid #1a5f9e}
 .fact:nth-child(2){border-top-color:#2e9e4a}.fact:nth-child(3){border-top-color:#ff6b00}.fact:nth-child(4){border-top-color:#7b1fa2}
 .fact b{display:block;font-size:20px;color:#1a5f9e}.fact span{font-size:11.5px;color:#666;font-weight:600}
 .boxes{display:grid;grid-template-columns:repeat(4,1fr);margin:14px 5% 0}
@@ -80,24 +94,24 @@ nav a.home{background:#ffb703;color:#222}
 .box p{font-size:12.5px;line-height:1.6}
 .box a{color:#fff;font-size:12px;font-weight:700}
 .box.green{background:#7a9e2e}.box.yellow{background:#f2b705}.box.orange{background:#e67e22}.box.red{background:#d95d3a}
-.welcome{display:flex;gap:22px;padding:28px 5%;background:#fff;margin:14px 5% 0}
+.welcome{display:flex;gap:22px;padding:28px 5%;background:rgba(255,255,255,.92);margin:14px 5% 0;border-radius:12px}
 .welcome-left{flex:1.6}.welcome-left h2{font-size:22px;color:#1a2a4a}.welcome-left h2 span{color:#2a6cb6}.welcome-left h4{font-size:13px;color:#2a6cb6;margin:4px 0 10px}.welcome-left p{font-size:13px;color:#666;line-height:1.8;text-align:justify}
 .join-btn{display:inline-block;background:#e67e22;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700;font-size:13px;margin-top:12px}
 .welcome-right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
 .mini-card{background:#e8eef7;padding:14px;border-radius:6px}.mini-card.orange{background:#f2b705;color:#fff}.mini-card.orange h4{color:#fff}.mini-card h4{font-size:14px;color:#1a2a4a}.mini-card p{font-size:12px;color:#666}.mini-card.orange p{color:#fff}
-.principal{background:linear-gradient(135deg,#e8f5e9 0%,#dcf5de 100%);border-top:4px solid #2e9e4a;margin:14px 5% 0;padding:26px 22px;border-radius:12px}
+.principal{background:linear-gradient(135deg,rgba(232,245,233,.92) 0%,rgba(220,245,222,.92) 100%);border-top:4px solid #2e9e4a;margin:14px 5% 0;padding:26px 22px;border-radius:12px}
 .principal h3{font-size:15px;color:#1a6b2e;display:flex;align-items:center;gap:12px;text-transform:uppercase}
 .principal h3 .icon{width:44px;height:44px;border-radius:50%;background:#2e9e4a;color:#fff;display:flex;align-items:center;justify-content:center}
 .principal p{font-size:13px;color:#2e4a33;line-height:1.9;text-align:justify;margin-top:12px}
 .principal .view-more{text-align:right;margin-top:14px}
 .principal .view-more a{font-size:12px;font-weight:700;text-decoration:none;background:#2e9e4a;color:#fff;padding:10px 20px;border-radius:50px}
-.proverbs{background:linear-gradient(135deg,#fff8e1 0%,#fff3e0 100%);border-top:4px solid #ff9800;margin:14px 5% 0;padding:22px;border-radius:12px}
+.proverbs{background:linear-gradient(135deg,rgba(255,248,225,.92) 0%,rgba(255,243,224,.92) 100%);border-top:4px solid #ff9800;margin:14px 5% 0;padding:22px;border-radius:12px}
 .proverbs h3{font-size:14px;color:#e65100;text-transform:uppercase;display:flex;align-items:center;gap:12px}
 .proverbs h3 .icon{width:44px;height:44px;border-radius:50%;background:#ff9800;color:#fff;display:flex;align-items:center;justify-content:center}
-.verse{background:#fff;border-left:4px solid #ff9800;padding:14px;border-radius:8px;margin-top:12px}
+.verse{background:rgba(255,255,255,.9);border-left:4px solid #ff9800;padding:14px;border-radius:8px;margin-top:12px}
 .verse b{color:#e65100;font-size:12px}
 .verse p{font-size:13px;color:#444;line-height:1.8;text-align:justify;margin-top:4px}
-.map-wrap{margin:14px 5% 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.map-wrap{margin:14px 5% 0;background:rgba(255,255,255,.92);border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
 .map-head{padding:16px;font-size:14px;font-weight:800;color:#0e3d6b;display:flex;align-items:center;gap:10px}
 .map-head span{width:36px;height:36px;border-radius:50%;background:#1a5f9e;color:#fff;display:flex;align-items:center;justify-content:center}
 .map-frame{width:100%;height:360px}.map-frame iframe{width:100%;height:100%;border:0}
@@ -124,96 +138,36 @@ footer{background:#2d1b69;color:#d6d0ea;padding:28px 0 12px;margin:14px 0 0}
   .topbar{height:auto;flex-direction:column;padding:8px 4%;gap:6px}
   .logo-bar{flex-direction:column;text-align:center;gap:12px}.logo-right{text-align:center}.logo-left h1{font-size:21px}
   .logo-tag{margin-left:10px;padding-left:10px}.logo-tag span{font-size:9px;letter-spacing:1.5px}
-  nav{flex-wrap:wrap;justify-content:center}
-  nav a{padding:11px 10px;font-size:12px}
+  nav{flex-wrap:wrap;justify-content:center;gap:6px;padding:8px}
+  nav a{flex:1 1 30%;min-width:110px;padding:12px 8px;font-size:12px;margin:0}
+  .nav-dropdown{flex:1 1 30%;min-width:110px}
+  .nav-dropdown > a{width:100%}
   .nav-dropdown-content{position:fixed;left:50% !important;top:auto;transform:translateX(-50%);width:92vw;max-width:340px}
   .hero{height:300px}.hero-text h2{font-size:22px}
-  .facts{grid-template-columns:1fr 1fr}.boxes{grid-template-columns:1fr 1fr;margin:14px 5% 0}.welcome{flex-direction:column;margin:14px 5% 0}.two-col{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}.boxes{grid-template-columns:1fr 1fr;margin:14px 5% 0}.welcome{flex-direction:column;margin:14px 5% 0}
 }
-@media(max-width:480px){.boxes{grid-template-columns:1fr}.welcome-right{grid-template-columns:1fr}}
+@media(max-width:480px){
+  nav a{flex:1 1 45%;font-size:11.5px}
+  .nav-dropdown{flex:1 1 45%}
+  .boxes{grid-template-columns:1fr}.welcome-right{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="topbar-left"><a href="contact.html">Support</a><a href="notification.html">Notification</a><a href="terms-conditions.html">Partners</a><a href="privacy-policy.html" href="#">FAQs</a></div>
-  <div class="topbar-right"><span class="live" id="liveTime">⏰ Loading...</span><span class="visit" id="visitCount">👁️ Visitors: 0</span><span class="call">Call Us : <b>+91 96123 56076</b></span><div class="topbar-search"><input placeholder="Search"><button>🔍</button></div></div>
+<div class="slideshow"></div>
+<div class="site-header">
+<div class="topbar"><div class="topbar-left"><a href="contact.html">Support</a><a href="notification.html">Notification</a><a href="terms-conditions.html">Partners</a><a href="privacy-policy.html" style="border-right:0">FAQs</a></div><div class="topbar-right"><span class="live" id="liveTime">⏰ Loading...</span><span class="visit" id="visitCount">👁️ Visitors: 0</span><span class="call">Call Us : <b>+91 96123 56076</b></span><div class="topbar-search"><input placeholder="Search"><button>🔍</button></div></div></div>
+<div class="logo-bar"><div class="logo-left"><img src="logo.jpg" alt="JJES Logo"><div><h1>JEHOVA JIRE <span>ENGLISH SCHOOL</span></h1></div><div class="logo-tag"><span>EDUCATE</span><span>ENRICH</span><span>IMPROVE</span></div></div><div class="logo-right"><b>PANGBALKAWN, KOLASIB</b><p>Govt. Recognised | UDISE: 15024100019<br><span class="motto">Motto: Brighten Up Your Future</span><br>Estd. 10th Jan 2011</p></div></div>
+<nav><a class="home" href="index.html">HOME PAGE</a><a href="about.html">WHO WE ARE</a><a href="our-academics.html">STUDENTS</a><div class="nav-dropdown"><a href="notification.html" class="nav-news" onclick="return toggleDrop(event,this)"><span class="dot"></span>📰 NEWS & EVENTS <span class="new-badge">NEW</span></a><div class="nav-dropdown-content news-drop"><div class="drop-head">📰 LATEST NEWS & EVENTS</div><ul><li><a href="news1.html">Cleanliness Drive - 31st Aug to 14th Sept 2026 - Social Work by Students.</a></li><li><a href="events1.html">65th Teachers Day Prog. - Community Hall, Pangbalkawn - 3rd Sept 2026.</a></li><li><a href="news2.html">MSU Pbk - Zirlai titha chawimawina prog. - JJES Secured 1st Position - Caroline Cl-V.</a></li><li><a href="news3.html">Health & Awareness prog. - 22nd April, 27th July 2026 - by HWCs Pangbalkawn.</a></li><li><a href="news4.html">Foundation Day - 15 Years (2011-2026) - 10th January with Alumni.</a></li><li><a href="news5.html">New Library & Computer Lab Inauguration - FREE Class 1 to 8.</a></li></ul><a class="drop-foot" href="notification.html">View All News & Events →</a></div></div><div class="nav-dropdown"><a href="about.html" class="nav-dept" onclick="return toggleDrop(event,this)">📋 DEPARTMENT UPDATES</a><div class="nav-dropdown-content dept-drop"><div class="drop-head">📋 DEPARTMENT UPDATES</div><ul><li><a href="smc.html">Music Committee Meeting under Managing Board - School Choir will produce at least two music videos in 2026-27.</a></li><li><a href="smc.html">Internal Committee - Academic Improvement & Infrastructure Development 2026-27.</a></li><li><a href="smc.html">Re-allocation of Classes - New Arrangement for Class 6 to 8 - Effective Immediately.</a></li><li><a href="smc.html">Sport Committee - During 2026-27, Futsal and a school trip are planned.</a></li><li><a href="smc.html">Term Exams 2026-27 will be held as per the Academic Calendar, as decided in the staff meeting.</a></li></ul><a class="drop-foot" href="about.html">View All Department Updates →</a></div></div><a href="photo-gallery.html">PHOTO GALLERY</a><a href="contact.html">CONTACTS</a></nav>
 </div>
-
-<div class="logo-bar">
-  <div class="logo-left">
-    <img src="logo.jpg" alt="JJES Logo">
-    <div><h1>JEHOVA JIRE <span>ENGLISH SCHOOL</span></h1></div>
-    <div class="logo-tag"><span>EDUCATE</span><span>ENRICH</span><span>IMPROVE</span></div>
-  </div>
-  <div class="logo-right"><b>PANGBALKAWN, KOLASIB</b><p>Govt. Recognised | UDISE: 15024100019<br><span class="motto">Motto: Brighten Up Your Future</span><br>Estd. 10th Jan 2011</p></div>
-</div>
-
-<nav>
-  <a class="home" href="index.html">HOME PAGE</a>
-  <a href="about.html">WHO WE ARE</a>
-  <a href="our-academics.html">STUDENTS</a>
-  <div class="nav-dropdown">
-  <a href="notification.html">NEWS & EVENTS</a>
-  <div class="nav-dropdown-content news-drop">
-  <div class="drop-head">📰 LATEST NEWS & EVENTS</div><ul>
-  <li><a href="news1.html">Cleanliness Drive - 31st Aug to 14th Sept 2026 - Social Work by Students.</a></li>
-  <li><a href="events1.html">65th Teachers Day Prog. - Community Hall, Pangbalkawn - 3rd Sept 2026.</a></li>
-  <li><a href="news2.html">MSU Pbk - Zirlai titha chawimawina prog. - JJES Secured 1st Position - Caroline Cl-V.</a></li>
-  <li><a href="news3.html">Health & Awareness prog. - 22nd April, 27th July 2026 - by HWCs Pangbalkawn.</a></li>
-  <li><a href="news4.html">Foundation Day - 15 Years (2011-2026) - 10th January with Alumni.</a></li>
-  <li><a href="news5.html">New Library & Computer Lab Inauguration - FREE Class 1 to 8.</a></li></ul>
-  <a class="drop-foot">View All News & Events →</a>
-  </div>
-  </div>
-  <div class="nav-dropdown">
-  <a href="about.html">DEPARTMENT UPDATES</a>
-  <div class="nav-dropdown-content dept-drop">
-  <div class="drop-head">📋 DEPARTMENT UPDATES</div><ul>
-  <li><a href="smc.html">Music Committee Meeting under Managing Board - School Choir will produce at least two music videos in 2026-27.</a></li>
-  <li><a href="smc.html">Internal Committee - Academic Improvement & Infrastructure Development 2026-27.</a></li>
-  <li><a href="smc.html">Re-allocation of Classes - New Arrangement for Class 6 to 8 - Effective Immediately.</a></li>
-  <li><a href="smc.html">Sport Committee - During 2026-27, Futsal and a school trip are planned.</a></li>
-  <li><a href="smc.html">Term Exams 2026-27 will be held as per the Academic Calendar, as decided in the staff meeting.</a></li></ul>
-  <a class="drop-foot">View All Department Updates →</a>
-  </div>
-  </div>
-  <a href="photo-gallery.html">PHOTO GALLERY</a>
-  <a href="contact.html">CONTACTS</a>
-</nav>
-
-<div class="hero" id="hero">
-  <div class="hero-slide active" style="background-image:url('campus-toon.jpg')"><div class="hero-text"><span>BEST LEARNING ENVIRONMENT</span><h2>Location</h2><p>Peaceful • Safe • Clean Air</p></div></div>
-  <div class="hero-slide" style="background-image:url('image-two.jpg')"><div class="hero-text"><span>CHARACTER WITH EXCELLENCE</span><h2>Education - Culture</h2><p>Discipline • Values • Growth</p></div></div>
-  <div class="hero-slide" style="background-image:url('smart-learning.jpg')"><div class="hero-text"><span>TEAM WORK & DISCIPLINE</span><h2>Smart Learning</h2><p>Modern • Smart • Joyful</p></div></div>
-  <div class="hero-slide" style="background-image:url('admission-banner.jpg')"><div class="hero-text"><span>JOIN JJES FAMILY</span><h2>Admissions Open 2027</h2><p>Join JJES Family Today</p></div></div>
-  <div class="hero-arrow left" onclick="heroGo(-1)">‹</div>
-  <div class="hero-arrow right" onclick="heroGo(1)">›</div>
-  <div class="hero-dots" id="heroDots"><i class="active"></i><i></i><i></i><i></i></div>
-</div>
-
+<div class="hero" id="hero"><div class="hero-slide active" style="background-image:url('campus-toon.jpg')"><div class="hero-text"><span>BEST LEARNING ENVIRONMENT</span><h2>Location</h2><p>Peaceful • Safe • Clean Air</p></div></div><div class="hero-slide" style="background-image:url('image-two.jpg')"><div class="hero-text"><span>CHARACTER WITH EXCELLENCE</span><h2>Education - Culture</h2><p>Discipline • Values • Growth</p></div></div><div class="hero-slide" style="background-image:url('smart-learning.jpg')"><div class="hero-text"><span>TEAM WORK & DISCIPLINE</span><h2>Smart Learning</h2><p>Modern • Smart • Joyful</p></div></div><div class="hero-slide" style="background-image:url('admission-banner.jpg')"><div class="hero-text"><span>JOIN JJES FAMILY</span><h2>Admissions Open 2027</h2><p>Join JJES Family Today</p></div></div><div class="hero-arrow left" onclick="heroGo(-1)">‹</div><div class="hero-arrow right" onclick="heroGo(1)">›</div><div class="hero-dots" id="heroDots"><i class="active"></i><i></i><i></i><i></i></div></div>
 <div class="facts"><div class="fact"><b>2011</b><span>Established</span></div><div class="fact"><b>15 Years</b><span>Foundation Day</span></div><div class="fact"><b>Class 1-8</b><span>Free Library & Lab</span></div><div class="fact"><b>Brighten Up</b><span>Your Future</span></div></div>
-
-<div class="boxes">
-  <div class="box green"><i class="fa-solid fa-users"></i><h3>Join JJES Family</h3><p>Admissions Open 2027. Class 1 to 8. Join a safe, caring and bright future school.</p><br><a href="admission-form.html">Join Us →</a></div>
-  <div class="box yellow"><i class="fa-solid fa-earth-asia"></i><h3>Our Students</h3><p>Our students learn English, Mizo & Hindi - Reading, Writing, Speaking with confidence.</p><br><a href="our-academics.html">Learn More →</a></div>
-  <div class="box orange"><i class="fa-solid fa-graduation-cap"></i><h3>Programs</h3><p>Eco Club, Scout / Guide, Sports, Cultural, Music & Extra-Curricular Activities.</p><br><a href="curricular.html">View Programs →</a></div>
-  <div class="box red"><i class="fa-solid fa-laptop"></i><h3>Smart Learning</h3><p>Free Library & Computer Lab. Modern teaching with MBSE Books.</p><br><a href="smart-learning.html">Explore →</a></div>
-</div>
-
-<div class="welcome">
-  <div class="welcome-left"><h2>Welcome to <span>JJES!</span></h2><h4>Committed to quality success for over 15 years!</h4><p>Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Near Community Hall, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. At our school, we believe true education goes beyond textbooks to shape well-rounded, compassionate, and capable individuals.</p><a class="join-btn" href="admission-form.html">Join us today! Click here.</a></div>
-  <div class="welcome-right"><div class="mini-card"><h4>Which program is right for you?</h4><p>Class 1 to 8 - Check our Academics</p></div><div class="mini-card orange"><h4>How to get Started?</h4><p>Admission is easy - Fill form today</p></div><div class="mini-card"><h4>Pro Learning Assessment</h4><p>Term Exams & Result Format</p></div><div class="mini-card"><h4>Certificates and Teacher Education</h4><p>Trained & Caring Teachers</p></div></div>
-</div>
-
+<div class="boxes"><div class="box green"><i class="fa-solid fa-users"></i><h3>Join JJES Family</h3><p>Admissions Open 2027. Class 1 to 8. Join a safe, caring and bright future school.</p><br><a href="admission-form.html">Join Us →</a></div><div class="box yellow"><i class="fa-solid fa-earth-asia"></i><h3>Our Students</h3><p>Our students learn English, Mizo & Hindi - Reading, Writing, Speaking with confidence.</p><br><a href="our-academics.html">Learn More →</a></div><div class="box orange"><i class="fa-solid fa-graduation-cap"></i><h3>Programs</h3><p>Eco Club, Scout / Guide, Sports, Cultural, Music & Extra-Curricular Activities.</p><br><a href="curricular.html">View Programs →</a></div><div class="box red"><i class="fa-solid fa-laptop"></i><h3>Smart Learning</h3><p>Free Library & Computer Lab. Modern teaching with MBSE Books.</p><br><a href="smart-learning.html">Explore →</a></div></div>
+<div class="welcome"><div class="welcome-left"><h2>Welcome to <span>JJES!</span></h2><h4>Committed to quality success for over 15 years!</h4><p>Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Near Community Hall, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. At our school, we believe true education goes beyond textbooks to shape well-rounded, compassionate, and capable individuals.</p><a class="join-btn" href="admission-form.html">Join us today! Click here.</a></div><div class="welcome-right"><div class="mini-card"><h4>Which program is right for you?</h4><p>Class 1 to 8 - Check our Academics</p></div><div class="mini-card orange"><h4>How to get Started?</h4><p>Admission is easy - Fill form today</p></div><div class="mini-card"><h4>Pro Learning Assessment</h4><p>Term Exams & Result Format</p></div><div class="mini-card"><h4>Certificates and Teacher Education</h4><p>Trained & Caring Teachers</p></div></div></div>
 <div class="principal"><h3><span class="icon">✉️</span> From The Principal's Desk</h3><p>A warm welcome to a new and exciting academic year! At our school, we believe true education goes beyond textbooks to shape well-rounded, compassionate, and capable individuals. We are committed to providing a safe, engaging environment where every student is empowered to think critically, act with integrity, and achieve their full potential. Let us work together to make this year a remarkable journey of learning and success.</p><div class="view-more"><a href="principal-message.html">View More →</a></div></div>
-
 <div class="proverbs"><h3><span class="icon">📖</span> The Book of Proverbs</h3><div class="verse"><b>Proverbs 1:7-9 (KJV)</b><p>7. The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction. 8. My son, hear the instruction of thy father, and forsake not the law of thy mother: 9. For they shall be an ornament of grace unto thy head, and chains about thy neck.</p></div><div class="verse"><b>Thufingte 1:7-9 (MzOV)</b><p>7. LALPA ṭih hi finna bul a ni a; Nimahsela, mi âte chuan finna leh zirtîrna an hmusit ṭhîn. 8. Ka fapa, i pa zirtîrna che chu ngaithla la, I nu zirtîrna che chu hawisan suh; 9. I lu atân pârṭhi mawi tak a ni ang a, I nghâwng atân ṭhi ang a ni dâwn si a.</p></div><div class="verse"><b>नीतिवचन 1:7-9 (HIN)</b><p>7. यहोवा का भय मानना बुद्धि का मूल है; बुद्धि और शिक्षा को मूढ़ ही लोग तुच्छ जानते हैं॥ 8. हे मेरे पुत्र, अपने पिता की शिक्षा पर कान लगा, और अपनी माता की शिक्षा को न तज; 9. क्योंकि वे मानो तेरे सिर के लिये शोभायमान मुकुट, और तेरे गले के लिये कन्ठ माला होंगी।</p></div></div>
-
 <div class="map-wrap"><div class="map-head"><span>📍</span> Our Location - Jehova Jire English School, Pangbalkawn</div><div class="map-frame"><iframe loading="lazy" allowfullscreen src="https://www.google.com/maps?q=JJES+Pangbalkawn&z=16&output=embed"></iframe></div><div class="map-foot"><div style="font-size:12px;color:#333;flex:1;min-width:200px;"><b>Jehova Jire English School</b><br>Pangbalkawn, Bilkhawthlir Block, Kolasib - 796081</div><a href="https://maps.app.goo.gl/QXnjQvgaNTT5x4NdA" target="_blank">🗺️ Open in Google Maps</a></div></div>
-
 <footer><div class="foot-top"><div class="foot-about"><div class="foot-about-head"><img src="logo.jpg" alt="JJES Logo"><h4>JEHOVA JIRE ENGLISH SCHOOL<br>PANGBALKAWN</h4></div><p>Jehova Jire English School - JJES Pangbalkawn is a Private Institution established on 10th Jan 2011 at Near Community Hall, Pangbalkawn. We focus on character building, academic excellence and brightening up the future of every child. Motto: Brighten up your future.</p><div class="foot-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div class="foot-links"><div class="foot-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-school.html">Our History</a></li><li><a href="about.html">Curriculum</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="admission-form.html">Admission Enquiry</a></li></ul></div><div class="foot-col"><h4>&nbsp;</h4><ul><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="terms-conditions.html">Fee Structure</a></li><li><a href="index.html">News & Events</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-conditions.html">Terms & Conditions</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div><div class="foot-contact"><h3>Contact Information</h3><p>Near Community Hall,<br>Pangbalkawn, Bilkhawthlir Block,<br>Kolasib - 796081, Mizoram, India</p><div>✉️ <a style="color:#fff; font-size:11px;" href="mailto:info@pbkjjes.online">info@pbkjjes.online</a><br>✉️ <a style="color:#fff; font-size:11px;" href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></div><a class="foot-call" href="tel:+919612356076">📞 +91 9612356076</a><a class="foot-call" href="tel:+918731996242">📞 +91 8731996242</a><div id="footerTime" style="margin-top:10px;font-size:10px;opacity:.7"></div></div></div><div class="foot-bottom"><span>Last Update : <b>19-10-2026</b></span><span>© Copyright 2026 Jehova Jire English School | Powered By <b>JJES</b></span><div style="display:flex;gap:8px;align-items:center"><div style="border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.14);padding:7px 14px;border-radius:50px"><a href="admin-login.html" target="_blank" style="color:#ffc107;text-decoration:none;font-weight:800;font-size:11px">🔐 Administrator LOGIN</a></div><span style="color:#fff;opacity:.7">JJES Official Website</span></div></div></footer>
-
 <script>
 let hi=0; const slides=document.querySelectorAll('.hero-slide'); const dots=document.querySelectorAll('#heroDots i');
 function heroShow(i){ slides.forEach(s=>s.classList.remove('active')); dots.forEach(d=>d.classList.remove('active')); slides[i].classList.add('active'); dots[i].classList.add('active'); hi=i; }
