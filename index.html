@@ -19,15 +19,15 @@ img{max-width:100%;height:auto}
 .logo-wrap img,.topbar-social a,.whatsapp-float,.hero-dots i,.latest-dots i{border-radius:50%!important}
 .jjes-footer-social a{border-radius:0!important}
 .fact,.leader-card,.announce-box,.admit-form input,.admit-form textarea,.virtual-item,.map-wrap,.about-jjes,.knowledge-sec,.leaders-sec,.proverbs-simple,.enquiry-banner,.latest-card,.principal,.topbar,.header,nav,.jjes-footer,.jjes-footer-bottom,.nav-drop,.nav-item > a,.about-jjes-text h2,.knowledge-grid h3,.virtual-head h3,.jjes-footer h3{border:none!important}
-/* ===== 1. TOPBAR ===== */
+/* ===== 1. TOPBAR - PC ===== */
 .topbar{background:#0a2a4a;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:7px 4%;font-size:12.5px;flex-wrap:wrap;gap:8px}
 .topbar a{color:#fff;text-decoration:none;transition:.25s}
 .topbar a:hover{color:#00AEEF!important}
-.topbar-left{display:flex;gap:20px;flex-wrap:wrap}
-.topbar-social{display:flex;gap:10px;font-size:14px}
+.topbar-left{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.topbar-social{display:flex;gap:10px;font-size:14px;align-items:center}
 .topbar-social a{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);transition:.25s}
 .topbar-social a:hover{color:#00AEEF!important;border-color:#00AEEF;transform:scale(1.15)}
-/* ===== 2. HEADER - PC DIK VEK ===== */
+/* ===== 2. HEADER ===== */
 .header{background:#0a2a4a;display:flex;justify-content:space-between;align-items:center;padding:14px 4%;gap:16px;flex-wrap:wrap;position:relative}
 .logo-wrap{display:flex;align-items:center;gap:14px;min-width:0}
 .logo-wrap img{width:72px;height:72px;border:3px solid #00AEEF;object-fit:cover;background:#fff;transition:.3s}
@@ -191,9 +191,16 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 .jjes-visitor{background:#00AEEF;color:#fff;font-weight:800;letter-spacing:2px;padding:3px 8px;font-size:13px;border:1px solid #fff}
 .whatsapp-float{position:fixed;right:16px;bottom:66px;width:52px;height:52px;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;z-index:2000;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .back-top{position:fixed;right:16px;bottom:16px;width:38px;height:38px;background:#00AEEF;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;z-index:2000}
-/* ===== MOBILE ONLY - HEADER CLEAN ===== */
+/* ===== MOBILE ONLY ===== */
 @media(max-width:900px){
-  .topbar{justify-content:center;text-align:center}
+  /* TOPBAR MOBILE: Date&Time VEI LAM, Social DING LAM - LINE KHAT AH */
+  .topbar{flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important;padding:6px 4%!important;gap:6px}
+  .topbar-left{flex:1;gap:0;flex-wrap:nowrap;min-width:0}
+  .topbar-left a{display:none!important}
+  #liveTime{font-size:11px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar-social{gap:6px!important;flex-shrink:0}
+  .topbar-social a{width:26px!important;height:26px!important;font-size:12px!important}
+  /* HEADER MOBILE CLEAN */
   .header{justify-content:space-between;align-items:flex-start;text-align:left;padding:12px 4%;gap:10px}
   .logo-wrap{gap:10px;flex:1}
   .logo-wrap img{width:58px;height:58px}
@@ -202,7 +209,6 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
   .gold-line{font-size:10.5px;line-height:1.4;margin-top:3px}
   .motto-line{display:block!important}
   .hamburger{display:flex;align-self:center}
-  /* MOBILE AH HEADER BUTTONS PAIH - SEARCH CHAUH AWM */
   .header-btns{display:none!important}
   .header-right{width:100%;align-items:stretch;order:3}
   .search-box{margin-top:0;width:100%;justify-content:stretch}
@@ -216,7 +222,9 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
   .boxes{grid-template-columns:1fr 1fr}.leaders-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:1fr;gap:28px}.latest-slide{min-width:50%}.virtual-grid{grid-template-columns:1fr 1fr}.jjes-footer-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
-  .topbar{font-size:11px}
+  #liveTime{font-size:10.5px!important}
+  .topbar-social{gap:5px!important}
+  .topbar-social a{width:24px!important;height:24px!important;font-size:11px!important}
   .header{padding:10px 3%}
   .logo-wrap img{width:52px;height:52px}
   .logo-wrap h1{font-size:19px}
@@ -239,17 +247,17 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 
 <!-- 1. TOPBAR -->
 <div class="topbar">
-  <div class="topbar-left"><a href="mailto:info@pbkjjes.online"> info@pbkjjes.online</a><a href="tel:+919612356076"> +91 96123 56076</a><span id="liveTime" style="color:#7dd3fc;font-weight:600"> Loading...</span></div>
+  <div class="topbar-left"><a href="mailto:info@pbkjjes.online">✉️ info@pbkjjes.online</a><a href="tel:+919612356076"> +91 96123 56076</a><span id="liveTime" style="color:#7dd3fc;font-weight:600"> Loading...</span></div>
   <div class="topbar-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a></div>
 </div>
 
-<!-- 2. HEADER - MOBILE CLEAN -->
+<!-- 2. HEADER -->
 <div class="header">
   <div class="logo-wrap"><img src="logo.jpg" alt="JJES Logo"><div><h1>JEHOVA JIRE<span>ENGLISH SCHOOL</span></h1><p class="motto-line">Brighten Up Your Future</p><p class="gold-line">Govt. Recognised | Pangbalkawn, Kolasib, Mizoram - 796081</p></div></div>
   <button class="hamburger" id="hamburgerBtn" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="header-right">
     <div class="header-btns"><a href="contact.html">Parent Enquiry Form</a><a href="contact.html">Book a Campus Visit</a><a href="contact.html">Schedule Counselling</a><a href="admission-form.html">Admission Form</a></div>
-    <div class="search-box"><input id="siteSearch"  autocomplete="off"><button onclick="doSearch()">Search</button><div class="search-results" id="searchResults"></div></div>
+    <div class="search-box"><input id="siteSearch" autocomplete="off"><button onclick="doSearch()">Search</button><div class="search-results" id="searchResults"></div></div>
   </div>
 </div>
 
@@ -269,7 +277,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
     <div class="nav-drop"><a href="infrastructure.html">Class Rooms</a><a href="smart-learning.html">Computer Laboratory</a><a href="smart-learning.html">Library - FREE Class 1 to 8</a><a href="infrastructure.html">Safe Drinking Water</a><a href="infrastructure.html">Easy Wheelchair Access</a></div>
   </div>
   <div class="nav-item"><a class="nav-news" href="notification.html">News & Announcements</a>
-    <div class="nav-drop"><a href="news1.html">Cleanliness Drive - 31st Aug to 14th Sept 2026</a><a href="events1.html">65th Teachers Day - 3rd Sept 2026</a><a href="news2.html">MSU Pbk - JJES 1st Position - Caroline Cl-V</a><a href="news4.html">Foundation Day - 15 Years</a><a href="notification.html">View All News →</a></div>
+    <div class="nav-drop"><a href="news1.html">Eco-Club activities Cleanliness Drive - 31st Aug to 14th Sept 2026</a><a href="events1.html">65th Teachers Day - 3rd Sept 2026</a><a href="news2.html">MSU Pbk - JJES 1st Position - Caroline Cl-V</a><a href="news4.html">Foundation Day - 15 Years</a><a href="notification.html">View All News →</a></div>
   </div>
   <div class="nav-item"><a href="photo-gallery.html">Gallery</a><div class="nav-drop"><a href="photo-gallery.html">Photo Gallery</a><a href="photo-gallery.html">Videos</a></div></div>
   <div class="nav-item"><a href="photo-gallery.html">Videos</a></div>
@@ -306,7 +314,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 <div class="leaders-sec"><h2>Where Education Shapes Future Leaders</h2><div class="leaders-grid"><div class="leader-card"><h3>Academic Excellence</h3><ul><li><a href="admission-form.html">Admissions</a></li><li><a href="smc.html">Result / Exams</a></li><li><a href="terms-conditions.html">Rules of Payment of Fees</a></li><li><a href="about.html">Recommendations to Parents</a></li><li><a href="about.html">School Uniform of Students</a></li></ul></div><div class="leader-card"><h3>School Activities</h3><ul><li><a href="curricular.html">Cultural Activities</a></li><li><a href="curricular.html">Sports</a></li><li><a href="our-academics.html">Curriculum</a></li><li><a href="curricular.html">Co-Curricular Activities</a></li><li><a href="curricular.html">Eco Club & Scout / Guide</a></li></ul></div><div class="leader-card"><h3>Student Facilities</h3><ul><li><a href="infrastructure.html">Class Rooms</a></li><li><a href="smart-learning.html">Computer Laboratory</a></li><li><a href="smart-learning.html">Library - FREE Class 1 to 8</a></li><li><a href="infrastructure.html">Safe Drinking Water</a></li><li><a href="infrastructure.html">Easy Wheelchair Access</a></li></ul></div></div></div>
 
 <!-- 9. KNOWLEDGE -->
-<div class="knowledge-sec"><h2>Knowledge is Power</h2><div class="knowledge-grid"><div><h3>Announcements</h3><div class="announce-box"><ul><li><a href="news1.html">Cleanliness Drive - 31st Aug to 14th Sept 2026 - Social Work by Students.</a></li><li><a href="events1.html">65th Teachers Day Prog. - Community Hall, Pangbalkawn - 3rd Sept 2026.</a></li><li><a href="news2.html">MSU Pbk - Zirlai titha chawimawina - JJES Secured 1st Position - Caroline Cl-V.</a></li><li><a href="news4.html">Foundation Day - 15 Years (2011-2026) - 10th January with Alumni.</a></li><li><a href="admission-form.html">Admission Open for Class 1 to 8 - Session 2027 - Join JJES Family.</a></li></ul></div></div><div><h3>Admissions & Inquiries</h3><form class="admit-form" onsubmit="return sendAdmission(this)"><input type="text" name="name" placeholder="Name" required><input type="tel" name="mobile" placeholder="Your Mobile" required><input type="email" name="email" placeholder="Your Email"><input type="text" name="class" placeholder="Class Name - e.g. Class 3" required><textarea name="message" placeholder="Message"></textarea><button class="admit-btn" type="submit">Submit</button></form></div></div></div>
+<div class="knowledge-sec"><h2>Knowledge is Power</h2><div class="knowledge-grid"><div><h3>Announcements</h3><div class="announce-box"><ul><li><a href="news1.html">Eco-Club activities Cleanliness Drive - 31st Aug to 14th Sept 2026.</a></li><li><a href="events1.html">65th Teachers Day Prog. - Community Hall, Pangbalkawn - 3rd Sept 2026.</a></li><li><a href="news2.html">MSU Pbk - Zirlai titha chawimawina - JJES Secured 1st Position - Caroline Cl-V.</a></li><li><a href="news4.html">Foundation Day - 15 Years (2011-2026) - 10th January with Alumni.</a></li><li><a href="admission-form.html">Admission Open for Class 1 to 8 - Session 2027 - Join JJES Family.</a></li></ul></div></div><div><h3>Admissions & Inquiries</h3><form class="admit-form" onsubmit="return sendAdmission(this)"><input type="text" name="name" placeholder="Name" required><input type="tel" name="mobile" placeholder="Your Mobile" required><input type="email" name="email" placeholder="Your Email"><input type="text" name="class" placeholder="Class Name - e.g. Class 3" required><textarea name="message" placeholder="Message"></textarea><button class="admit-btn" type="submit">Submit</button></form></div></div></div>
 
 <!-- 10. PRINCIPAL -->
 <div class="principal"><h3>✉️ From The Principal's Desk</h3><p>A warm welcome to a new and exciting academic year! At our school, we believe true education goes beyond textbooks to shape well-rounded, compassionate, and capable individuals. We are committed to providing a safe, engaging environment where every student is empowered to think critically, act with integrity, and achieve their full potential. Let us work together to make this year a remarkable journey of learning and success.</p><div class="view-more"><a href="principal-message.html">View More →</a></div></div>
@@ -320,10 +328,10 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 </div>
 
 <!-- 11. LATEST -->
-<div class="latest-sec"><h2>Latest Activities</h2><div class="latest-card"><div class="latest-slider"><div class="latest-track" id="latestTrack"><div class="latest-slide"><img src="campus-toon.jpg" alt="Cleanliness Drive"><p>Cleanliness Drive - 31st Aug to 14th Sept 2026</p></div><div class="latest-slide"><img src="image-two.jpg" alt="Teachers Day"><p>65th Teachers Day - Community Hall, Pangbalkawn</p></div><div class="latest-slide"><img src="smart-learning.jpg" alt="MSU Zirlai Titha"><p>MSU Pbk - JJES Secured 1st Position - Caroline Cl-V</p></div><div class="latest-slide"><img src="admission-banner.jpg" alt="Health Awareness"><p>Health & Awareness Prog. - HWC Pangbalkawn</p></div><div class="latest-slide"><img src="campus-toon.jpg" alt="Foundation Day"><p>Foundation Day - 15 Years (2011-2026)</p></div><div class="latest-slide"><img src="smart-learning.jpg" alt="Library Lab"><p>New Library & Computer Lab - FREE Class 1 to 8</p></div></div></div><div class="latest-dots" id="latestDots"><i class="active"></i><i></i><i></i><i></i></div></div></div>
+<div class="latest-sec"><h2>Latest Activities</h2><div class="latest-card"><div class="latest-slider"><div class="latest-track" id="latestTrack"><div class="latest-slide"><img src="eco-club.jpeg" alt="Cleanliness Drive"><p>Eco-Club activities Cleanliness Drive - 31st Aug to 14th Sept 2026</p></div><div class="latest-slide"><img src="teachers-day.jpeg" alt="Teachers Day"><p>65th Teachers Day - Community Hall, Pangbalkawn</p></div><div class="latest-slide"><img src="msu-prog.jpeg" alt="MSU Zirlai Titha"><p>MSU Program - JJES invited</p></div><div class="latest-slide"><img src="health-awareness.jpg" alt="Health Awareness"><p>Health & Awareness Prog. - HWC Pangbalkawn</p></div><div class="latest-slide"><img src="childrens-day.jpeg" alt="Foundation Day"><p>Foundation Day - 15 Years (2011-2026)</p></div><div class="latest-slide"><img src="smart-learning.jpg" alt="Library Lab"><p>New Library & Computer Lab - FREE Class 1 to 8</p></div></div></div><div class="latest-dots" id="latestDots"><i class="active"></i><i></i><i></i><i></i></div></div></div>
 
 <!-- 12. VIRTUAL -->
-<div class="virtual-sec"><div class="virtual-head"><h3>Virtual Tour</h3><a class="view-all-btn" href="photo-gallery.html">View all</a></div><div class="virtual-grid"><a class="virtual-item" href="photo-gallery.html"><img src="campus-toon.jpg" alt="School Campus"><span>🏫 School Campus - Pangbalkawn</span></a><a class="virtual-item" href="smart-learning.html"><img src="smart-learning.jpg" alt="Smart Learning"><span>💻 Smart Learning & Computer Lab</span></a><a class="virtual-item" href="curricular.html"><img src="image-two.jpg" alt="Activities"><span>🎭 Activities - Eco Club, Scout & Guide</span></a></div></div>
+<div class="virtual-sec"><div class="virtual-head"><h3>Virtual Tour</h3><a class="view-all-btn" href="photo-gallery.html">View all</a></div><div class="virtual-grid"><a class="virtual-item" href="photo-gallery.html"><img src="campus-toon.jpg" alt="School Campus"><span>🏫 School Campus - Pangbalkawn</span></a><a class="virtual-item" href="smart-learning.html"><img src="smart-learning.jpg" alt="Smart Learning"><span>💻 Smart Learning & Computer Lab</span></a><a class="virtual-item" href="curricular.html"><img src="activities-scoutsguides.jpeg" alt="Activities"><span>🎭 Activities - Eco Club, Scout & Guide</span></a></div></div>
 
 <!-- 13. ENQUIRY -->
 <div class="enquiry-banner"><h2>For more enquiries or concerns about Admissions</h2><a class="contact-us-btn" href="contact.html">Contact Us</a></div>
@@ -335,7 +343,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 </div>
 
 <!-- 15. FOOTER -->
-<footer class="jjes-footer"><div class="jjes-footer-top"><div><h3>JJES PANGBALKAWN</h3><div class="jjes-footer-contact"><p> Near Community Hall, Pangbalkawn,<br>Bilkhawthlir Block, Kolasib - 796081,<br>Mizoram, India</p><p>📞 <a href="tel:+919612356076">+91 96123 56076</a></p><p>📞 <a href="tel:+918731996242">+91 87319 96242</a></p><p>✉️ <a href="mailto:info@pbkjjes.online">info@pbkjjes.online</a></p><p>✉️ <a href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></p></div><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div><h3>About Us</h3><ul><li><a href="about-school.html">History</a></li><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="our-academics.html">Academics</a></li><li><a href="principal-message.html">Principal Message</a></li></ul></div><div><h3>Important Links</h3><ul><li><a href="our-academics.html">MBSE Corner</a></li><li><a href="curricular.html">Activities</a></li><li><a href="terms-conditions.html">School Regulations</a></li><li><a href="notification.html">News & Announcements</a></li><li><a href="terms-conditions.html">Fee Structure</a></li></ul></div><div><h3>Quick Links</h3><ul><li><a href="curricular.html">Sports</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="photo-gallery.html">Videos</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div></div><div class="jjes-footer-bottom"><span>© JJES PANGBALKAWN, All Right Reserved.</span><span class="jjes-visitor" id="visitCountFooter">000000</span><span>Designed By <b>JJES</b> | Motto: Brighten Up Your Future</span></div></footer>
+<footer class="jjes-footer"><div class="jjes-footer-top"><div><h3>JJES PANGBALKAWN</h3><div class="jjes-footer-contact"><p>Near Community Hall, Pangbalkawn,<br>Bilkhawthlir Block, Kolasib - 796081,<br>Mizoram, India</p><p>📞 <a href="tel:+919612356076">+91 96123 56076</a></p><p>📞 <a href="tel:+918731996242">+91 87319 96242</a></p><p>✉️ <a href="mailto:info@pbkjjes.online">info@pbkjjes.online</a></p><p>✉️ <a href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></p></div><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div><h3>About Us</h3><ul><li><a href="about-school.html">History</a></li><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="our-academics.html">Academics</a></li><li><a href="principal-message.html">Principal Message</a></li></ul></div><div><h3>Important Links</h3><ul><li><a href="our-academics.html">MBSE Corner</a></li><li><a href="curricular.html">Activities</a></li><li><a href="terms-conditions.html">School Regulations</a></li><li><a href="notification.html">News & Announcements</a></li><li><a href="terms-conditions.html">Fee Structure</a></li></ul></div><div><h3>Quick Links</h3><ul><li><a href="curricular.html">Sports</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="photo-gallery.html">Videos</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div></div><div class="jjes-footer-bottom"><span>© JJES PANGBALKAWN, All Right Reserved.</span><span class="jjes-visitor" id="visitCountFooter">000000</span><span>Designed By <b>JJES</b> | Motto: Brighten Up Your Future</span></div></footer>
 
 <a class="whatsapp-float" href="https://wa.me/9612356076" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a class="back-top" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
