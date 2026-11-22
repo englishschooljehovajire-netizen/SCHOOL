@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;border-radius:0}
-/* ===== PAGE BACKGROUND SLIDE ===== */
 html,body{background:transparent!important;color:#333}
 body{overflow-x:hidden;position:relative}
 .page-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#f4f8fc}
@@ -28,7 +27,7 @@ img{max-width:100%;height:auto}
 .topbar-social{display:flex;gap:10px;font-size:14px}
 .topbar-social a{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);transition:.25s}
 .topbar-social a:hover{color:#00AEEF!important;border-color:#00AEEF;transform:scale(1.15)}
-/* ===== 2. HEADER ===== */
+/* ===== 2. HEADER - PC DIK VEK ===== */
 .header{background:#0a2a4a;display:flex;justify-content:space-between;align-items:center;padding:14px 4%;gap:16px;flex-wrap:wrap;position:relative}
 .logo-wrap{display:flex;align-items:center;gap:14px;min-width:0}
 .logo-wrap img{width:72px;height:72px;border:3px solid #00AEEF;object-fit:cover;background:#fff;transition:.3s}
@@ -36,6 +35,7 @@ img{max-width:100%;height:auto}
 .logo-wrap h1{font-size:clamp(22px,4.5vw,38px);color:#fff;line-height:1;font-weight:800}
 .logo-wrap h1 span{display:block;font-size:clamp(13px,2.5vw,18px);font-weight:700;margin-top:4px;color:#00AEEF}
 .gold-line{color:#FFD700!important;font-size:12px;font-weight:700;margin-top:4px;letter-spacing:.3px;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.motto-line{display:none;color:#7dd3fc!important;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:3px}
 .header-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:0}
 .hamburger{display:none;flex-direction:column;gap:5px;background:transparent;border:1px solid #00AEEF;padding:10px 9px;cursor:pointer;margin-left:auto}
 .hamburger span{display:block;width:24px;height:3px;background:#fff;transition:.3s}
@@ -134,7 +134,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 .principal{background:rgba(232,245,233,.96);margin:14px 4% 0;padding:26px 22px}
 .principal h3{font-size:15px;color:#1a6b2e;text-transform:uppercase}.principal p{font-size:13px;color:#2e4a33;line-height:1.9;text-align:justify;margin-top:12px}
 .principal .view-more{text-align:right;margin-top:14px}.principal .view-more a{font-size:12px;font-weight:700;text-decoration:none;background:#2e9e4a;color:#fff;padding:10px 20px;display:inline-block}
-/* ===== 10B. PROVERBS - SIMPLE, A HMAA MI ANG, ENGLISH-MIZO-HINDI ===== */
+/* ===== 10B. PROVERBS ===== */
 .proverbs-simple{background:rgba(255,255,255,.96);padding:22px 4%;margin:14px 4% 0}
 .proverbs-simple h3{font-size:14px;color:#0a2a4a;text-transform:uppercase;margin-bottom:12px}
 .proverbs-simple .verse{margin-top:14px}
@@ -166,7 +166,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 .enquiry-banner{background:#0a2a4a;background-image:linear-gradient(rgba(10,42,74,.92),rgba(10,42,74,.92)),url('campus-toon.jpg');background-size:cover;background-position:center;padding:44px 4%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .enquiry-banner h2{color:#fff;font-size:clamp(20px,3.5vw,30px);font-weight:800;line-height:1.25;max-width:680px}
 .contact-us-btn{background:#00AEEF;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:12px 28px;display:inline-block;white-space:nowrap}
-/* ===== 14. MAP - FULL BLEED, HEADING BO ===== */
+/* ===== 14. MAP ===== */
 .map-wrap{margin:14px 0 0!important;width:100%!important;max-width:100%!important;background:#fff;overflow:hidden;box-shadow:none}
 .map-frame{width:100%;height:480px;margin:0;padding:0;line-height:0}
 .map-frame iframe{width:100%;height:100%;border:0;display:block;margin:0;padding:0}
@@ -191,12 +191,23 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 .jjes-visitor{background:#00AEEF;color:#fff;font-weight:800;letter-spacing:2px;padding:3px 8px;font-size:13px;border:1px solid #fff}
 .whatsapp-float{position:fixed;right:16px;bottom:66px;width:52px;height:52px;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;z-index:2000;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .back-top{position:fixed;right:16px;bottom:16px;width:38px;height:38px;background:#00AEEF;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;z-index:2000}
+/* ===== MOBILE ONLY - HEADER CLEAN ===== */
 @media(max-width:900px){
   .topbar{justify-content:center;text-align:center}
-  .header{justify-content:space-between;text-align:left}
-  .header-right{width:100%;align-items:stretch}
-  .hamburger{display:flex}
-  .header-btns,.search-box{justify-content:center}
+  .header{justify-content:space-between;align-items:flex-start;text-align:left;padding:12px 4%;gap:10px}
+  .logo-wrap{gap:10px;flex:1}
+  .logo-wrap img{width:58px;height:58px}
+  .logo-wrap h1{font-size:21px;line-height:1.05}
+  .logo-wrap h1 span{font-size:12px;margin-top:2px}
+  .gold-line{font-size:10.5px;line-height:1.4;margin-top:3px}
+  .motto-line{display:block!important}
+  .hamburger{display:flex;align-self:center}
+  /* MOBILE AH HEADER BUTTONS PAIH - SEARCH CHAUH AWM */
+  .header-btns{display:none!important}
+  .header-right{width:100%;align-items:stretch;order:3}
+  .search-box{margin-top:0;width:100%;justify-content:stretch}
+  .search-box input{flex:1;width:auto}
+  .search-results{width:100%;left:0;right:auto}
   nav{display:none;flex-direction:column;position:relative}
   nav.open{display:flex}
   .nav-item > a{padding:12px 14px;font-size:13.5px}
@@ -205,14 +216,20 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
   .boxes{grid-template-columns:1fr 1fr}.leaders-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:1fr;gap:28px}.latest-slide{min-width:50%}.virtual-grid{grid-template-columns:1fr 1fr}.jjes-footer-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
-  .logo-wrap img{width:54px;height:54px}.facts{grid-template-columns:1fr 1fr}.boxes{grid-template-columns:1fr}.about-jjes-images img{height:140px}.about-jjes-images img:nth-child(2){height:290px}
+  .topbar{font-size:11px}
+  .header{padding:10px 3%}
+  .logo-wrap img{width:52px;height:52px}
+  .logo-wrap h1{font-size:19px}
+  .gold-line{font-size:10px}
+  .motto-line{font-size:10px;letter-spacing:1.5px}
+  .search-box input{font-size:12px}
+  .facts{grid-template-columns:1fr 1fr}.boxes{grid-template-columns:1fr}.about-jjes-images img{height:140px}.about-jjes-images img:nth-child(2){height:290px}
   .admit-form{grid-template-columns:1fr}.admit-form textarea,.admit-btn{grid-column:span 1}.admit-btn{width:100%}.latest-slide{min-width:100%}.virtual-grid{grid-template-columns:1fr}.enquiry-banner{justify-content:center;text-align:center}.contact-us-btn{width:100%;text-align:center}.jjes-footer-top{grid-template-columns:1fr}.jjes-footer-bottom{justify-content:center;text-align:center}.map-frame{height:340px}.map-foot a{width:100%;text-align:center}
 }
 </style>
 </head>
 <body>
 
-<!-- PAGE BACKGROUND SLIDE -->
 <div class="page-bg" id="pageBg">
   <div class="page-bg-slide active" style="background-image:url('campus-toon.jpg')"></div>
   <div class="page-bg-slide" style="background-image:url('image-two.jpg')"></div>
@@ -222,17 +239,17 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 
 <!-- 1. TOPBAR -->
 <div class="topbar">
-  <div class="topbar-left"><a href="mailto:info@pbkjjes.online">✉️ info@pbkjjes.online</a><a href="tel:+919612356076">📞 +91 96123 56076</a><span id="liveTime" style="color:#7dd3fc;font-weight:600">⏰ Loading...</span></div>
+  <div class="topbar-left"><a href="mailto:info@pbkjjes.online"> info@pbkjjes.online</a><a href="tel:+919612356076"> +91 96123 56076</a><span id="liveTime" style="color:#7dd3fc;font-weight:600"> Loading...</span></div>
   <div class="topbar-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a></div>
 </div>
 
-<!-- 2. HEADER -->
+<!-- 2. HEADER - MOBILE CLEAN -->
 <div class="header">
-  <div class="logo-wrap"><img src="logo.jpg" alt="JJES Logo"><div><h1>JEHOVA JIRE<span>ENGLISH SCHOOL</span></h1><p class="gold-line">Govt. Recognised | Pangbalkawn, Kolasib, Mizoram - 796081</p></div></div>
+  <div class="logo-wrap"><img src="logo.jpg" alt="JJES Logo"><div><h1>JEHOVA JIRE<span>ENGLISH SCHOOL</span></h1><p class="motto-line">Brighten Up Your Future</p><p class="gold-line">Govt. Recognised | Pangbalkawn, Kolasib, Mizoram - 796081</p></div></div>
   <button class="hamburger" id="hamburgerBtn" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="header-right">
     <div class="header-btns"><a href="contact.html">Parent Enquiry Form</a><a href="contact.html">Book a Campus Visit</a><a href="contact.html">Schedule Counselling</a><a href="admission-form.html">Admission Form</a></div>
-    <div class="search-box"><input id="siteSearch" placeholder="Search... e.g. admission, fee, news" autocomplete="off"><button onclick="doSearch()">🔍</button><div class="search-results" id="searchResults"></div></div>
+    <div class="search-box"><input id="siteSearch"  autocomplete="off"><button onclick="doSearch()">Search</button><div class="search-results" id="searchResults"></div></div>
   </div>
 </div>
 
@@ -261,20 +278,19 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 
 <!-- 4. HERO -->
 <div class="hero" id="hero">
-  <div class="hero-slide active" style="background-image:url('campus-toon.jpg')"><div class="hero-text"><span>BEST LEARNING ENVIRONMENT</span><h2>Location</h2><p>Peaceful • Safe • Clean Air</p></div></div>
-  <div class="hero-slide" style="background-image:url('image-two.jpg')"><div class="hero-text"><span>CHARACTER WITH EXCELLENCE</span><h2>Education - Culture</h2><p>Discipline • Values • Growth</p></div></div>
-  <div class="hero-slide" style="background-image:url('smart-learning.jpg')"><div class="hero-text"><span>TEAM WORK & DISCIPLINE</span><h2>Smart Learning</h2><p>Modern • Smart • Joyful</p></div></div>
+  <div class="hero-slide active" style="background-image:url('scouts-guides.jpeg')"><div class="hero-text"><span>TEAM WORK & DISCIPLINE</span><h2>Physical Activities</h2><p>Peaceful • Safe • Clean Air</p></div></div>
+  <div class="hero-slide" style="background-image:url('smart-learning.jpg')"><div class="hero-text"><span>BEST LEARNING IN TECHNOLOGY</span><h2>Smart Learning</h2><p>Modern • Smart • Joyful</p></div></div>
   <div class="hero-slide" style="background-image:url('admission-banner.jpg')"><div class="hero-text"><span>JOIN JJES FAMILY</span><h2>Admissions Open 2027</h2><p>Join JJES Family Today</p></div></div>
   <div class="hero-arrow left" onclick="heroGo(-1)">‹</div><div class="hero-arrow right" onclick="heroGo(1)">›</div>
-  <div class="hero-dots" id="heroDots"><i class="active"></i><i></i><i></i><i></i></div>
+  <div class="hero-dots" id="heroDots"><i class="active"></i><i></i><i></i></div>
 </div>
 
 <!-- 5. FACTS -->
-<div class="facts"><div class="fact"><b>2011</b><span>Established - 10th Jan</span></div><div class="fact"><b>15 Years</b><span>Foundation Day</span></div><div class="fact"><b>Class 1-8</b><span>Free Library & Lab</span></div><div class="fact"><b>Brighten Up</b><span>Your Future</span></div></div>
+<div class="facts"><div class="fact"><b>2011</b><span>Established - 10th Jan</span></div><div class="fact"><b>15 +</b><span>Years of Service</span></div><div class="fact"><b>Class 1-8</b><span>Free Library & Lab</span></div><div class="fact"><b>100%</b><span>Safe & Peaceful</span></div></div>
 
 <!-- 6. ABOUT -->
 <div class="about-jjes">
-  <div class="about-jjes-images"><img src="campus-toon.jpg" alt="JJES Students Playing"><img src="image-two.jpg" alt="JJES School Building and Assembly"><img src="smart-learning.jpg" alt="JJES Playground"><img src="admission-banner.jpg" alt="JJES Smart Learning"></div>
+  <div class="about-jjes-images"><img src="utsav-railstation.jpeg" alt="JJES UTSAV Participants"><img src="flag-hoist.jpeg" alt="Mizoram Bharat Scouts & Guides"><img src="trophy.jpeg" alt="JJES Playground"><img src="childrens-day.jpeg" alt="Childern's Day Celebration"></div>
   <div class="about-jjes-text"><h2>Jehova Jire English School,<br>Pangbalkawn</h2><p>Jehova Jire English School is situated at a prime spot in Pangbalkawn village, 100 metres from the nearby Community Hall, Pangbalkawn, Bilkhawthlir Block, Kolasib, Mizoram - 796081. A branch of JJES, the school's foundation was laid on 10th January 2011, with the motto "Brighten Up Your Future." The school is Govt. Recognised, Co-educational English Medium School.</p><p>All subjects are taught in English, Mizo and Hindi. We also teach Music, Public Speaking and Computer. In Computer, we teach only the basics of Programming, System and Microsoft Office. Our school campus is in a quiet place, with clean air, safe drinking water and easy wheelchair access.</p><a class="read-more-btn" href="about.html">Read More</a></div>
 </div>
 
@@ -295,7 +311,7 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 <!-- 10. PRINCIPAL -->
 <div class="principal"><h3>✉️ From The Principal's Desk</h3><p>A warm welcome to a new and exciting academic year! At our school, we believe true education goes beyond textbooks to shape well-rounded, compassionate, and capable individuals. We are committed to providing a safe, engaging environment where every student is empowered to think critically, act with integrity, and achieve their full potential. Let us work together to make this year a remarkable journey of learning and success.</p><div class="view-more"><a href="principal-message.html">View More →</a></div></div>
 
-<!-- 10B. PROVERBS - SIMPLE -->
+<!-- 10B. PROVERBS -->
 <div class="proverbs-simple">
   <h3>📖 The Book of Proverbs</h3>
   <div class="verse"><b>Proverbs 1:7-9 (KJV)</b><p>7. The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction. 8. My son, hear the instruction of thy father, and forsake not the law of thy mother: 9. For they shall be an ornament of grace unto thy head, and chains about thy neck.</p></div>
@@ -319,13 +335,12 @@ nav{background:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:0;pad
 </div>
 
 <!-- 15. FOOTER -->
-<footer class="jjes-footer"><div class="jjes-footer-top"><div><h3>JJES PANGBALKAWN</h3><div class="jjes-footer-contact"><p>📍 Near Community Hall, Pangbalkawn,<br>Bilkhawthlir Block, Kolasib - 796081,<br>Mizoram, India</p><p>📞 <a href="tel:+919612356076">+91 96123 56076</a></p><p>📞 <a href="tel:+918731996242">+91 87319 96242</a></p><p>✉️ <a href="mailto:info@pbkjjes.online">info@pbkjjes.online</a></p><p>✉️ <a href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></p></div><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div><h3>About Us</h3><ul><li><a href="about-school.html">History</a></li><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="our-academics.html">Academics</a></li><li><a href="principal-message.html">Principal Message</a></li></ul></div><div><h3>Important Links</h3><ul><li><a href="our-academics.html">MBSE Corner</a></li><li><a href="curricular.html">Activities</a></li><li><a href="terms-conditions.html">School Regulations</a></li><li><a href="notification.html">News & Announcements</a></li><li><a href="terms-conditions.html">Fee Structure</a></li></ul></div><div><h3>Quick Links</h3><ul><li><a href="curricular.html">Sports</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="photo-gallery.html">Videos</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div></div><div class="jjes-footer-bottom"><span>© JJES PANGBALKAWN, All Right Reserved.</span><span class="jjes-visitor" id="visitCountFooter">000000</span><span>Designed By <b>JJES</b> | Motto: Brighten Up Your Future</span></div></footer>
+<footer class="jjes-footer"><div class="jjes-footer-top"><div><h3>JJES PANGBALKAWN</h3><div class="jjes-footer-contact"><p> Near Community Hall, Pangbalkawn,<br>Bilkhawthlir Block, Kolasib - 796081,<br>Mizoram, India</p><p>📞 <a href="tel:+919612356076">+91 96123 56076</a></p><p>📞 <a href="tel:+918731996242">+91 87319 96242</a></p><p>✉️ <a href="mailto:info@pbkjjes.online">info@pbkjjes.online</a></p><p>✉️ <a href="mailto:englishschooljehovajire@gmail.com">englishschooljehovajire@gmail.com</a></p></div><div class="jjes-footer-social"><a href="https://facebook.com/@pbkjjes"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/pbkjjes"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@pbkjjes"><i class="fab fa-youtube"></i></a><a href="https://wa.me/9612356076"><i class="fab fa-whatsapp"></i></a></div></div><div><h3>About Us</h3><ul><li><a href="about-school.html">History</a></li><li><a href="infrastructure.html">Infrastructure</a></li><li><a href="admission-form.html">Admissions</a></li><li><a href="our-academics.html">Academics</a></li><li><a href="principal-message.html">Principal Message</a></li></ul></div><div><h3>Important Links</h3><ul><li><a href="our-academics.html">MBSE Corner</a></li><li><a href="curricular.html">Activities</a></li><li><a href="terms-conditions.html">School Regulations</a></li><li><a href="notification.html">News & Announcements</a></li><li><a href="terms-conditions.html">Fee Structure</a></li></ul></div><div><h3>Quick Links</h3><ul><li><a href="curricular.html">Sports</a></li><li><a href="photo-gallery.html">Photo Gallery</a></li><li><a href="photo-gallery.html">Videos</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div></div><div class="jjes-footer-bottom"><span>© JJES PANGBALKAWN, All Right Reserved.</span><span class="jjes-visitor" id="visitCountFooter">000000</span><span>Designed By <b>JJES</b> | Motto: Brighten Up Your Future</span></div></footer>
 
 <a class="whatsapp-float" href="https://wa.me/9612356076" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a class="back-top" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
 
 <script>
-// PAGE BACKGROUND SLIDE - 6 SEC DANAH INTHLAK
 let bgI=0;const bgSlides=document.querySelectorAll('.page-bg-slide');
 setInterval(()=>{bgSlides.forEach(s=>s.classList.remove('active'));bgI=(bgI+1)%bgSlides.length;bgSlides[bgI].classList.add('active');},6000);
 function toggleMenu(){document.getElementById('mainNav').classList.toggle('open');document.getElementById('hamburgerBtn').classList.toggle('active');}
@@ -333,7 +348,7 @@ let hi=0;const slides=document.querySelectorAll('.hero-slide');const dots=docume
 function heroShow(i){slides.forEach(s=>s.classList.remove('active'));dots.forEach(d=>d.classList.remove('active'));slides[i].classList.add('active');dots[i].classList.add('active');hi=i;}
 function heroGo(n){heroShow((hi+n+slides.length)%slides.length);}
 dots.forEach((d,i)=>d.onclick=()=>heroShow(i));setInterval(()=>heroGo(1),5000);
-function updateTime(){const now=new Date();const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});const el=document.getElementById('liveTime');if(el)el.innerText='⏰ '+str+' IST';}
+function updateTime(){const now=new Date();const str=now.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});const el=document.getElementById('liveTime');if(el)el.innerText=' '+str+' IST';}
 setInterval(updateTime,1000);updateTime();
 let c=localStorage.getItem('jjes_visits');if(!c)c=1285;else c=parseInt(c)+1;localStorage.setItem('jjes_visits',c);document.getElementById('visitCountFooter').innerText=String(c).padStart(6,'0');
 function sendAdmission(f){var msg="Admission Enquiry - JJES%0AName: "+encodeURIComponent(f.name.value)+"%0AMobile: "+encodeURIComponent(f.mobile.value)+"%0AEmail: "+encodeURIComponent(f.email.value)+"%0AClass: "+encodeURIComponent(f.class.value)+"%0AMessage: "+encodeURIComponent(f.message.value);window.open("https://wa.me/9612356076?text="+msg,"_blank");return false;}
